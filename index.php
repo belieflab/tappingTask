@@ -92,6 +92,7 @@ file_put_contents($name, $data);
 
   <div id="nextButtonHolder" class="buttonHolder">
   <button id="nextButton" onclick="startExperiment()">CONSENT/NEXT</button>
+  <!-- <div id = "counter" style="color:white; font-size:60px;">timer</div> -->
 </div>
 </body>
 
@@ -141,18 +142,32 @@ file_put_contents($name, $data);
       stimulus: '<p style="color:white;">Here are some examples.</p> ' +
           '<p style="color:white;">For each, guess whether the assigned figure is male-like or female-like and indicate your choice by pressing either response keys.</p> ' +
           '<p style="color:white;">Press the space bar to continue.</p>',
-      prompt: '<p style="color:white;" id="safeTimerDisplay">00:30</p>',
+      // prompt: '<p style="color:white;" id="safeTimerDisplay">00:30</p>',
       choices: [32],
       post_trial_gap: 2000,
 //       on_start: function () {document.getElementById('timer').innerHTML = 003 + ":" + 20;},
-
       };
-    timeline.push(instructions_3);
+    
+      timeline.push(instructions_3);
+
+    let ready = { // This is creating the fixation object //
+      type: 'html-keyboard-response',
+      stimulus: '<div style="color:white; font-size:60px;">Press Spacebar when Ready to Begin</div>',
+      choices: [32], //Spacebar
+    //  trial_duration: 10000,
+      // response_ends_trial: true,
+      on_finish: countdown(1),
+      prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
+    // data: jsPsych.timelineVariable('data'),
+    }
+
+    timeline.push(ready);
 
     /* START TRAINING TRIAL FOR PARTICIPANTS */
     
     // var sec = 30; //set timer for 30 seconds
 
+    
     
 
     var tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */
@@ -181,7 +196,7 @@ file_put_contents($name, $data);
 {stimulus: tapping_stimuli[ 17 ], data: {test_part: 'tap', correct_response: ' '}},
 {stimulus: tapping_stimuli[ 18 ], data: {test_part: 'tap', correct_response: ' '}},
 {stimulus: tapping_stimuli[ 19 ], data: {test_part: 'tap', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 20 ], data: {test_part: 'tap', correct_response: ' '}},
+{stimulus: tapping_stimuli[ 20 ], data: {test_part: 'tap', correct_response: ' '}},
 // {stimulus: tapping_stimuli[ 21 ], data: {test_part: 'tap', correct_response: ' '}},
 // {stimulus: tapping_stimuli[ 22 ], data: {test_part: 'tap', correct_response: ' '}},
 // {stimulus: tapping_stimuli[ 23 ], data: {test_part: 'tap', correct_response: ' '}},
@@ -1163,34 +1178,21 @@ file_put_contents($name, $data);
 // {stimulus: tapping_stimuli[ 999 ], data: {test_part: 'tap', correct_response: ' '}}
 ]
 
-    // var fixation = { // This is creating the fixation object //
-    //   type: 'html-keyboard-response',
-    //   stimulus: '<div style="color:white; font-size:60px;">+</div>',
-    //   choices: [32],
-    //   trial_duration: 10000,
-    //   response_ends_trial: false,
-    // //   on_finish: function(data){
-    // //   if(data.key_press == 32){
-    // //     data.correct = true;
-    // //   } else {
-    // //     data.correct = false;
-    // //   }
-    // // },
-    // data: jsPsych.timelineVariable('data'),
-    // }
 
-    // timeline.push(fixation);
+    
     
 
     var tap = { // I think this is the object for collecting responses //
       type: "html-keyboard-response",
-      prompt: '<p style="color:white;" id="safeTimerDisplay">00:30</p>',
-      choices: [' '],
-      // trial_duration: 3000,
+      //prompt: '<p style="color:white;" id="safeTimerDisplay">00:30</p>',
+      //prompt: '<input type="text" onkeypress="move()">',
+      choices: [9,' '],
+      // trial_duration: 10000,
       response_ends_trial: true,
+      prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
       stimulus: jsPsych.timelineVariable('stimulus'),
       data: jsPsych.timelineVariable('data'),
-      // stimulus: '<p style="text-align:center; color:green; font-size:100px">Go!</p>',
+      stimulus: '<p style="text-align:center; color:green; font-size:100px">Go!</p>',
 
       // on_load: function() { //end
       //   if (sec <= 0) {
@@ -1203,7 +1205,7 @@ file_put_contents($name, $data);
 
     // Everything from line 144 to 174 are building the objects that are fed into c1_train_procedure //
     var procedure = {
-      timeline: [tap],
+      timeline: [tap], //if you put fixation in front and the feedback after, it will display those in that order
       timeline_variables: stimuli,
       randomize_order: false,
       // on_start: function timer(){ // initialize timer

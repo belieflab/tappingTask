@@ -16,4 +16,7 @@ function countdown(minutes) {
         }
     }
     tick();
+    if (seconds == 0) {
+        jsPsych.endCurrentTimeline;
+    }
 }
