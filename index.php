@@ -16,6 +16,7 @@ file_put_contents($name, $data);
     <script src="jsPsych/jspsych.js"></script>
     <script src="jsPsych/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="jsPsych/plugins/jspsych-image-keyboard-response.js"></script>
+    <script src="jsPsych/plugins/jspsych-html-button-response.js"></script>
     <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link>
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
@@ -92,7 +93,7 @@ file_put_contents($name, $data);
 
   <div id="nextButtonHolder" class="buttonHolder">
   <button id="nextButton" onclick="startExperiment()">CONSENT/NEXT</button>
-  <div id = "counter" style="color:white; font-size:60px;">timer</div>
+  <!-- <div id = "counter" style="color:white; font-size:60px;">timer</div> -->
 </div>
 </body>
 
@@ -103,12 +104,12 @@ file_put_contents($name, $data);
     // let countdownTimer = '<div id = "counter" style="color:white; font-size:60px;">timer</div>';
 
     /* create timeline */
-    var timeline = [];
+    let timeline = [];
 
     // timeline.push({stimulus: '<p style="text-align:center; color:green; font-size:100px">Go!</p>', data: {test_part: 'tap', correct_response: ' '}})
 
     /* define welcome message trial */
-    var welcome = {
+    let welcome = {
       type: "html-keyboard-response",
       stimulus: '<p style="color:white;">Welcome to the experiment! Press any key to begin.</p>',
       // on_load: countdown(1),
@@ -117,7 +118,7 @@ file_put_contents($name, $data);
     timeline.push(welcome);
 
     /* define instructions trial */
-    var instructions_1 = {
+    let instructions_1 = {
       type: "html-keyboard-response",
       stimulus: '<p style="color:white;">You will see a series of abstract figures. They are adaptations of signs in the Korean alphabet, but that is not important for this study. </p>' +
         '<p style="color:white;">Abstract figures sometimes have a more masculine or feminine shape. Here, each figure has already been assigned a gender '+
@@ -131,7 +132,7 @@ file_put_contents($name, $data);
     };
     timeline.push(instructions_1);
 
-    var instructions_2 = {
+    let instructions_2 = {
       type: "html-keyboard-response",
       stimulus: '<p style="color:white;">Your choice is correct if it matches the gender assigned by the majority of respondents in the pilot study.</p> ' +
           '<p style="color:white;">For each correct choice you will receive 2 cents. There will be 200 trials divided into 4 blocks of 50 trials. You will be able to take a break after every 50 trials.</p> ' +
@@ -142,7 +143,7 @@ file_put_contents($name, $data);
 
     
 
-    var instructions_3 = {
+    let instructions_3 = {
       type: "html-keyboard-response",
       stimulus: '<p style="color:white;">Here are some examples.</p> ' +
           '<p style="color:white;">For each, guess whether the assigned figure is male-like or female-like and indicate your choice by pressing either response keys.</p> ' +
@@ -156,18 +157,20 @@ file_put_contents($name, $data);
       timeline.push(instructions_3);
 
     let ready = { // This is creating the fixation object //
-      type: 'html-keyboard-response',
-      stimulus: '<div style="color:white; font-size:60px;">Press Spacebar when Ready to Begin</div>',
-      // prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
-      // prompt: '<input type="text" onkeypress="coutndown(1)">',
+      type: 'html-button-response',
+      stimulus: '<div style="color:white; font-size:20px;">Press the START button and Immediately Press the Spacebar as fast as You can until you are told to stop</div>',
+      button_html: '<button id="nextButton" onclick="countdown(1)" onkeypress="coutndown(1)">START</button>',
+      // prompt: '<div style="color:white; font-size:20px;">Press the START button and Immediately Press the Spacebar as fast as You can until you are told to stop</div>',
+      // stimulus: '<button id="nextButton" onclick="countdown(1)" onkeypress="countdown(1)">START</button>',
+      // prompt: '<button id="nextButton" onclick="countdown(1)" onkeypress="coutndown(1)">START</button>',
       choices: [32], //Spacebar
-      on_finish: function(){
-        seconds = 60;
-      },
+      prompt: '<p id="counter" style="text-align:center; color:white; font-size:30px"></p>',
+      
+
       
       
 
-     trial_duration: 10000,
+    //  trial_duration: 10000,
       response_ends_trial: true,
       // on_finish: countdown(1),
       // // prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
@@ -178,17 +181,16 @@ file_put_contents($name, $data);
 
     /* START TRAINING TRIAL FOR PARTICIPANTS */
     
-    // var sec = 30; //set timer for 30 seconds
+    // let sec = 30; //set timer for 30 seconds
 
     
-    
 
-    var tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */
-    for (var i = 0; i < 1000; i++){
+    let tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */
+    for (let i = 0; i < 1000; i++){
       tapping_stimuli.push('<p style="text-align:center; color:green; font-size:100px">Go!</p>');
     }
 
-    var stimuli = [ 
+    let stimuli = [ 
 {stimulus: tapping_stimuli[ 0 ], data: {test_part: 'tap', correct_response: ' '}},
 {stimulus: tapping_stimuli[ 1 ], data: {test_part: 'tap', correct_response: ' '}},
 {stimulus: tapping_stimuli[ 2 ], data: {test_part: 'tap', correct_response: ' '}},
@@ -1195,7 +1197,7 @@ file_put_contents($name, $data);
     
     
 
-    var tap = { // I think this is the object for collecting responses //
+    let tap = { // I think this is the object for collecting responses //
       type: "html-keyboard-response",
       //prompt: '<p style="color:white;" id="safeTimerDisplay">00:30</p>',
       //prompt: '<input type="text" onkeypress="move()">',
@@ -1205,8 +1207,9 @@ file_put_contents($name, $data);
       // prompt: countdownTimer,
       stimulus: jsPsych.timelineVariable('stimulus'),
       data: jsPsych.timelineVariable('data'),
-      // prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
-      // stimulus: '<p style="text-align:center; color:green; font-size:100px">Go!</p>',
+      // prompt: '<div style="color:white; font-size:20px;">Press the Space Bar as Fast as You Can Until You are Instructed to Stop</div>',
+      prompt: '<p id="counter" style="text-align:center; color:white; font-size:30px"></p>',
+      
 
       // on_load: function() { //end
       //   if (sec <= 0) {
@@ -1218,30 +1221,15 @@ file_put_contents($name, $data);
     // timeline.push(tap);
 
     // Everything from line 144 to 174 are building the objects that are fed into c1_train_procedure //
-    var procedure = {
+    let procedure = {
       timeline: [tap], //if you put fixation in front and the feedback after, it will display those in that order
       timeline_variables: stimuli,
       randomize_order: false,
-      // prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
-      // prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
-      // on_load: countdown(1),
-      // prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
-      // on_start: function timer(){ // initialize timer
-      //   var sec = 30; // set timer in seconds
-      //   var timer = setInterval(function(){
-      //   document.getElementById('safeTimerDisplay').innerHTML='00:'+sec;
-      //   sec--;
-      //   if (sec < 0) {
-      //     jsPsych.endCurrentTimeline();
-      //     }
-      //   }, 1000);
-      // },
-      // trial_duration: 5000,
     }
 
-    timeline.push(procedure);
+    timeline.push(procedure)
 
-    // var tap_block = { // This is creating the fixation object //
+    // let tap_block = { // This is creating the fixation object //
     //   type: 'html-keyboard-response',
     //   prompt: '<p style="text-align:center; color:green; font-size:100px">Go!</p>',
     //   choices: [32],
@@ -1256,22 +1244,21 @@ file_put_contents($name, $data);
     // timeline.push(tap_block);
 
     function saveData(name, data){
-      var xhr = new XMLHttpRequest();
-      // var sec = 30;
+      let xhr = new XMLHttpRequest();
+      // let sec = 30;
       xhr.open('POST', 'index.php'); // 'write_data.php' is the path to the php file described above.
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send(JSON.stringify({filename: name, filedata: data}));
     }
 
-    var workerID = prompt( 'Subject ID' );
+    let workerID = prompt( 'Subject ID' );
 
    /* start the experiment */
    function startExperiment(){
       jsPsych.init({
         timeline: timeline,
         show_progress_bar: true,
-        on_start: countdown(1),
-        // on_start: countdown(1),
+        // on_finish: countdown(1),
         // prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
         on_finish: function(){ saveData("tapping-task_" + workerID, jsPsych.data.get().csv()); }
         //on_finish: function(){
