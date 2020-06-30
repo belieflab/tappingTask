@@ -104,6 +104,7 @@ file_put_contents($name, $data);
   <script>
 
     let stimuli;
+    let j=0;
     // let countdownTimer = '<div id = "counter" style="color:white; font-size:60px;">timer</div>';
 
     /* create timeline */
@@ -144,8 +145,6 @@ file_put_contents($name, $data);
     };
     timeline.push(instructions_2);
 
-    
-
     let instructions_3 = {
       type: "html-keyboard-response",
       stimulus: '<p style="color:white;">Here are some examples.</p> ' +
@@ -160,64 +159,98 @@ file_put_contents($name, $data);
       timeline.push(instructions_3);
 
 
+    var countdownTrial = []
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 10 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 9 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 8 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 7 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 6 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 5 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 4 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 3 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 2 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 1 + "</p>'");
+      
+    var countdown_stim=[{stimulus: countdownTrial[0], sound: audio},{stimulus: countdownTrial[1], sound: audio},{stimulus: countdownTrial[2], sound: audio},{stimulus: countdownTrial[3], sound: audio},{stimulus: countdownTrial[4], sound: audio}, {stimulus: countdownTrial[5], sound: audio}, {stimulus: countdownTrial[6], sound: audio}, {stimulus: countdownTrial[7], sound: audio}, {stimulus: countdownTrial[8], sound: audio}, {stimulus: countdownTrial[9], sound: audio}]
+
+
+    let workerID = prompt( 'Subject ID' );
+    var audio = ["Stimuli/50msec.wav"];
+
     /* START TRAINING TRIAL FOR PARTICIPANTS */
-    
-    // let sec = 30; //set timer for 30 seconds
 
-    
+    let getReady = { 
+      type: 'html-button-response',
+      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get Ready To Tap!</p>',
+      button_html: '<button id="countdownPrompt" style = "outline:none; border:none; background-color:black" onclick="countdown()" onkeypress="countdown()">START</button>',
+      choices: jsPsych.NO_KEYS, //Spacebar
+      trial_duration: 5000,
+      on_load: function() {
+        document.getElementByID("countdownPrompt").focus() // getElementByID is camel case variable naming
+      }
+    }
 
-    // let tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */
-    // for (let i = 0; i < 10; i++){
-    //         tapping_stimuli.push("Stimuli/50msec.mp3"); // I guess this could be done different ways. Stimuli here, or in the trial. Prob want to preload this.
-    // }
-
-//     stimuliTone = [ 
-// {stimulus: tapping_stimuli[ 0 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 1 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 2 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 3 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 4 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 5 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 6 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 7 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 8 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// {stimulus: tapping_stimuli[ 9 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-// ]  
-
-    // var source = context.createBufferSource();
-    // source.buffer = jsPsych.pluginAPI.getAudioBuffer("Stimuli/50msec.wav");
-    // source.connect(context.destination);
-    // startTime = context.currentTime;
-    // source.start(startTime);
+    let countDown = { 
+      type: 'audio-keyboard-response', //html is the most versatile. Use html-keyboard-response and stuff as many things in it as possible
+      // stimulus: function(){
+      //           var html= jsPsych.timelineVariable('stimulus', true) +
+      //           "<audio controls autoplay src='"+jsPsych.timelineVariable('sound', true)+"'>" 
+      //           return html;
+      // },
+      stimulus: audio,
+      prompt: function(){
+          return countdownTrial[j];
+      },
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500,
+      on_finish: function(){
+        j++
+      }
+    }
 
     let tapTone = { // I think this is the object for collecting responses //
       type: "audio-keyboard-response",
       choices: [32],
       response_ends_trial: false,
       trial_ends_after_audio: false,
-      trial_duration: 500,
+      trial_duration: 250,
       stimulus: "Stimuli/50msec.wav",
+      on_finish: function (data) {
+          console.log(data.key_press)
+          },
       // stimulus: function() { return "Stimuli/50msec.wav" },
-      prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
+      prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
     }
 
-    let promptTone = { 
-      type: 'html-button-response',
-      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get ready to tap with you LEFT hand.</p>',
-      button_html: '<button id="nextButton" onclick="" onkeypress="">START</button>',
+    let toneITI = { 
+      type: 'html-keyboard-response',
+      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
       choices: [32], //Spacebar
-      prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px"></p>', //this gets filled in with the countdown
+      response_ends_trial: false,
+      on_finish: function (data) {
+          console.log(data.key_press)
+          },
+      trial_duration: 250,
     }
     
+    let procedureCountDown = { //This loops over the object
+      timeline: [countDown], //if you put fixation in front and the feedback after, it will display those in that order
+      //timeline_variables: stimuliTone,
+      randomize_order: false,// This is the outer procedure, looping over the stimuli
+      timeline_variables: countdown_stim
+    }
+
     let procedureTone = { //This loops over the object
-      timeline: [tapTone], //if you put fixation in front and the feedback after, it will display those in that order
+      timeline: [tapTone, toneITI], //if you put fixation in front and the feedback after, it will display those in that order
       //timeline_variables: stimuliTone,
       randomize_order: false,// This is the outer procedure, looping over the stimuli
       repetitions: 10,
     }
     
-    timeline.push(promptTone) //Object oriented.
+    timeline.push(getReady) //Object oriented.
+    timeline.push(procedureCountDown) //Object oriented.
     timeline.push(procedureTone) //Object oriented.
+    
 
     //timeline.push(promptTone, procedureTone) //1st block
     // timeline.push(promptRight, procedureRight, promptLeft, procedureLeft) //2nd block
@@ -231,11 +264,6 @@ file_put_contents($name, $data);
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send(JSON.stringify({filename: name, filedata: data}));
     }
-
-    let workerID = prompt( 'Subject ID' );
-
-
-    var audio = ["Stimuli/50msec.wav"];
 
    /* start the experiment */
    function startExperiment(){
