@@ -15,6 +15,10 @@ file_put_contents($name, $data);
     <script async src="js/timer.js"></script>
     <!--<script type="text/javascript" src="js/stimuli.js"></script>-->
     <script src="jsPsych/jspsych.js"></script>
+    <script src="jsPsych/plugins/jspsych-audio-keyboard-response.js"></script>
+    <script src="jsPsych/plugins/jspsych-html-keyboard-response.js"></script> <!--script is for javascript -->
+    <script src="jsPsych/plugins/jspsych-image-keyboard-response.js"></script>
+    <script src="jsPsych/plugins/jspsych-html-button-response.js"></script>
     <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link> <!--link is for any other text file; href is for local directory, either a url or path -->
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!--the interpreter will take care of ordering, rel, type, href do not have to be in a specific order -->
   </head>
@@ -100,6 +104,7 @@ file_put_contents($name, $data);
   <script>
 
     let stimuli;
+    let j=0;
     // let countdownTimer = '<div id = "counter" style="color:white; font-size:60px;">timer</div>';
 
     /* create timeline */
@@ -140,8 +145,6 @@ file_put_contents($name, $data);
     };
     timeline.push(instructions_2);
 
-    
-
     let instructions_3 = {
       type: "html-keyboard-response",
       stimulus: '<p style="color:white;">Here are some examples.</p> ' +
@@ -156,296 +159,119 @@ file_put_contents($name, $data);
       timeline.push(instructions_3);
 
 
+    var countdownTrial = []
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 10 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 9 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 8 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 7 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 6 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 5 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 4 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 3 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 2 + "</p>'");
+      countdownTrial.push("<p style='text-align:center; color:white; font-size:30px'>" + 1 + "</p>'");
+      
+    var countdown_stim=[{stimulus: countdownTrial[0], sound: audio},{stimulus: countdownTrial[1], sound: audio},{stimulus: countdownTrial[2], sound: audio},{stimulus: countdownTrial[3], sound: audio},{stimulus: countdownTrial[4], sound: audio}, {stimulus: countdownTrial[5], sound: audio}, {stimulus: countdownTrial[6], sound: audio}, {stimulus: countdownTrial[7], sound: audio}, {stimulus: countdownTrial[8], sound: audio}, {stimulus: countdownTrial[9], sound: audio}]
+
+
+    let workerID = prompt( 'Subject ID' );
+    var audio = ["Stimuli/50msec.wav"];
+
     /* START TRAINING TRIAL FOR PARTICIPANTS */
-    
-    // let sec = 30; //set timer for 30 seconds
 
-    
-
-    let tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */
-    for (let i = 0; i < 100; i++){
-      tapping_stimuli.push('<p style="text-align:center; color:green; font-size:100px">Go!</p>'); //this is a thought of these in between the ps in an array
-    }
-
-    stimuliLeft = [ 
-{stimulus: tapping_stimuli[ 0 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 1 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 2 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 3 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 4 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 5 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 6 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 7 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 8 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 9 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 10 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 11 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 12 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 13 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 14 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 15 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 16 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 17 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 18 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 19 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 20 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 21 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 22 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 23 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 24 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 25 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 26 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 27 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 28 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 29 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 30 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 31 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 32 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 33 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 34 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 35 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 36 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 37 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 38 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 39 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 40 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 41 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 42 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 43 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 44 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 45 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 46 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 47 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 48 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 49 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 50 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 51 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 52 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 53 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 54 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 55 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 56 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 57 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 58 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 59 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 60 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 61 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 62 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 63 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 64 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 65 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 66 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 67 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 68 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 69 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 70 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 71 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 72 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 73 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 74 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 75 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 76 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 77 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 78 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 79 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 80 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 81 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 82 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 83 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 84 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 85 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 86 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 87 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 88 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 89 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 90 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 91 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 92 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 93 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 94 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 95 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 96 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 97 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 98 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 99 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-]  
-
-stimuliRight = [ 
-{stimulus: tapping_stimuli[ 0 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 1 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 2 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 3 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 4 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 5 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 6 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 7 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 8 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 9 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 10 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 11 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 12 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 13 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 14 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 15 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 16 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 17 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 18 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 19 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 20 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 21 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 22 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 23 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 24 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 25 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 26 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 27 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 28 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 29 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 30 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 31 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 32 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 33 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 34 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 35 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 36 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 37 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 38 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 39 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 40 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 41 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 42 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 43 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 44 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 45 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 46 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 47 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 48 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 49 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 50 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 51 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 52 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 53 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 54 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 55 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 56 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 57 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 58 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 59 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 60 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 61 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 62 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 63 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 64 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 65 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 66 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 67 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 68 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 69 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 70 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 71 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 72 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 73 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 74 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 75 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 76 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 77 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 78 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 79 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 80 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 81 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 82 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 83 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 84 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 85 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 86 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 87 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 88 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 89 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 90 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 91 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 92 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 93 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 94 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 95 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 96 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 97 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 98 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 99 ], data: {test_part: 'tapRight', correct_response: ' '}},
-]
-
-    let tapLeft = { // I think this is the object for collecting responses //
-      type: "html-keyboard-response",
-      choices: [9,' '],
-      response_ends_trial: true,
-      stimulus: jsPsych.timelineVariable('stimulus'), //This loads the array of your stimulus order
-      data: jsPsych.timelineVariable('data'), //Data is a method (function), saves and knows to write it later
-      prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px"></p>',
-    }
-
-    let tapRight = { // I think this is the object for collecting responses //
-      type: "html-keyboard-response",
-      choices: [9,' '],
-      response_ends_trial: true,
-      stimulus: jsPsych.timelineVariable('stimulus'), //This loads the array of your stimulus order
-      data: jsPsych.timelineVariable('data'), //Data is a method (function), saves and knows to write it later
-      prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px"></p>',
-    }
-
-    let promptLeft = { // I think this is the object for collecting responses //
+    let getReady = { 
       type: 'html-button-response',
-      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get ready to tap with you LEFT hand.</p>',
-      button_html: '<button id="nextButton" onclick="countdown(1)" onkeypress="coutndown(1)">START</button>',
+      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get Ready To Tap!</p>',
+      button_html: '<button id="countdownPrompt" style = "outline:none; border:none; background-color:black" onclick="countdown()" onkeypress="countdown()">START</button>',
+      choices: jsPsych.NO_KEYS, //Spacebar
+      trial_duration: 5000,
+      on_load: function() {
+        document.getElementByID("countdownPrompt").focus() // getElementByID is camel case variable naming
+      }
+    }
+
+    let countDown = { 
+      type: 'audio-keyboard-response', //html is the most versatile. Use html-keyboard-response and stuff as many things in it as possible
+      // stimulus: function(){
+      //           var html= jsPsych.timelineVariable('stimulus', true) +
+      //           "<audio controls autoplay src='"+jsPsych.timelineVariable('sound', true)+"'>" 
+      //           return html;
+      // },
+      stimulus: audio,
+      prompt: function(){
+          return countdownTrial[j];
+      },
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 500,
+      on_finish: function(){
+        j++
+      }
+    }
+
+    let tapTone = { // I think this is the object for collecting responses //
+      type: "audio-keyboard-response",
+      choices: [32],
+      response_ends_trial: false,
+      trial_ends_after_audio: false,
+      trial_duration: 250,
+      stimulus: "Stimuli/50msec.wav",
+      on_finish: function (data) {
+          console.log(data.key_press)
+          },
+      // stimulus: function() { return "Stimuli/50msec.wav" },
+      prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
+    }
+
+    let toneITI = { 
+      type: 'html-keyboard-response',
+      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
       choices: [32], //Spacebar
-      prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px"></p>', //this gets filled in with the countdown
+      response_ends_trial: false,
+      on_finish: function (data) {
+          console.log(data.key_press)
+          },
+      trial_duration: 250,
     }
     
-
-    let procedureLeft = { //This loops over the object
-      timeline: [tapLeft], //if you put fixation in front and the feedback after, it will display those in that order
-      timeline_variables: stimuliLeft,
+    let procedureCountDown = { //This loops over the object
+      timeline: [countDown], //if you put fixation in front and the feedback after, it will display those in that order
+      //timeline_variables: stimuliTone,
       randomize_order: false,// This is the outer procedure, looping over the stimuli
+      timeline_variables: countdown_stim
     }
 
-
-    let promptRight = { // 
-      type: 'html-button-response',
-      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get ready to tap with you RIGHT hand.</p>',
-      button_html: '<button id="nextButton" onclick="countdown(1)" onkeypress="coutndown(1)">START</button>',
-      choices: [32], //Spacebar
-      prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px"></p>', //this gets filled in with the countdown
-      response_ends_trial: true, //as soon as the click, it will advance to the next trial
-    }
-
-    //timeline.push(promptRight);
-
-
-    let procedureRight = { //This loops over the object
-      timeline: [tapRight], //if you put fixation in front and the feedback after, it will display those in that order
-      timeline_variables: stimuliRight,
+    let procedureTone = { //This loops over the object
+      timeline: [tapTone, toneITI], //if you put fixation in front and the feedback after, it will display those in that order
+      //timeline_variables: stimuliTone,
       randomize_order: false,// This is the outer procedure, looping over the stimuli
+      repetitions: 10,
     }
+    
+    timeline.push(getReady) //Object oriented.
+    timeline.push(procedureCountDown) //Object oriented.
+    timeline.push(procedureTone) //Object oriented.
+    
 
-    //timeline.push(procedureRight) //Object oriented.
-
-    timeline.push(promptRight, procedureRight, promptLeft, procedureLeft) //1st block
-    timeline.push(promptRight, procedureRight, promptLeft, procedureLeft) //2nd block
-    timeline.push(promptRight, procedureRight, promptLeft, procedureLeft) //3rd block
+    //timeline.push(promptTone, procedureTone) //1st block
+    // timeline.push(promptRight, procedureRight, promptLeft, procedureLeft) //2nd block
+    // timeline.push(promptRight, procedureRight, promptLeft, procedureLeft) //3rd block
+    //timeline.push(tapTone)
 
     function saveData(name, data){
       let xhr = new XMLHttpRequest();
       // let sec = 30;
-      xhr.open('POST', 'index.php'); // 'write_data.php' is the path to the php file described above.
+      xhr.open('POST', 'index_working.php'); // 'write_data.php' is the path to the php file described above.
       xhr.setRequestHeader('Content-Type', 'application/json');
       xhr.send(JSON.stringify({filename: name, filedata: data}));
     }
-
-    let workerID = prompt( 'Subject ID' );
 
    /* start the experiment */
    function startExperiment(){
       jsPsych.init({
         timeline: timeline,
+        preload_audio: audio,
         show_progress_bar: true,
+        //use_webaudio: false,
         // on_finish: countdown(1),
         // prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
         on_finish: function(){ saveData("tapping-task_" + workerID, jsPsych.data.get().csv()); }
@@ -459,9 +285,6 @@ stimuliRight = [
 </script>
 
 <footer>
-<script src="jsPsych/plugins/jspsych-html-keyboard-response.js"></script> <!--script is for javascript -->
-<script src="jsPsych/plugins/jspsych-image-keyboard-response.js"></script>
-<script src="jsPsych/plugins/jspsych-html-button-response.js"></script>
 
 <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
 
