@@ -184,14 +184,20 @@ file_put_contents($name, $data);
 // {stimulus: tapping_stimuli[ 9 ], data: {test_part: 'tapLeft', correct_response: ' '}},
 // ]  
 
+    // var source = context.createBufferSource();
+    // source.buffer = jsPsych.pluginAPI.getAudioBuffer("Stimuli/50msec.wav");
+    // source.connect(context.destination);
+    // startTime = context.currentTime;
+    // source.start(startTime);
 
     let tapTone = { // I think this is the object for collecting responses //
       type: "audio-keyboard-response",
       choices: [32],
       response_ends_trial: false,
       trial_ends_after_audio: false,
-      trial_duration: 1000,
-      stimulus: "Stimuli/150msec.wav",
+      trial_duration: 500,
+      stimulus: "Stimuli/50msec.wav",
+      // stimulus: function() { return "Stimuli/50msec.wav" },
       prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
     }
 
@@ -229,10 +235,13 @@ file_put_contents($name, $data);
     let workerID = prompt( 'Subject ID' );
 
 
+    var audio = ["Stimuli/50msec.wav"];
+
    /* start the experiment */
    function startExperiment(){
       jsPsych.init({
         timeline: timeline,
+        preload_audio: audio,
         show_progress_bar: true,
         //use_webaudio: false,
         // on_finish: countdown(1),
