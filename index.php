@@ -18,7 +18,7 @@ file_put_contents($name, $data);
     <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link> <!--link is for any other text file; href is for local directory, either a url or path -->
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!--the interpreter will take care of ordering, rel, type, href do not have to be in a specific order -->
   </head>
-  <body  style="background-color:black;">  <!--any time you see style = all properties that follow are inline css -->
+  <body  style="background-color:gray;">  <!--any time you see style = all properties that follow are inline css -->
   
   <div class="loading centeredDiv">
     <h1 class="loading">Loading...</h1>
@@ -110,58 +110,49 @@ file_put_contents($name, $data);
     /* define welcome message trial */
     let welcome = {
       type: "html-keyboard-response",
-      stimulus: '<p style="color:white;">Welcome to the experiment! Press any key to begin.</p>', //by default, jsPysch is white background and black text
-      // on_load: countdown(1),
-      // // prompt: '<div id = "counter" style="color:white; font-size:60px;">timer</div>',
+      stimulus: '<p style="color:black; font-size:40px">Welcome to the FINGER TAPPING experiment!</p>' + '<br>' + '<p style="color:black; font-size:40px">Press the SPACEBAR to continue.</p>', //by default, jsPysch is white background and black text
+      choices: [32],
     };
     timeline.push(welcome);
 
     /* define instructions trial */
     let instructions_1 = {
       type: "html-keyboard-response",
-      stimulus: '<p style="color:white;">You will see a series of abstract figures. They are adaptations of signs in the Korean alphabet, but that is not important for this study. </p>' +
-        '<p style="color:white;">Abstract figures sometimes have a more masculine or feminine shape. Here, each figure has already been assigned a gender '+
-        'as <q>Male</q> or <q>Female</q> by a panel of respondents in a pilot study. The respondents were not given specific instructions on how to do this, '+
-        'but were only told to use their intuition and to take into account the entire configuration of the stimulus. </p>'+
-        '<p style="color:white;">Your task now is to guess the assigned gender of each figure. Please press the corresponding response keys to indicate your choice: </p>'+
-        '<p style="color:white;"> Male &#8594 <q>,</q> (comma)</p>'+
-        '<p style="color:white;"> Female &#8594 <q>.</q> (period)</p>'+
-        '<p style="color:white;">Press either response keys to continue.</p>',
-      choices: [',', '.'], //without this, it can be any keyboard response
+      stimulus: '<p style="color:black; font-size:30px">This is a test of your finger speed.</p>' +
+        '<p style="color:black; font-size:30px">We want to see how many times you can press the SPACEBAR in 10 seconds.</p>' +
+        '<p style="color:black; font-size:30px">You will start with the hand that you use when writing.</p>' +
+        '<p style="color:black; font-size:30px">After each 10 second trail, you will switch hands.</p>' + '<br>' +
+        '<p style="color:black; font-size:30px">Press the SPACEBAR to continue the instructions.</p>',
+      choices: [32], //without this, it can be any keyboard response
     };
     timeline.push(instructions_1);
 
     let instructions_2 = {
       type: "html-keyboard-response",
-      stimulus: '<p style="color:white;">Your choice is correct if it matches the gender assigned by the majority of respondents in the pilot study.</p> ' +
-          '<p style="color:white;">For each correct choice you will receive 2 cents. There will be 200 trials divided into 4 blocks of 50 trials. You will be able to take a break after every 50 trials.</p> ' +
-          '<p style="color:white;">Press the space bar to continue.</p>',
-      choices: [32],
+      stimulus: '<p style="color:black; font-size:30px">Do you WRITE with your LEFT hand or RIGHT hand?</p>' +
+      '<p style="color:black; font-size:30px">Press 1 for LEFT hand or 2 for RIGHT hand.</p>',
+      choices: [49, 50],
     };
     timeline.push(instructions_2);
 
     
-
     let instructions_3 = {
       type: "html-keyboard-response",
-      stimulus: '<p style="color:white;">Here are some examples.</p> ' +
-          '<p style="color:white;">For each, guess whether the assigned figure is male-like or female-like and indicate your choice by pressing either response keys.</p> ' +
-          '<p style="color:white;">Press the space bar to continue.</p>',
-      // prompt: '<p style="color:white;" id="safeTimerDisplay">00:30</p>',
-      choices: [32],
-      post_trial_gap: 2000, //After this is displayed, it waits 2 seconds before moving to next object
-//       on_start: function () {document.getElementById('timer').innerHTML = 003 + ":" + 20;},
+      stimulus: '<p style="color:black; font-size:30px">While testing, you must keep your hand in the position pitured below.</p>' + '<img src="Stimuli/handposition1.jpg" width="600" height="300" /><img src="Stimuli/handposition2.jpg" width="600" height="300" />' + '<br>' + 
+      '<p style="color:black; font-size:30px">Keep your non-pointer finger curled and your thumb under your pointer finger.</p>'+ '<br>' + 
+      '<p style="color:black; font-size:30px">Press the SPACEBAR to continue.</p>',
+      choices: [32]
       };
-    
       timeline.push(instructions_3);
 
+      let instructions_4 = {
+      type: "html-keyboard-response",
+      stimulus: '<p style="color:black; font-size:30px">Before we start, lets try a few practice trials.</p>' + '<p style="color:black; font-size:30px">The screen is going to count down from 5 before each trial.</p>' + '<p style="color:black; font-size:30px">When the screen says: </p>' + '<p style="color:green; font-size:30px"> "GO!"</p>' + '<p style="color:black; font-size:30px">Tap the SPACEBAR as fast as you can.</p>' + '<p style="color:black; font-size:30px">Remember to use the hand position shown earlier.</p>' + '<p style="color:black; font-size:30px">Stay in that position for each trial and do not use your whole hand or wrist or arm to press the SPACEBAR.</p>' + '<p style="color:black; font-size:30px">Just use your pointer finger to tap.</p>' + '<p style="color:black; font-size:30px">Press the SPACEBAR to begin.</p>',
+      choices: [32]
+      };
+      timeline.push(instructions_4);
 
     /* START TRAINING TRIAL FOR PARTICIPANTS */
-    
-    // let sec = 30; //set timer for 30 seconds
-
-    
-
     let tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */
     for (let i = 0; i < 100; i++){
       tapping_stimuli.push('<p style="text-align:center; color:green; font-size:100px">Go!</p>'); //this is a thought of these in between the ps in an array
@@ -372,6 +363,13 @@ stimuliRight = [
 {stimulus: tapping_stimuli[ 98 ], data: {test_part: 'tapRight', correct_response: ' '}},
 {stimulus: tapping_stimuli[ 99 ], data: {test_part: 'tapRight', correct_response: ' '}},
 ]
+
+    // let countDownTap = { 
+    //   type: 'html-keyboard-response',
+    //   stimulus: jsPsych.timelineVariable('stimulus'),
+    //   choices: jsPsych.NO_KEYS,
+    //   trial_duration: 1000
+    // }
 
     let tapLeft = { // I think this is the object for collecting responses //
       type: "html-keyboard-response",
