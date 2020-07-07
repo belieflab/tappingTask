@@ -12,7 +12,7 @@ file_put_contents($name, $data);
 <html>
   <head>
     <title>Tapping Task</title>  <!-- This is for changing the title -->
-    <script async src="js/timer.js"></script>
+    <script src="js/timer.js"></script>
     <!--<script type="text/javascript" src="js/stimuli.js"></script>-->
     <script src="jsPsych/jspsych.js"></script>
     <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link> <!--link is for any other text file; href is for local directory, either a url or path -->
@@ -169,96 +169,96 @@ file_put_contents($name, $data);
 {stimulus: tapping_stimuli[ 7 ], data: {test_part: 'tapLeft', correct_response: ' '}},
 {stimulus: tapping_stimuli[ 8 ], data: {test_part: 'tapLeft', correct_response: ' '}},
 {stimulus: tapping_stimuli[ 9 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 10 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 11 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 12 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 13 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 14 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 15 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 16 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 17 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 18 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 19 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 20 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 21 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 22 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 23 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 24 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 25 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 26 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 27 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 28 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 29 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 30 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 31 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 32 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 33 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 34 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 35 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 36 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 37 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 38 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 39 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 40 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 41 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 42 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 43 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 44 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 45 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 46 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 47 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 48 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 49 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 50 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 51 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 52 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 53 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 54 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 55 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 56 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 57 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 58 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 59 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 60 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 61 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 62 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 63 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 64 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 65 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 66 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 67 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 68 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 69 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 70 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 71 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 72 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 73 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 74 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 75 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 76 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 77 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 78 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 79 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 80 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 81 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 82 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 83 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 84 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 85 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 86 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 87 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 88 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 89 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 90 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 91 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 92 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 93 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 94 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 95 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 96 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 97 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 98 ], data: {test_part: 'tapLeft', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 99 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 10 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 11 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 12 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 13 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 14 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 15 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 16 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 17 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 18 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 19 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 20 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 21 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 22 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 23 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 24 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 25 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 26 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 27 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 28 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 29 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 30 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 31 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 32 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 33 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 34 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 35 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 36 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 37 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 38 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 39 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 40 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 41 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 42 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 43 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 44 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 45 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 46 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 47 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 48 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 49 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 50 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 51 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 52 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 53 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 54 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 55 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 56 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 57 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 58 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 59 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 60 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 61 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 62 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 63 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 64 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 65 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 66 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 67 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 68 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 69 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 70 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 71 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 72 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 73 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 74 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 75 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 76 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 77 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 78 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 79 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 80 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 81 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 82 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 83 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 84 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 85 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 86 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 87 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 88 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 89 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 90 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 91 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 92 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 93 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 94 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 95 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 96 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 97 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 98 ], data: {test_part: 'tapLeft', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 99 ], data: {test_part: 'tapLeft', correct_response: ' '}},
 ]  
 
 stimuliRight = [ 
@@ -272,112 +272,165 @@ stimuliRight = [
 {stimulus: tapping_stimuli[ 7 ], data: {test_part: 'tapRight', correct_response: ' '}},
 {stimulus: tapping_stimuli[ 8 ], data: {test_part: 'tapRight', correct_response: ' '}},
 {stimulus: tapping_stimuli[ 9 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 10 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 11 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 12 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 13 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 14 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 15 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 16 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 17 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 18 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 19 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 20 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 21 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 22 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 23 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 24 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 25 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 26 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 27 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 28 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 29 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 30 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 31 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 32 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 33 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 34 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 35 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 36 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 37 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 38 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 39 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 40 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 41 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 42 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 43 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 44 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 45 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 46 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 47 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 48 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 49 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 50 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 51 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 52 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 53 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 54 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 55 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 56 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 57 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 58 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 59 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 60 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 61 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 62 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 63 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 64 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 65 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 66 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 67 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 68 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 69 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 70 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 71 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 72 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 73 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 74 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 75 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 76 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 77 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 78 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 79 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 80 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 81 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 82 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 83 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 84 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 85 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 86 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 87 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 88 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 89 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 90 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 91 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 92 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 93 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 94 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 95 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 96 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 97 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 98 ], data: {test_part: 'tapRight', correct_response: ' '}},
-{stimulus: tapping_stimuli[ 99 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 10 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 11 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 12 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 13 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 14 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 15 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 16 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 17 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 18 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 19 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 20 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 21 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 22 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 23 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 24 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 25 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 26 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 27 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 28 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 29 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 30 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 31 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 32 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 33 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 34 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 35 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 36 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 37 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 38 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 39 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 40 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 41 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 42 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 43 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 44 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 45 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 46 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 47 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 48 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 49 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 50 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 51 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 52 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 53 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 54 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 55 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 56 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 57 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 58 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 59 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 60 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 61 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 62 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 63 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 64 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 65 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 66 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 67 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 68 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 69 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 70 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 71 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 72 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 73 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 74 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 75 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 76 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 77 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 78 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 79 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 80 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 81 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 82 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 83 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 84 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 85 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 86 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 87 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 88 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 89 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 90 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 91 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 92 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 93 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 94 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 95 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 96 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 97 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 98 ], data: {test_part: 'tapRight', correct_response: ' '}},
+// {stimulus: tapping_stimuli[ 99 ], data: {test_part: 'tapRight', correct_response: ' '}},
 ]
 
-    // let countDownTap = { 
-    //   type: 'html-keyboard-response',
-    //   stimulus: jsPsych.timelineVariable('stimulus'),
-    //   choices: jsPsych.NO_KEYS,
-    //   trial_duration: 1000
-    // }
+
+    let promptLeft = { 
+      type: 'html-keyboard-response',
+      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get ready to tap with you LEFT hand.</p>'  +
+      '<p style="color:white; font-size:30px">Press the SPACEBAR to start tapping.</p>',
+      choices: [32], //Spacebar
+      on_finish: countdown(1),
+    }
+
+    let countDownTap = { 
+      type: 'html-keyboard-response',
+      stimulus: '<p style="color:black; font-size:60px;" id="countdown"></p>',
+      choices: jsPsych.NO_KEYS,
+      trial_duration: 6000,
+    }
+
+    let startTimer = {
+      type: "html-keyboard-response",
+      stimulus: '<p id="timer" style="text-align:center; color:white; font-size:30px"></p>',
+      trial_duration: 1000,
+      on_finish: function experimentTimer(minutes) {// jsPsych on_finish cannot handle nested functions, you have to directly paste it in.
+        // jsPsych.endCurrentTimeline();
+        let seconds = 10;
+        let mins = minutes;
+        function tick() {
+            //This script expects an element with an ID = "counter". You can change that to what ever you want. 
+            // let counter = document.getElementById("counter");
+            // let counter = '';
+            let current_minutes = mins-1
+            seconds--;
+            // counter = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds); //comment out .innerHTML method to hide the timer
+            if( seconds > 0 ) {
+                setTimeout(tick, 1000);
+                console.log(seconds);
+            } else {
+                if(mins > 1){
+                    countdown(mins-1);           
+                }
+                else if (seconds == 0) { //ends experiment when timer reaches 0
+                    jsPsych.endCurrentTimeline();
+                  seconds = 10;
+                }
+            }
+        }
+        tick();
+    }
+      // response_ends_trial: false
+    }
 
     let tapLeft = { // I think this is the object for collecting responses //
       type: "html-keyboard-response",
-      choices: [9,' '],
+      choices: [32],
       response_ends_trial: true,
       stimulus: jsPsych.timelineVariable('stimulus'), //This loads the array of your stimulus order
       data: jsPsych.timelineVariable('data'), //Data is a method (function), saves and knows to write it later
       prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px"></p>',
+      on_finish: function (data) {
+        console.log(data.key_press)
+      }
+    }
+
+    let promptRight = { // 
+      type: 'html-keyboard-response',
+      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get ready to tap with you LEFT hand.</p>'  +
+      '<p style="color:white; font-size:30px">Press the SPACEBAR to start tapping.</p>',
+      choices: [32], //Spacebar
+      on_finish: countdown(1),
     }
 
     let tapRight = { // I think this is the object for collecting responses //
@@ -387,35 +440,10 @@ stimuliRight = [
       stimulus: jsPsych.timelineVariable('stimulus'), //This loads the array of your stimulus order
       data: jsPsych.timelineVariable('data'), //Data is a method (function), saves and knows to write it later
       prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px"></p>',
+      on_finish: function (data) {
+        console.log(data.key_press)
+      }
     }
-
-    let promptLeft = { // I think this is the object for collecting responses //
-      type: 'html-button-response',
-      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get ready to tap with you LEFT hand.</p>',
-      button_html: '<button id="nextButton" onclick="countdown(1)" onkeypress="coutndown(1)">START</button>',
-      choices: [32], //Spacebar
-      prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px"></p>', //this gets filled in with the countdown
-    }
-    
-
-    let procedureLeft = { //This loops over the object
-      timeline: [tapLeft], //if you put fixation in front and the feedback after, it will display those in that order
-      timeline_variables: stimuliLeft,
-      randomize_order: false,// This is the outer procedure, looping over the stimuli
-    }
-
-
-    let promptRight = { // 
-      type: 'html-button-response',
-      stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get ready to tap with you RIGHT hand.</p>',
-      button_html: '<button id="nextButton" onclick="countdown(1)" onkeypress="coutndown(1)">START</button>',
-      choices: [32], //Spacebar
-      prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:30px"></p>', //this gets filled in with the countdown
-      response_ends_trial: true, //as soon as the click, it will advance to the next trial
-    }
-
-    //timeline.push(promptRight);
-
 
     let procedureRight = { //This loops over the object
       timeline: [tapRight], //if you put fixation in front and the feedback after, it will display those in that order
@@ -423,11 +451,15 @@ stimuliRight = [
       randomize_order: false,// This is the outer procedure, looping over the stimuli
     }
 
-    //timeline.push(procedureRight) //Object oriented.
+    let procedureLeft = { //This loops over the object
+      timeline: [tapLeft], //if you put fixation in front and the feedback after, it will display those in that order
+      timeline_variables: stimuliLeft,
+      randomize_order: false,// This is the outer procedure, looping over the stimuli
+    }
 
-    timeline.push(promptRight, procedureRight, promptLeft, procedureLeft) //1st block
-    timeline.push(promptRight, procedureRight, promptLeft, procedureLeft) //2nd block
-    timeline.push(promptRight, procedureRight, promptLeft, procedureLeft) //3rd block
+    timeline.push(promptRight, countDownTap, startTimer, procedureRight, promptLeft, countDownTap, startTimer, procedureLeft) //1st block
+    timeline.push(promptRight, countDownTap, startTimer, procedureRight, promptLeft, countDownTap, startTimer, procedureLeft) //2nd block
+    timeline.push(promptRight, countDownTap, startTimer, procedureRight, promptLeft, countDownTap, startTimer, procedureLeft) //3rd block
 
     function saveData(name, data){
       let xhr = new XMLHttpRequest();
