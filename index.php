@@ -25,6 +25,7 @@ file_put_contents($name, $data);
     <script src="js/saveData.js"></script>
     <script src="js/startExperiment.js"></script>
     <script src="js/consentLoad.js"></script>
+    <script src="js/checkHandedness.js"></script>
     <script src="variables.js"></script>
     <script src="timeline.js"></script>
     <script src="main.js"></script>    
