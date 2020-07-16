@@ -24,6 +24,7 @@ file_put_contents($name, $data);
   </body>
   <footer>
     <script src="js/saveData.js"></script>
+    <script src="js/timer.js"></script>
     <script src="js/jquery-git.js"></script>
   </footer>
   </html>
