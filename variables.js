@@ -1,7 +1,6 @@
-let workerID = prompt( 'Subject ID' );
+//let workerID = prompt( 'Subject ID' );
 
-let handedness =prompt("Are you right or left handed?");
-
+//let handedness =prompt("Are you right or left handed?");
 let stimuli;
 
 let tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */

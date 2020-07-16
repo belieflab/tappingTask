@@ -7,7 +7,7 @@ let welcome = {
   type: "html-keyboard-response",
   stimulus: '<p style="color:white; font-size:18px">Welcome to the FINGER TAPPING experiment!</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the SPACEBAR to continue.</p>', //by default, jsPysch is white background and white text
   choices: [32],
-  on_load: checkHandedness(),
+//  on_load: checkHandedness(),
 };
 
 /* define instructions trial */
