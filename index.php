@@ -11,20 +11,18 @@ file_put_contents($name, $data);
 <html>
   <head>
     <title>Tapping Task</title>  <!-- This is for changing the title -->
-    <script src="js/submitIntake.js"></script>
-<script src="js/handedness.js"</script> 
-    <script src="js/timer.js"></script>
-  <script src="jsPsych/jspsych.js"></script>
-    <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link> <!--link is for any other text file; href is for local directory, either a url or path -->
+    <script src="jsPsych/jspsych.js"></script>
     <script src="jsPsych/plugins/jspsych-html-keyboard-response.js"></script> <!--script is for javascript -->
+    <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link> <!--link is for any other text file; href is for local directory, either a url or path -->
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!--the interpreter will take care of ordering, rel, type, href do not have to be in a specific order -->
   </head>
   <body  style="background-color:gray;">  <!--any time you see style = all properties that follow are inline css -->
     <?php include "include/intake.php"?>
   </body>
   <footer>
-    <script src="js/saveData.js"></script>
-    <script src="js/timer.js"></script>
-    <script src="js/jquery-git.js"></script>
+    <script src="js/jQuery.js"></script>
+    <script src="js/fn.js"></script>
+    <script src="js/var.js"></script>
+    <script src="js/main.js"></script>
   </footer>
   </html>

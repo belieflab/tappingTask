@@ -1,3 +1,15 @@
+<script>src = "js/jQuery.js"</script>
+<script>
+  // loads the experiment (i.e., variables and main javascript) 
+  $("button.loadMain").click(function(){
+    $.getScript("js/fn.js");
+    $.getScript("js/main.js");
+    $.getScript("js/var.js");
+  // $.load("include/consent.php");
+}); 
+</script>
+
+
 <div class="screening" style="background-color:powderblue; text-align:center; margin:35px; vertical-align:middle">
   <div id="intake">
   <br>
@@ -42,11 +54,11 @@
     <!-- <label for="handedness"><b>Are you right or left handed?</b></label> -->
     <p><b>Which is your dominant hand?</b></p>
     
-        <input id="rightHanded" type="radio" value="right" name="handedness">
+        <input id="rightHanded" type="radio" value="right">
         <label for="right">Right</label><br>
         <!-- <span class="checkmark"></span> -->
-        <input id="leftHanded" type="radio" value="left" name="handedness">
-        <label for="left">Left</label><br>
+        <input id="leftHanded" type="radio" value="left">
+        <label for="left">&nbsp Left</label><br>
         <!-- <span class="checkmark"></span> -->
   </form>
 
@@ -56,6 +68,17 @@
     <p><b>Before proceeding to the task, please confirm that the following are true:</b></p>
     <label class="container">Screen brightness is up to 100% &nbsp&nbsp&nbsp&nbsp   
     <input type="checkbox">
+    <br>
+  </label>
+  
+  <label class="container">Headphones plugged in? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp               
+    <input type="checkbox"> 
+    <br>
+  </label>
+
+  <label class="container">Headphone volume at 50%? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp          
+    <input type="checkbox"> 
+    <br>
   </label>
 
 <!-- <label class="container">Headphones are plugged in
@@ -83,19 +106,6 @@
 <button id="nextButton" style="display: none" onclick="startExperiment()">CONSENT/NEXT</button>
 <br>
 </div>
-
-<script type="text/javascript" src="js/jquery-git.js"></script>
-
-<script>$("button.loadMain").click(function(){
-    $.getScript("main.js");
-    // $.load("include/consent.php");
-  }); </script>
-
-
-<script>
-
-</script>
-
 
 <!-- <label class="container">One
   <input type="checkbox" checked="checked">
