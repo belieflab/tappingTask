@@ -47,6 +47,20 @@ let instructions_4 = {
     choices: [49]
 };
 
+let instructions_5 = {
+    type: "html-keyboard-response",
+    stimulus: '<p style="color:white; font-size:18px">Try this one for practice.</p>' + 
+    '<p style="color:white; font-size:18px">Do your best to keep tapping at the same rate as the tone.</p>' + '<br>' + '<p style="color:white; font-size:18px">Do you have any questions?</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the 1 key to start the first trial.</p>',
+    choices: [49]
+};
+
+let experimentStartInst = {
+    type: "html-keyboard-response",
+    stimulus: '<p style="color:white; font-size:18px">The experiment will now begin.</p>' + 
+    '<p style="color:white; font-size:18px">If you need more practice, refresh your browser to repeat the instructions and practice trials.</p>' + '<br>' + '<p style="color:white; font-size:18px">Do you have any questions?</p>' + '<br>' + '<p style="color:white; font-size:18px">If not, press the 1 key to start the first trial.</p>',
+    choices: [49]
+};
+
 /* SLOW TAPPING OBJECTS */
 
 let getReadySlow = { 
@@ -82,6 +96,7 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
     stimulus: "stim/50msec.wav",
     on_finish: function (data) {
         console.log(data.key_press)
+        j=0;
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
@@ -155,6 +170,7 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
     stimulus: "stim/50msec.wav",
     on_finish: function (data) {
         console.log(data.key_press)
+        j=0; // if you do not reset
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
