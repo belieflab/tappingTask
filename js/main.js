@@ -1,11 +1,42 @@
 /* create timeline */
 let timeline = [];
 
-/* define welcome message trial */
+//////////////////////////////////////////////////
+///////////////////INSTRUCTIONS//////////////////
+////////////////////////////////////////////////
+
+/* define welcome message */
 let welcome = {
     type: "html-keyboard-response",
     stimulus: '<p style="color:white; font-size:18px">Welcome to the last part of the FINGER TAPPING experiment!</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the SPACEBAR to continue.</p>', //by default, jsPysch is white background and white text
     choices: [32],
+    // on_load: checkHandedness(),
+};
+
+/* define experiment end message */
+
+let endExperiment = {
+    type: "html-keyboard-response",
+    stimulus: '<p style="color:white; font-size:18px">Thank you for participating!</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the 1 key to exit. Then wait for further instructions.</p>', //by default, jsPysch is white background and white text
+    choices: [49],
+    // on_load: checkHandedness(),
+};
+
+/* define break message */
+
+let selfTimeBreak = {
+    type: "html-keyboard-response",
+    stimulus: '<p style="color:white; font-size:18px">Please take a brief 30 second break.</p>' + '<br>' + '<p style="color:white; font-size:18px">The experiment will continue automatically, so please be prepared.</p>', //by default, jsPysch is white background and white text
+    choices: jsPsych.NO_KEYS,
+    trial_duration: 30000,
+    // on_load: checkHandedness(),
+};
+
+let secondHalfStart = {
+    type: "html-keyboard-response",
+    stimulus: '<p style="color:white; font-size:18px">The experiment is going start.</p>' + '<br>' + '<p style="color:white; font-size:18px">Get ready to start tapping.</p>', //by default, jsPysch is white background and white text
+    choices: jsPsych.NO_KEYS,
+    trial_duration: 5000,
     // on_load: checkHandedness(),
 };
 
@@ -61,7 +92,11 @@ let experimentStartInst = {
     choices: [49]
 };
 
-/* SLOW TAPPING OBJECTS */
+//////////////////////////////////////////////////
+/////////////////SLOW TAPPING OBJECTS////////////
+////////////////////////////////////////////////
+
+/* Slow Tapping Condition Instruction Object */
 
 let getReadySlow = { 
     type: 'html-button-response',
@@ -73,6 +108,8 @@ let getReadySlow = {
     document.getElementByID("countdownPrompt").focus() // getElementByID is camel case variable naming
     }
 }
+
+/* Slow Countodwn Object */
 
 let countDownSlow = { 
     type: 'audio-keyboard-response', //html is the most versatile. Use html-keyboard-response and stuff as many things in it as possible
@@ -87,6 +124,8 @@ let countDownSlow = {
     j++
     }
 }
+
+/* Slow Tap w/ Tone Object */
 
 let tapToneSlow = { // Collects responses for tone paced tapping for the first 250 ms
     type: "audio-keyboard-response",
@@ -103,6 +142,8 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
     prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
 }
 
+/* 2nd Post-Tone Slow Tap Catchment Object */
+
 let toneITISlow = { // this was added to capture taps before the next tone in order to capture 2 taps within a single 500 ms inter-tap interval. Otherwise, get nulls.
     type: 'html-keyboard-response',
     stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
@@ -113,6 +154,8 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
         },
     trial_duration: 250,
 }
+
+/* 1st Self-Paced Slow Tap Catchment Object */
 
 let tapNoToneSlow = { // this was added to capture taps before the next tap interval in order to capture 2 taps within a single 500 ms inter-tap interval. Otherwise, get nulls.
     type: 'html-keyboard-response',
@@ -125,6 +168,8 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
     trial_duration: 250,
 }
 
+/* 2nd Self-Paced Slow Tap Catchment Object */
+
 let noToneITISlow = { // this was added to capture taps before the next tap interval in order to capture 2 taps within a single 500 ms inter-tap interval. Otherwise, get nulls.
     type: 'html-keyboard-response',
     stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
@@ -136,7 +181,11 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
     trial_duration: 250,
 }
 
-/* FAST TAPPING OBJECTS */
+//////////////////////////////////////////////////
+/////////////////FAST TAPPING OBJECTS////////////
+////////////////////////////////////////////////
+
+/* Fast Tapping Condition Instruction Object */
 
 let getReadyFast = { 
     type: 'html-button-response',
@@ -148,6 +197,8 @@ let getReadyFast = {
     document.getElementByID("countdownPrompt").focus() // getElementByID is camel case variable naming
     }
 }
+
+/* Fast Countodwn Object */
 
 let countDownFast = { 
     type: 'audio-keyboard-response', //html is the most versatile. Use html-keyboard-response and stuff as many things in it as possible
@@ -162,6 +213,8 @@ let countDownFast = {
     j++
     }
 }
+
+/* Fast Tap w/ Tone Object */
 
 let tapToneFast = { // Collects responses for tone paced tapping for the first 250 ms
     type: "audio-keyboard-response",
@@ -178,6 +231,8 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
     prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
 }
 
+/* 2nd Post-Tone Fast Tap Catchment Object */
+
 let toneITIFast = { // this was added to capture taps before the next tone in order to capture 2 taps within a single 500 ms inter-tap interval. Otherwise, get nulls.
     type: 'html-keyboard-response',
     stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
@@ -188,6 +243,8 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
         },
     trial_duration: 125,
 }
+
+/* 1st Self-Paced Fast Tap Catchment Object */
 
 let tapNoToneFast = { // this was added to capture taps before the next tap interval in order to capture 2 taps within a single 500 ms inter-tap interval. Otherwise, get nulls.
     type: 'html-keyboard-response',
@@ -200,6 +257,8 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
     trial_duration: 125,
 }
 
+/* 2nd Self-Paced Fast Tap Catchment Object */
+
 let noToneITIFast = { // this was added to capture taps before the next tap interval in order to capture 2 taps within a single 500 ms inter-tap interval. Otherwise, get nulls.
     type: 'html-keyboard-response',
     stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
@@ -211,21 +270,31 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
     trial_duration: 125,
 }
 
+//////////////////////////////////////////////////
+////////////////////PROCEDURES///////////////////
+////////////////////////////////////////////////
 
-let instProcedure = { //This loops over the object
+/* Instructions Procedure */
+
+let instProcedure = { //This loops over the intrudction objects
   timeline: [welcome, instructions_1, instructions_2, instructions_3, instructions_4, instructions_5], 
 }    
 
-////////////////PRACTICE SLOW PROCEDURES/////////////
-  
+let endExperimentProcedure = { //This loops over the intrudction objects
+    timeline: [endExperiment], 
+  }    
+
+/* Slow Practice Countdown Procedure */
+
+//The way the experiment is designed is that the only the differentiating experiment blocks from practice
+//is the countdown procedure to denote it as practice.
 let practiceProcedureCountDownSlow = { //This loops over the object
-  timeline: [countDownSlow], //if you put fixation in front and the feedback after, it will display those in that order
-  //timeline_variables: stimuliTone,
+  timeline: [countDownSlow], //This is the loop through objects, just one, so it does countdown
   randomize_order: false,// This is the outer procedure, looping over the stimuli
   timeline_variables: countdown_practice_stim
 }
 
-////////////////PRACTICE FAST PROCEDURES/////////////
+/* Fast Practice Countdown Procedure */
 
 let practiceProcedureCountDownFast = { //This loops over the object
   timeline: [countDownFast], //if you put fixation in front and the feedback after, it will display those in that order
@@ -237,6 +306,8 @@ let practiceProcedureCountDownFast = { //This loops over the object
 
 ////////////////EXPERIMENT SLOW PROCEDURES/////////////
   
+/* Slow Experiment Countdown Procedure */
+
   let procedureCountDownSlow = { //This loops over the object
     timeline: [countDownSlow], //if you put fixation in front and the feedback after, it will display those in that order
     //timeline_variables: stimuliTone,
@@ -244,12 +315,16 @@ let practiceProcedureCountDownFast = { //This loops over the object
     timeline_variables: countdown_experiment_stim
   }
 
+/* Slow Experiment Tone Tapping Procedure */
+
   let procedureToneSlow = { //This loops over the object
     timeline: [tapToneSlow, toneITISlow], //if you put fixation in front and the feedback after, it will display those in that order
     //timeline_variables: stimuliTone,
     randomize_order: false,// This is the outer procedure, looping over the stimuli
     repetitions: 12,
   }
+
+/* Slow Experiment Self-Paced Tapping Procedure */
 
   let procedureNoToneSlow = { //This loops over the object
     timeline: [tapNoToneSlow, noToneITISlow], //if you put fixation in front and the feedback after, it will display those in that order
@@ -260,12 +335,16 @@ let practiceProcedureCountDownFast = { //This loops over the object
   
   ////////////////EXPERIMENT FAST PROCEDURES/////////////
 
+/* Fast Experiment Countdown Procedure */
+
   let procedureCountDownFast = { //This loops over the object
     timeline: [countDownFast], //if you put fixation in front and the feedback after, it will display those in that order
     //timeline_variables: stimuliTone,
     randomize_order: false,// This is the outer procedure, looping over the stimuli
     timeline_variables: countdown_experiment_stim
   }
+
+/* Tap-Matched Fast Experiment Tone Tapping Procedure */
 
   let procedureToneFast = { //This loops over the object
     timeline: [tapToneFast, toneITIFast], //if you put fixation in front and the feedback after, it will display those in that order
@@ -274,6 +353,8 @@ let practiceProcedureCountDownFast = { //This loops over the object
     repetitions: 12,
   }
 
+/* Tap-Matched Fast Experiment Self-Paced Tapping Procedure */
+
   let procedureNoToneFast = { //This loops over the object
     timeline: [tapNoToneFast, noToneITIFast], //if you put fixation in front and the feedback after, it will display those in that order
     //timeline_variables: stimuliTone,
@@ -281,12 +362,40 @@ let practiceProcedureCountDownFast = { //This loops over the object
     repetitions: 30,
   }
 
-  timeline.push(instProcedure)
-  timeline.push(getReadySlow, practiceProcedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, practiceProcedureCountDownFast, procedureToneFast, procedureNoToneFast)// PRACTICE
-  timeline.push(experimentStartInst)
-  timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 1
-  timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 2
-//   timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 3
-//   timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 4
-//   timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 5
-//   timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 6
+  /* Time-Matched Fast Experiment Tone Tapping Procedure */
+
+  let procedureToneFast_timeMatched = { //This loops over the object
+    timeline: [tapToneFast, toneITIFast], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    repetitions: 24,
+  }
+
+/* Time-Matched Fast Experiment Self-Paced Tapping Procedure */
+
+  let procedureNoToneFast_timeMatched = { //This loops over the object
+    timeline: [tapNoToneFast, noToneITIFast], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    repetitions: 60,
+  }
+
+ ////////////////DEFINING BLOCKS/////////////
+
+timeline.push(instProcedure)
+timeline.push(getReadySlow, practiceProcedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, practiceProcedureCountDownFast, procedureToneFast, procedureNoToneFast)// PRACTICE
+timeline.push(experimentStartInst)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 1- Tap Matched
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 2
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 3
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 4
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 5
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 6- Tap Matched
+timeline.push(selfTimeBreak, secondHalfStart)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 1- Time Matched
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 6- Time Matched
+timeline.push(endExperimentProcedure)
