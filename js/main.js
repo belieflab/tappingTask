@@ -9,6 +9,14 @@ let welcome = {
   // on_load: checkHandedness(),
 };
 
+/* define experiment end message */
+
+let endExperiment = {
+    type: "html-keyboard-response",
+    stimulus: '<p style="color:white; font-size:18px">Thank you for participating!</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the 1 key to exit. Then wait for further instructions.</p>', //by default, jsPysch is white background and white text
+    choices: [49],
+    // on_load: checkHandedness(),
+};
 
 /* define instructions trial */
 let instructions_1 = {
@@ -165,13 +173,18 @@ let practiceProcedureCountDown = { //This loops over the object
     randomize_order: false,// This is the outer procedure, looping over the stimuli
     repetitions: 30,
   }
+
+  let endExperimentProcedure = { //This loops over the intrudction objects
+    timeline: [endExperiment], 
+  }    
   
   timeline.push(instProcedure)
   timeline.push(getReady, practiceProcedureCountDown, procedureTone, procedureNoTone)// PRACTICE
   timeline.push(experimentStartInst)
   timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 1
   timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 2
-  // timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 3
-  // timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 4
-  // timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 5
-  // timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 6
+  timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 3
+  timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 4
+  timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 5
+  timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 6
+  timeline.push(endExperimentProcedure)
