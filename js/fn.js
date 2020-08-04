@@ -57,12 +57,7 @@ function startExperiment(){
 
 
       // function to store subject number on submit
-let workerID;
 
-let handedness;
-let antihandedness;
-//let EasyKey_uCase; 
-//let HardKey_uCase;
 
 function validateIntake() {
     let intake = document.getElementById("intake");
@@ -122,7 +117,6 @@ function submitIntake() {
         checkHandedness();
     }
 }
-
 
 
 function move() { // function definition

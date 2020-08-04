@@ -1,4 +1,9 @@
 // let stimuli;
+let workerID;
+
+let handedness;
+let antihandedness;
+
 
 let tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */
 for (let i = 0; i < 100; i++){

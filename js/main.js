@@ -8,6 +8,15 @@ let welcome = {
   choices: [32],
 };
 
+/* define experiment end message */
+
+let endExperiment = {
+  type: "html-keyboard-response",
+  stimulus: '<p style="color:white; font-size:18px">Thank you for participating!</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the 1 key to exit. Then wait for further instructions.</p>', //by default, jsPysch is white background and white text
+  choices: [49],
+  // on_load: checkHandedness(),
+};
+
 /* define instructions trial */
 let instructions_1 = {
   type: "html-keyboard-response",
@@ -141,8 +150,12 @@ let procedureNondominant = { //This loops over the object
     randomize_order: false,// This is the outer procedure, looping over the stimuli
 }
 
+let endExperimentProcedure = { //This loops over the intrudction objects
+  timeline: [endExperiment], 
+}    
+
 timeline.push(instProcedure)
 timeline.push(promptDominant, countDownTap, startTimer, procedureNondominant, stopTapping, promptNondominant, countDownTap, startTimer, procedureNondominant, stopTapping) //1st block
 timeline.push(promptDominant, countDownTap, startTimer, procedureNondominant, stopTapping, promptNondominant, countDownTap, startTimer, procedureNondominant, stopTapping) //2nd block
 timeline.push(promptDominant, countDownTap, startTimer, procedureNondominant, stopTapping, promptNondominant, countDownTap, startTimer, procedureNondominant, stopTapping)  //3rd block
-
+timeline.push(endExperimentProcedure)
