@@ -1,10 +1,13 @@
-<script>src = "js/jQuery.js"</script>
+
 <script>
   // loads the experiment (i.e., variables and main javascript) 
   $("button.loadMain").click(function(){
-    $.getScript("js/fn.js");
-    $.getScript("js/main.js");
-    $.getScript("js/var.js");
+    // $.getScript("include/intake.js");
+    $.getScript("exp/jQuery.js");
+    $.getScript("exp/var.js");
+    $.getScript("exp/fn.js");
+    // $.getScript("exp/main.js");
+
   // $.load("include/consent.php");
 }); 
 </script>
@@ -28,36 +31,21 @@
     </select>
     <label for="facility"></label>
 
-    <!-- <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-    Name: <input type="text" name="fname">
-    <input type="submit" value="Submit">
-    </form> -->
-
-    <!-- <form action="/action_page.php" method="post">
-        <input type="text" name="fname" required>
-        <input type="submit" value="Submit">
-    </form> -->
 
     <form>
     <p><b>Subject ID Number:</b></p>
     <input id="subjectid" type="number" required>
 </form>
-    <!-- <button onclick="submitIntake()">submit subjectid</button> -->
 
-    <!-- <p><b>Participant DOB</b></p>
-    <p><b>Enter as MM/DD/YYYY</b></p>
-    <p style="color:red">*must provide value</p>
-    <input type="date">
-    <form> -->
    
   <form>
     <!-- <label for="handedness"><b>Are you right or left handed?</b></label> -->
     <p><b>Which is your dominant hand?</b></p>
     
-        <input id="rightHanded" type="radio" value="right">
+        <input id="rightHanded" type="radio" value="rightHanded">
         <label for="right">Right</label><br>
         <!-- <span class="checkmark"></span> -->
-        <input id="leftHanded" type="radio" value="left">
+        <input id="leftHanded" type="radio" value="leftHanded">
         <label for="left">&nbsp Left</label><br>
         <!-- <span class="checkmark"></span> -->
   </form>
