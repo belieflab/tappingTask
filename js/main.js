@@ -30,9 +30,16 @@ let instructions_1 = {
 
 let instructions_2 = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">While testing, you must keep your hand in the position pitured below.</p>' + '<img src="stim/handposition1.jpg" width="600" height="180" /><img src="stim/handposition2.jpg" width="600" height="180" />' + '<br>' + 
+  prompt:'<p style="color:white; font-size:18px">While testing, you must keep your hand in the position pitured below.</p>' +  
   '<p style="color:white; font-size:18px">Keep your non-pointer finger curled and your thumb under your pointer finger.</p>'+ '<br>' + 
   '<p style="color:white; font-size:18px">Press the SPACEBAR to continue.</p>',
+  // stimulus: '<p style="color:white; font-size:18px">While testing, you must keep your hand in the position pitured below.</p>' + '<img src="stim/handposition1.jpg" width="600" height="180" /><img src="stim/handposition2.jpg" width="600" height="180" />' + '<br>' + 
+  // '<p style="color:white; font-size:18px">Keep your non-pointer finger curled and your thumb under your pointer finger.</p>'+ '<br>' + 
+  // '<p style="color:white; font-size:18px">Press the SPACEBAR to continue.</p>',
+  stimulus: function(){
+    html = '<img src="stim/handposition1.jpg" width="600" height="180" /><img src="stim/handposition2.jpg" width="600" height="180" />' + '<br>'
+    return html
+  },
   choices: [32]
   };
 
