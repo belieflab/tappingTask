@@ -26,6 +26,7 @@ file_put_contents($name, $data);
   <script src="exp/jQuery.js"></script>
   <script src="exp/fn.js"></script>
   <script src="exp/var.js"></script>
+  <script src="exp/timeline.js"></script>
   <script src="exp/main.js"></script>
 </footer>
 </html>
