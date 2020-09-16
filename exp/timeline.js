@@ -118,7 +118,10 @@ let getReadySlow = {
     trial_duration: 5000,
     on_load: function() {
     document.getElementByID("countdownPrompt").focus() // getElementByID is camel case variable naming
-    }
+    },
+    on_finish: function(data) {
+        blockIterator++
+      },
 }
 
 /* Slow Countodwn Object */
@@ -145,19 +148,13 @@ let countDownSlow = {
       experimentIterator++
       data.test_part = "experiment";
     }
-    if (blockCounter <= 188 && data.test_part == "experiment") {
-      data.block = blockIterator;
-      blockCounter++
-    } else if (blockCounter > 188 && data.test_part == "experiment") {
-      blockIterator++
-      blockCounter = 1
-    }
     if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
       data.condition = "number-match";
       timeVsNumIterator++
     } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
       data.condition = "time-tapping-match";
     }
+    data.block = blockIterator;
     }
 }
 
@@ -183,19 +180,13 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
           experimentIterator++
           data.test_part = "experiment";
         }
-        if (blockCounter <= 188 && data.test_part == "experiment") {
-          data.block = blockIterator;
-          blockCounter++
-        } else if (blockCounter > 188 && data.test_part == "experiment") {
-          blockIterator++
-          blockCounter = 1
-        }
         if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
           data.condition = "number-match";
           timeVsNumIterator++
         } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
           data.condition = "time-tapping-match";
         }
+        data.block = blockIterator;
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<p style="text-align:center; color:white; font-size:24px">+</p>',
@@ -220,19 +211,13 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
           experimentIterator++
           data.test_part = "experiment";
         }
-        if (blockCounter <= 188 && data.test_part == "experiment") {
-          data.block = blockIterator;
-          blockCounter++
-        } else if (blockCounter > 188 && data.test_part == "experiment") {
-          blockIterator++
-          blockCounter = 1
-        }
         if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
           data.condition = "number-match";
           timeVsNumIterator++
         } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
           data.condition = "time-tapping-match";
         }
+        data.block = blockIterator;
         },
     trial_duration: 250,
 }
@@ -256,19 +241,13 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
           experimentIterator++
           data.test_part = "experiment";
         }
-        if (blockCounter <= 188 && data.test_part == "experiment") {
-          data.block = blockIterator;
-          blockCounter++
-        } else if (blockCounter > 188 && data.test_part == "experiment") {
-          blockIterator++
-          blockCounter = 1
-        }
         if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
           data.condition = "number-match";
           timeVsNumIterator++
         } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
           data.condition = "time-tapping-match";
         }
+        data.block = blockIterator;
         },
     trial_duration: 250,
 }
@@ -292,19 +271,13 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
           experimentIterator++
           data.test_part = "experiment";
         }
-        if (blockCounter <= 188 && data.test_part == "experiment") {
-          data.block = blockIterator;
-          blockCounter++
-        } else if (blockCounter > 188 && data.test_part == "experiment") {
-          blockIterator++
-          blockCounter = 1
-        }
         if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
           data.condition = "number-match";
           timeVsNumIterator++
         } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
           data.condition = "time-tapping-match";
         }
+        data.block = blockIterator;
         },
     trial_duration: 250,
 }
@@ -350,19 +323,13 @@ let countDownFast = {
       experimentIterator++
       data.test_part = "experiment";
     }
-    if (blockCounter <= 188 && data.test_part == "experiment") {
-      data.block = blockIterator;
-      blockCounter++
-    } else if (blockCounter > 188 && data.test_part == "experiment") {
-      blockIterator++
-      blockCounter = 1
-    }
     if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
       data.condition = "number-match";
       timeVsNumIterator++
     } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
       data.condition = "time-tapping-match";
     }
+    data.block = blockIterator;
     }
 }
 
@@ -388,19 +355,13 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
           experimentIterator++
           data.test_part = "experiment";
         }
-        if (blockCounter <= 188 && data.test_part == "experiment") {
-          data.block = blockIterator;
-          blockCounter++
-        } else if (blockCounter > 188 && data.test_part == "experiment") {
-          blockIterator++
-          blockCounter = 1
-        }
         if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
           data.condition = "number-match";
           timeVsNumIterator++
         } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
           data.condition = "time-tapping-match";
         }
+        data.block = blockIterator;
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<p style="text-align:center; color:white; font-size:24px">+</p>',
@@ -425,19 +386,13 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
           experimentIterator++
           data.test_part = "experiment";
         }
-        if (blockCounter <= 188 && data.test_part == "experiment") {
-          data.block = blockIterator;
-          blockCounter++
-        } else if (blockCounter > 188 && data.test_part == "experiment") {
-          blockIterator++
-          blockCounter = 1
-        }
         if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
           data.condition = "number-match";
           timeVsNumIterator++
         } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
           data.condition = "time-tapping-match";
         }
+        data.block = blockIterator;
         },
     trial_duration: 125,
 }
@@ -461,19 +416,13 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
           experimentIterator++
           data.test_part = "experiment";
         }
-        if (blockCounter <= 188 && data.test_part == "experiment") {
-          data.block = blockIterator;
-          blockCounter++
-        } else if (blockCounter > 188 && data.test_part == "experiment") {
-          blockIterator++
-          blockCounter = 1
-        }
         if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
           data.condition = "number-match";
           timeVsNumIterator++
         } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
           data.condition = "time-tapping-match";
         }
+        data.block = blockIterator;
         },
     trial_duration: 125,
 }
@@ -497,19 +446,13 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
           experimentIterator++
           data.test_part = "experiment";
         }
-        if (blockCounter <= 188 && data.test_part == "experiment") {
-          data.block = blockIterator;
-          blockCounter++
-        } else if (blockCounter > 188 && data.test_part == "experiment") {
-          blockIterator++
-          blockCounter = 1
-        }
         if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
           data.condition = "number-match";
           timeVsNumIterator++
         } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
           data.condition = "time-tapping-match";
         }
+        data.block = blockIterator;
         },
     trial_duration: 125,
 }

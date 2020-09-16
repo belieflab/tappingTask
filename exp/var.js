@@ -13,8 +13,7 @@ let audio = ["stim/50msec.wav"];
 let j=0;
 practiceIterator = -1;
 experimentIterator = 1;
-blockCounter = 1;
-blockIterator = 1;
+blockIterator = -1;
 
 //iterator for adding if the blocks are matched on number of taps or time tapping
 timeVsNumIterator = 1;
