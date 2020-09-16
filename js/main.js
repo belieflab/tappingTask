@@ -124,8 +124,13 @@ let countDownSlow = {
     on_finish: function(data){
     j++
     data.tap_type = "slow-countdown";
-    data.trial = practiceIterator;
-    practiceIterator++
+    if (practiceIterator > -188) {
+      data.trial = practiceIterator;
+      practiceIterator--
+    } else if (practiceIterator == -188) {
+      data.trial = experimentIterator;
+      experimentIterator++
+    }
     }
 }
 
@@ -142,8 +147,13 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
         console.log(data.key_press);
         j=0;
         data.tap_type = "slow-tone-paced";
-        data.trial = practiceIterator;
-        practiceIterator++
+        if (practiceIterator > -188) {
+          data.trial = practiceIterator;
+          practiceIterator--
+        } else if (practiceIterator == -188) {
+          data.trial = experimentIterator;
+          experimentIterator++
+        }
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
@@ -159,8 +169,13 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
     on_finish: function (data) {
         console.log(data.key_press);
         data.tap_type = "slow-tone-paced";
-        data.trial = practiceIterator;
-        practiceIterator++
+        if (practiceIterator > -188) {
+          data.trial = practiceIterator;
+          practiceIterator--
+        } else if (practiceIterator == -188) {
+          data.trial = experimentIterator;
+          experimentIterator++
+        }
         },
     trial_duration: 250,
 }
