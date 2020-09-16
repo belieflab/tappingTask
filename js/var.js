@@ -11,8 +11,13 @@ var audio = ["stim/50msec.wav"];
 // let stimuli;
 
 let j=0;
-practiceIterator = -1
-experimentIterator = 1
+practiceIterator = -1;
+experimentIterator = 1;
+blockCounter = 1;
+blockIterator = 1;
+
+//iterator for adding if the blocks are matched on number of taps or time tapping
+timeVsNumIterator = 1;
 
 // practiceIterator = [];
 // for (let i = -999; i < -1; i++){

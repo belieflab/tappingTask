@@ -133,6 +133,19 @@ let countDownSlow = {
       experimentIterator++
       data.test_part = "experiment";
     }
+    if (blockCounter <= 188 && data.test_part == "experiment") {
+      data.block = blockIterator;
+      blockCounter++
+    } else if (blockCounter > 188 && data.test_part == "experiment") {
+      blockIterator++
+      blockCounter = 1
+    }
+    if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+      data.condition = "number-match";
+      timeVsNumIterator++
+    } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+      data.condition = "time-tapping-match";
+    }
     }
 }
 
@@ -158,6 +171,19 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
           experimentIterator++
           data.test_part = "experiment";
         }
+        if (blockCounter <= 188 && data.test_part == "experiment") {
+          data.block = blockIterator;
+          blockCounter++
+        } else if (blockCounter > 188 && data.test_part == "experiment") {
+          blockIterator++
+          blockCounter = 1
+        }
+        if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+          data.condition = "number-match";
+          timeVsNumIterator++
+        } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+          data.condition = "time-tapping-match";
+        }
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
@@ -182,6 +208,19 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
           experimentIterator++
           data.test_part = "experiment";
         }
+        if (blockCounter <= 188 && data.test_part == "experiment") {
+          data.block = blockIterator;
+          blockCounter++
+        } else if (blockCounter > 188 && data.test_part == "experiment") {
+          blockIterator++
+          blockCounter = 1
+        }
+        if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+          data.condition = "number-match";
+          timeVsNumIterator++
+        } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+          data.condition = "time-tapping-match";
+        }
         },
     trial_duration: 250,
 }
@@ -205,6 +244,19 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
           experimentIterator++
           data.test_part = "experiment";
         }
+        if (blockCounter <= 188 && data.test_part == "experiment") {
+          data.block = blockIterator;
+          blockCounter++
+        } else if (blockCounter > 188 && data.test_part == "experiment") {
+          blockIterator++
+          blockCounter = 1
+        }
+        if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+          data.condition = "number-match";
+          timeVsNumIterator++
+        } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+          data.condition = "time-tapping-match";
+        }
         },
     trial_duration: 250,
 }
@@ -227,6 +279,19 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
           data.trial = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
+        }
+        if (blockCounter <= 188 && data.test_part == "experiment") {
+          data.block = blockIterator;
+          blockCounter++
+        } else if (blockCounter > 188 && data.test_part == "experiment") {
+          blockIterator++
+          blockCounter = 1
+        }
+        if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+          data.condition = "number-match";
+          timeVsNumIterator++
+        } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+          data.condition = "time-tapping-match";
         }
         },
     trial_duration: 250,
@@ -273,6 +338,19 @@ let countDownFast = {
       experimentIterator++
       data.test_part = "experiment";
     }
+    if (blockCounter <= 188 && data.test_part == "experiment") {
+      data.block = blockIterator;
+      blockCounter++
+    } else if (blockCounter > 188 && data.test_part == "experiment") {
+      blockIterator++
+      blockCounter = 1
+    }
+    if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+      data.condition = "number-match";
+      timeVsNumIterator++
+    } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+      data.condition = "time-tapping-match";
+    }
     }
 }
 
@@ -298,6 +376,19 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
           experimentIterator++
           data.test_part = "experiment";
         }
+        if (blockCounter <= 188 && data.test_part == "experiment") {
+          data.block = blockIterator;
+          blockCounter++
+        } else if (blockCounter > 188 && data.test_part == "experiment") {
+          blockIterator++
+          blockCounter = 1
+        }
+        if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+          data.condition = "number-match";
+          timeVsNumIterator++
+        } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+          data.condition = "time-tapping-match";
+        }
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
@@ -322,6 +413,19 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
           experimentIterator++
           data.test_part = "experiment";
         }
+        if (blockCounter <= 188 && data.test_part == "experiment") {
+          data.block = blockIterator;
+          blockCounter++
+        } else if (blockCounter > 188 && data.test_part == "experiment") {
+          blockIterator++
+          blockCounter = 1
+        }
+        if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+          data.condition = "number-match";
+          timeVsNumIterator++
+        } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+          data.condition = "time-tapping-match";
+        }
         },
     trial_duration: 125,
 }
@@ -345,6 +449,19 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
           experimentIterator++
           data.test_part = "experiment";
         }
+        if (blockCounter <= 188 && data.test_part == "experiment") {
+          data.block = blockIterator;
+          blockCounter++
+        } else if (blockCounter > 188 && data.test_part == "experiment") {
+          blockIterator++
+          blockCounter = 1
+        }
+        if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+          data.condition = "number-match";
+          timeVsNumIterator++
+        } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+          data.condition = "time-tapping-match";
+        }
         },
     trial_duration: 125,
 }
@@ -367,6 +484,19 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
           data.trial = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
+        }
+        if (blockCounter <= 188 && data.test_part == "experiment") {
+          data.block = blockIterator;
+          blockCounter++
+        } else if (blockCounter > 188 && data.test_part == "experiment") {
+          blockIterator++
+          blockCounter = 1
+        }
+        if (timeVsNumIterator <= 188*6 && data.test_part == "experiment") {
+          data.condition = "number-match";
+          timeVsNumIterator++
+        } else if (timeVsNumIterator > 188*6 && data.test_part == "experiment") {
+          data.condition = "time-tapping-match";
         }
         },
     trial_duration: 125,
@@ -488,16 +618,16 @@ let practiceProcedureCountDownFast = { //This loops over the object
 timeline.push(getReadySlow, practiceProcedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, practiceProcedureCountDownFast, procedureToneFast, procedureNoToneFast)// PRACTICE
 // timeline.push(experimentStartInst)
 timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 1- Tap Matched
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 2
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 3
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 4
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 5
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 6- Tap Matched
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 2
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 3
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 4
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 5
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 6- Tap Matched
 // timeline.push(selfTimeBreak, secondHalfStart)
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 1- Time Matched
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
-// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 6- Time Matched
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 1- Time Matched
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 6- Time Matched
 timeline.push(endExperimentProcedure)
