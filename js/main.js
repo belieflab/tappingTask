@@ -135,8 +135,9 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
     trial_duration: 250,
     stimulus: "stim/50msec.wav",
     on_finish: function (data) {
-        console.log(data.key_press)
+        console.log(data.key_press);
         j=0;
+        data.tap_type = "slow-tone-paced"
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
@@ -150,7 +151,8 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
-        console.log(data.key_press)
+        console.log(data.key_press);
+        data.tap_type = "slow-tone-paced";
         },
     trial_duration: 250,
 }
@@ -163,7 +165,8 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
-        console.log(data.key_press)
+        console.log(data.key_press);
+        data.tap_type = "slow-self-paced";
         },
     trial_duration: 250,
 }
@@ -176,7 +179,8 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
-        console.log(data.key_press)
+        console.log(data.key_press);
+        data.tap_type = "slow-self-paced";
         },
     trial_duration: 250,
 }
@@ -224,8 +228,9 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
     trial_duration: 125,
     stimulus: "stim/50msec.wav",
     on_finish: function (data) {
-        console.log(data.key_press)
+        console.log(data.key_press);
         j=0; // if you do not reset
+        data.tap_type = "fast-tone-paced";
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
@@ -239,7 +244,8 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
-        console.log(data.key_press)
+        console.log(data.key_press);
+        data.tap_type = "fast-tone-paced";
         },
     trial_duration: 125,
 }
@@ -252,7 +258,8 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
-        console.log(data.key_press)
+        console.log(data.key_press);
+        data.tap_type = "fast-self-paced";
         },
     trial_duration: 125,
 }
@@ -265,7 +272,8 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
-        console.log(data.key_press)
+        console.log(data.key_press);
+        data.tap_type = "fast-self-paced";
         },
     trial_duration: 125,
 }
@@ -382,20 +390,20 @@ let practiceProcedureCountDownFast = { //This loops over the object
 
  ////////////////DEFINING BLOCKS/////////////
 
-timeline.push(instProcedure)
+// timeline.push(instProcedure)
 timeline.push(getReadySlow, practiceProcedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, practiceProcedureCountDownFast, procedureToneFast, procedureNoToneFast)// PRACTICE
 timeline.push(experimentStartInst)
 timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 1- Tap Matched
 timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 2
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 3
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 4
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 5
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 6- Tap Matched
-timeline.push(selfTimeBreak, secondHalfStart)
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 1- Time Matched
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
-timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 6- Time Matched
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 3
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 4
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 5
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast)// BLOCK 6- Tap Matched
+// timeline.push(selfTimeBreak, secondHalfStart)
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 1- Time Matched
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
+// timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 6- Time Matched
 timeline.push(endExperimentProcedure)
