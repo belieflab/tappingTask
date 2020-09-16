@@ -20,12 +20,12 @@ file_put_contents($name, $data);
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!--the interpreter will take care of ordering, rel, type, href do not have to be in a specific order -->
   </head>
   <body  style="background-color:gray;">  <!--any time you see style = all properties that follow are inline css -->
-    <?php include "include/intake.php"?>
+    <?php include_once "include/intake.php"?>
   </body>
 <footer>
-  <script src="js/jQuery.js"></script>
-  <script src="js/fn.js"></script>
-  <script src="js/var.js"></script>
-  <script src="js/main.js"></script>
+  <script src="exp/jQuery.js"></script>
+  <script src="exp/fn.js"></script>
+  <script src="exp/var.js"></script>
+  <script src="exp/main.js"></script>
 </footer>
 </html>
