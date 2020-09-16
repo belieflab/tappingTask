@@ -24,10 +24,11 @@
     <select name="facility" id="siteid">
         <option value="">---</option>
         <option value="Yale">Yale</option>
-        <option value="UGA">UGA</option>
+        <option value="UGA">Georgia</option>
         <option value="Northwestern">Northwestern</option>
         <option value="Temple">Temple</option>
         <option value="Maryland">Maryland</option>
+        <option value="Emory">Emory</option>
     </select>
     <label for="facility"></label>
 

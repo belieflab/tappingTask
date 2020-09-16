@@ -1,6 +1,7 @@
-  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
- /// *  make sure you know what you are doing with these buttons and levers; you may break the experiment  * ///
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//let workerID = prompt( 'Subject ID' );
+
+//let handedness =prompt("Are you right or left handed?");
+let stimuli;
 
 let tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */
 for (let i = 0; i < 100; i++){
