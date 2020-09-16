@@ -11,6 +11,10 @@ var audio = ["stim/50msec.wav"];
 // let stimuli;
 
 let j=0; //this is increment in countdown through countdown_stim
+practiceIterator = -1;
+experimentIterator = 1;
+blockIterator = 0;
+
 
 // creates the html code to be placed in the countdown object for displaying the countdown
 countdownTrial  = [];

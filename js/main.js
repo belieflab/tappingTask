@@ -74,8 +74,11 @@ let getReady = {
   trial_duration: 5000,
   on_load: function() {
   document.getElementByID("countdownPrompt").focus() // getElementByID is camel case variable naming
+  },
+  on_finish: function(data) {
+          blockIterator++
+        },
   }
-}
 
 let countDown = { 
   type: 'audio-keyboard-response', //html is the most versatile. Use html-keyboard-response and stuff as many things in it as possible
@@ -86,8 +89,19 @@ let countDown = {
   choices: [32],
   response_ends_trial: false,
   trial_duration: 500,
-  on_finish: function(){
+  on_finish: function(data){
       j++
+      data.tap_type = "countdown";
+      if (practiceIterator >= -94) {
+          data.trial = practiceIterator;
+          practiceIterator--;
+          data.test_part = "practice";
+        } else if (practiceIterator < -94) {
+          data.trial = experimentIterator;
+          experimentIterator++
+          data.test_part = "experiment";
+        }
+      data.block = blockIterator;
   },
 }
 
@@ -102,6 +116,17 @@ let tapTone = { // Collects responses for tone paced tapping for the first 250 m
   on_finish: function (data) {
       console.log(data.key_press)
       j=0; //this has to be reset to 0 for the countdown to work. j is left at 10 in countdown.
+      data.tap_type = "tone-paced";
+      if (practiceIterator >= -94) {
+          data.trial = practiceIterator;
+          practiceIterator--;
+          data.test_part = "practice";
+        } else if (practiceIterator < -94) {
+          data.trial = experimentIterator;
+          experimentIterator++
+          data.test_part = "experiment";
+        }
+      data.block = blockIterator;
       },
   // stimulus: function() { return "Stimuli/50msec.wav" },
   prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
@@ -114,6 +139,17 @@ let toneITI = { // this was added to capture taps before the next tone in order 
   response_ends_trial: false,
   on_finish: function (data) {
       console.log(data.key_press)
+      data.tap_type = "tone-paced";
+      if (practiceIterator >= -94) {
+          data.trial = practiceIterator;
+          practiceIterator--;
+          data.test_part = "practice";
+        } else if (practiceIterator < -94) {
+          data.trial = experimentIterator;
+          experimentIterator++
+          data.test_part = "experiment";
+        }
+      data.block = blockIterator;
       },
   trial_duration: 250,
 }
@@ -125,6 +161,17 @@ let tapNoTone = { // this was added to capture taps before the next tap interval
   response_ends_trial: false,
   on_finish: function (data) {
       console.log(data.key_press)
+      data.tap_type = "self-paced";
+      if (practiceIterator >= -94) {
+          data.trial = practiceIterator;
+          practiceIterator--;
+          data.test_part = "practice";
+        } else if (practiceIterator < -94) {
+          data.trial = experimentIterator;
+          experimentIterator++
+          data.test_part = "experiment";
+        }
+      data.block = blockIterator;
       },
   trial_duration: 250,
 }
@@ -136,6 +183,17 @@ let noToneITI = { // this was added to capture taps before the next tap interval
   response_ends_trial: false,
   on_finish: function (data) {
       console.log(data.key_press)
+      data.tap_type = "self-paced";
+      if (practiceIterator >= -94) {
+          data.trial = practiceIterator;
+          practiceIterator--;
+          data.test_part = "practice";
+        } else if (practiceIterator < -94) {
+          data.trial = experimentIterator;
+          experimentIterator++
+          data.test_part = "experiment";
+        }
+      data.block = blockIterator;
       },
   trial_duration: 250,
 }
