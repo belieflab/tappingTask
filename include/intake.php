@@ -2,9 +2,9 @@
 <script>
   // loads the experiment (i.e., variables and main javascript) 
   $("button.loadMain").click(function(){
-    $.getScript("js/fn.js");
-    $.getScript("js/main.js");
-    $.getScript("js/var.js");
+    // $.getScript("js/fn.js");
+    // $.getScript("js/main.js");
+    // $.getScript("js/var.js");
   // $.load("include/consent.php");
 }); 
 </script>
@@ -50,17 +50,6 @@
     <input type="date">
     <form> -->
    
-  <form>
-    <!-- <label for="handedness"><b>Are you right or left handed?</b></label> -->
-    <p><b>Which is your dominant hand?</b></p>
-    
-        <input id="rightHanded" type="radio" value="right">
-        <label for="right">Right</label><br>
-        <!-- <span class="checkmark"></span> -->
-        <input id="leftHanded" type="radio" value="left">
-        <label for="left">&nbsp Left</label><br>
-        <!-- <span class="checkmark"></span> -->
-  </form>
 
     <!-- <input type="checkbox"><p>Left</p> -->
 
@@ -76,7 +65,7 @@
     <br>
   </label>
 
-  <label class="container">Headphone volume at 50%? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp          
+  <label class="container">Headphones volume at 50%? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp          
     <input type="checkbox"> 
     <br>
   </label>

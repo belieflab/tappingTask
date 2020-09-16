@@ -52,17 +52,8 @@ function validateIntake() {
 
 function submitIntake() {
     let subjectID = document.getElementById("subjectid").value;
-    let rightHandedness = document.getElementById("rightHanded").checked;
-    let leftHandedness = document.getElementById("leftHanded").checked;
     let siteID = document.getElementById("siteid");
     
-    if(rightHandedness == true) {
-        handedness = "RIGHT";
-        antihandedness = "LEFT";
-    } else if(leftHandedness == true) {
-        handedness = "LEFT";
-        antihandedness = "RIGHT";
-    } 
 
     switch(siteID.options[siteID.selectedIndex].value){
         case "Yale":
@@ -94,7 +85,6 @@ function submitIntake() {
         alert("your subjectid is " + siteNumber + subjectID);
         workerID = parseInt(siteNumber + subjectID);
         validateIntake();
-        checkHandedness();
     }
 }
 

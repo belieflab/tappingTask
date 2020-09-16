@@ -3,10 +3,10 @@
 // let handedness =prompt("Are you right or left handed?");
 let workerID;
 
-let handedness;
-let antihandedness;
+// let handedness;
+// let antihandedness;
 
-var audio = ["stim/50msec.wav"];
+let audio = ["stim/50msec.wav"];
 
 // let stimuli;
 
@@ -18,16 +18,6 @@ blockIterator = 1;
 
 //iterator for adding if the blocks are matched on number of taps or time tapping
 timeVsNumIterator = 1;
-
-// practiceIterator = [];
-// for (let i = -999; i < -1; i++){
-//     practiceIterator.push(i);
-// }
-
-// experimentIterator = [];
-// for (let i = 0; i < 5000; i++){
-//     experimentIterator.push(i);
-// }
 
 // creates the html code to be placed in the countdown object for displaying the countdown
 countdownTrial  = [];
