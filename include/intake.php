@@ -4,9 +4,7 @@
   $("button.loadMain").click(function(){
     // $.getScript("include/intake.js");
     $.getScript("exp/jQuery.js");
-    $.getScript("exp/var.js");
-    $.getScript("exp/fn.js");
-    // $.getScript("exp/main.js");
+    $.getScript("exp/main.js");
 
   // $.load("include/consent.php");
 }); 

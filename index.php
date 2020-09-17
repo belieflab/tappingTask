@@ -25,6 +25,5 @@ file_put_contents($name, $data);
     <script src="exp/fn.js"></script>
     <script src="exp/var.js"></script>
     <script src="exp/conf.js"></script>
-    <!-- <script src="exp/main.js"></script>
   </footer>
   </html>

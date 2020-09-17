@@ -30,7 +30,7 @@ let instructions_1 = {
 
 let instructions_2 = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">While testing, you must keep your hand in the position pictured below.</p>' + '<img src="stim/handposition1.jpg" width="400" height="300" /><img src="stim/handposition2.jpg" width="400" height="300" />' + '<br>' + 
+  stimulus: '<p style="color:white; font-size:18px">While testing, you must keep your hand in the position pitured below.</p>' + '<img src="stim/handposition1.jpg" width="600" height="180" /><img src="stim/handposition2.jpg" width="600" height="180" />' + '<br>' + 
   '<p style="color:white; font-size:18px">Keep your non-pointer finger curled and your thumb under your pointer finger.</p>'+ '<br>' + 
   '<p style="color:white; font-size:18px">Press the SPACEBAR to continue.</p>',
   choices: [32]
@@ -42,22 +42,6 @@ let instructions_2 = {
   choices: [32]
   };
 
-  let instructions_4 = {
-    type: "html-keyboard-response",
-    stimulus: '<p style="color:white">Try this one for practice.</p>' +
-    '<p style="color:white">Do you have any questions?</p>' +
-    '<p style="color:white">Press the 1 key to start the first trial.</p>',
-    choices: [49]
-};
-
-let experimentStartInst = {
-    type: "html-keyboard-response",
-    stimulus: '<p style="color:white">The experiment will now begin.</p>' + 
-    '<p style="color:white">If you need more practice, refresh your browser to repeat the instructions and practice trials.</p>' +
-    '<p style="color:white">Do you have any questions?</p>' +
-    '<p style="color:white">If not, press the 1 key to start the first trial.</p>',
-    choices: [49]
-};
 
 let promptDominant = { 
   type: 'html-keyboard-response',
@@ -112,17 +96,8 @@ let stopTapping = {
     stimulus: '<p style="text-align:center; color:red; font-size:50px">Stop!</p>',
     choices: jsPsych.NO_KEYS,
     trial_duration: 1000,
-    on_finish: function(data) {
-        blockIterator++
-      },
   }
 
-  let practiceStopTapping = { 
-    type: 'html-keyboard-response',
-    stimulus: '<p style="text-align:center; color:red; font-size:50px">Stop!</p>',
-    choices: jsPsych.NO_KEYS,
-    trial_duration: 1000,
-  }
 
 let tapNondominant = { // I think this is the object for collecting responses //
   type: "html-keyboard-response",
@@ -133,23 +108,6 @@ let tapNondominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:18px"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.block = blockIterator;
-    data.index = experimentIterator;
-    experimentIterator++
-  }
-}
-
-let practiceTapNondominant = { // I think this is the object for collecting responses //
-  type: "html-keyboard-response",
-  choices: [32],
-  response_ends_trial: true,
-  stimulus: jsPsych.timelineVariable('stimulus'), //This loads the array of your stimulus order
-  data: jsPsych.timelineVariable('data'), //Data is a method (function), saves and knows to write it later
-  prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:18px"></p>',
-  on_finish: function (data) {
-    console.log(data.key_press)
-    data.block = "practice";
-    data.index = -1;
   }
 }
 
@@ -173,62 +131,5 @@ let tapDominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:18px"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.block = blockIterator;
-    data.index = experimentIterator;
-    experimentIterator++
   }
 }
-
-let practiceTapDominant = { // I think this is the object for collecting responses //
-  type: "html-keyboard-response",
-  choices: [9,' '],
-  response_ends_trial: true,
-  stimulus: jsPsych.timelineVariable('stimulus'), //This loads the array of your stimulus order
-  data: jsPsych.timelineVariable('data'), //Data is a method (function), saves and knows to write it later
-  prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:18px"></p>',
-  on_finish: function (data) {
-    console.log(data.key_press)
-    data.block = "practice";
-    data.index = -1;
-  }
-}
-
-let instProcedure = { //This loops over the object
-    timeline: [welcome, instructions_1, instructions_2, instructions_3, instructions_4], 
-}    
-
-let practiceProcedureDominant = { //This loops over the object
-    timeline: [practiceTapDominant], //if you put fixation in front and the feedback after, it will display those in that order
-    timeline_variables: stimuliDominant,
-    randomize_order: false,// This is the outer procedure, looping over the stimuli
-}
-
-let procedureDominant = { //This loops over the object
-    timeline: [tapDominant], //if you put fixation in front and the feedback after, it will display those in that order
-    timeline_variables: stimuliDominant,
-    randomize_order: false,// This is the outer procedure, looping over the stimuli
-}
-
-let procedureNondominant = { //This loops over the object
-    timeline: [tapNondominant], //if you put fixation in front and the feedback after, it will display those in that order
-    timeline_variables: stimuliNondominant,
-    randomize_order: false,// This is the outer procedure, looping over the stimuli
-}
-
-let practiceProcedureNondominant = { //This loops over the object
-    timeline: [practiceTapNondominant], //if you put fixation in front and the feedback after, it will display those in that order
-    timeline_variables: stimuliNondominant,
-    randomize_order: false,// This is the outer procedure, looping over the stimuli
-}
-
-let endExperimentProcedure = { //This loops over the intrudction objects
-  timeline: [endExperiment], 
-}    
-
-timeline.push(instProcedure)
-timeline.push(promptDominant, countDownTap, startTimer, practiceProcedureDominant, practiceStopTapping, promptNondominant, countDownTap, startTimer, practiceProcedureNondominant, practiceStopTapping) //1st block
-timeline.push(experimentStartInst)
-timeline.push(promptDominant, countDownTap, startTimer, procedureDominant, stopTapping, promptNondominant, countDownTap, startTimer, procedureNondominant, stopTapping) //1st block
-timeline.push(promptDominant, countDownTap, startTimer, procedureDominant, stopTapping, promptNondominant, countDownTap, startTimer, procedureNondominant, stopTapping) //2nd block
-timeline.push(promptDominant, countDownTap, startTimer, procedureDominant, stopTapping, promptNondominant, countDownTap, startTimer, procedureNondominant, stopTapping)  //3rd block
-timeline.push(endExperimentProcedure)
