@@ -4,8 +4,8 @@ let timeline = []; // this needs to be first in code or it will error
 /* define welcome message trial */
 let welcome = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">Welcome to the FINGER TAPPING experiment!</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the SPACEBAR to continue.</p>', //by default, jsPysch is white background and white text
-  choices: [32],
+  stimulus: '<p style="color:white; font-size:18px">Welcome to the FINGER TAPPING experiment!</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the 1 key to continue.</p>', //by default, jsPysch is white background and white text
+  choices: [49],
 };
 
 /* define experiment end message */
@@ -23,23 +23,23 @@ let instructions_1 = {
   stimulus: '<p style="color:white; font-size:18px">This is a test of your finger speed.</p>' +
     '<p style="color:white; font-size:18px">We want to see how many times you can press the SPACEBAR in 10 seconds.</p>' +
     '<p style="color:white; font-size:18px">You will start with the hand that you use when writing.</p>' +
-    '<p style="color:white; font-size:18px">After each 10 second trail, you will switch hands.</p>' + '<br>' +
-    '<p style="color:white; font-size:18px">Press the SPACEBAR to continue the instructions.</p>',
-  choices: [32], //without this, it can be any keyboard response
+    '<p style="color:white; font-size:18px">After each 10 second trial, you will switch hands.</p>' + '<br>' +
+    '<p style="color:white; font-size:18px">Press the 1 key to continue the instructions.</p>',
+  choices: [49], //without this, it can be any keyboard response
 };
 
 let instructions_2 = {
   type: "html-keyboard-response",
   stimulus: '<p style="color:white; font-size:18px">While testing, you must keep your hand in the position pictured below.</p>' + '<img src="stim/handposition1.jpg" width="400" height="300" /><img src="stim/handposition2.jpg" width="400" height="300" />' + '<br>' + 
   '<p style="color:white; font-size:18px">Keep your non-pointer finger curled and your thumb under your pointer finger.</p>'+ '<br>' + 
-  '<p style="color:white; font-size:18px">Press the SPACEBAR to continue.</p>',
-  choices: [32]
+  '<p style="color:white; font-size:18px">Press the 1 key to continue.</p>',
+  choices: [49]
   };
 
   let instructions_3 = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">Before we start, lets try a few practice trials.</p>' + '<p style="color:white; font-size:18px">The screen is going to count down from 5 before each trial.</p>' + '<p style="color:white; font-size:18px">When the screen says: </p>' + '<p style="color:green; font-size:18px"> "Go!"</p>' + '<p style="color:white; font-size:18px">Tap the SPACEBAR as fast as you can.</p>' + '<p style="color:white; font-size:18px">Remember to use the hand position shown earlier.</p>' + '<p style="color:white; font-size:18px">Stay in that position for each trial and do not use your whole hand or wrist or arm to press the SPACEBAR.</p>' + '<p style="color:white; font-size:18px">Just use your pointer finger to tap.</p>' + '<p style="color:white; font-size:18px">Press the SPACEBAR to begin.</p>',
-  choices: [32]
+  stimulus: '<p style="color:white; font-size:18px">Before we start, lets try a few practice trials.</p>' + '<p style="color:white; font-size:18px">The screen is going to count down from 5 before each trial.</p>' + '<p style="color:white; font-size:18px">When the screen says: </p>' + '<p style="color:green; font-size:18px"> "Go!"</p>' + '<p style="color:white; font-size:18px">Tap the SPACEBAR as fast as you can.</p>' + '<p style="color:white; font-size:18px">Remember to use the hand position shown earlier.</p>' + '<p style="color:white; font-size:18px">Stay in that position for each trial and do not use your whole hand or wrist or arm to press the SPACEBAR.</p>' + '<p style="color:white; font-size:18px">Just use your pointer finger to tap.</p>' + '<p style="color:white; font-size:18px">Press the 1 key to begin.</p>',
+  choices: [49]
   };
 
   let instructions_4 = {
@@ -133,6 +133,14 @@ let tapNondominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:18px"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
+    data.subjectKey = ' ';
+    data.src_subject_id = workerId;
+    // data.site = siteNumber;
+    data.interview_date = ' ';
+    data.session = ' ';
+    data.sex = ' ';
+    data.sample_group = ' ';
+    data.interview_age = ' ';
     data.block = blockIterator;
     data.index = experimentIterator;
     experimentIterator++
@@ -173,6 +181,14 @@ let tapDominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:18px"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
+    data.subjectKey = ' ';
+    data.src_subject_id = workerId;
+    // data.site = siteNumber;
+    data.interview_date = ' ';
+    data.session = ' ';
+    data.sex = ' ';
+    data.sample_group = ' ';
+    data.interview_age = ' ';
     data.block = blockIterator;
     data.index = experimentIterator;
     experimentIterator++
