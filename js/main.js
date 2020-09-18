@@ -115,14 +115,12 @@ let tapTone = { // Collects responses for tone paced tapping for the first 250 m
   stimulus: "stim/50msec.wav",
   on_finish: function (data) {
       console.log(data.key_press)
-      data.subjectKey = ' ';
+      data.subjectKey = 'GUID';
       data.src_subject_id = workerID;
-      // data.site = siteNumber;
-      data.interview_date = ' ';
-      data.session = ' ';
-      data.sex = ' ';
-      data.sample_group = ' ';
+      data.site = siteNumber;
+      data.interview_date = today;
       data.interview_age = ' ';
+      data.sex = ' ';
       j=0; //this has to be reset to 0 for the countdown to work. j is left at 10 in countdown.
       data.tap_type = "tone-paced";
       if (practiceIterator >= -94) {
@@ -147,14 +145,12 @@ let toneITI = { // this was added to capture taps before the next tone in order 
   response_ends_trial: false,
   on_finish: function (data) {
       console.log(data.key_press)
-      data.subjectKey = ' ';
+      data.subjectKey = 'GUID';
       data.src_subject_id = workerID;
-      // data.site = siteNumber;
-      data.interview_date = ' ';
-      data.session = ' ';
-      data.sex = ' ';
-      data.sample_group = ' ';
+      data.site = siteNumber;
+      data.interview_date = today;
       data.interview_age = ' ';
+      data.sex = ' ';
       data.tap_type = "tone-paced";
       if (practiceIterator >= -94) {
           data.trial = practiceIterator;
@@ -177,14 +173,12 @@ let tapNoTone = { // this was added to capture taps before the next tap interval
   response_ends_trial: false,
   on_finish: function (data) {
       console.log(data.key_press)
-      data.subjectKey = ' ';
+      data.subjectKey = 'GUID';
       data.src_subject_id = workerID;
-      // data.site = siteNumber;
-      data.interview_date = ' ';
-      data.session = ' ';
-      data.sex = ' ';
-      data.sample_group = ' ';
+      data.site = siteNumber;
+      data.interview_date = today;
       data.interview_age = ' ';
+      data.sex = ' ';
       data.tap_type = "self-paced";
       if (practiceIterator >= -94) {
           data.trial = practiceIterator;
@@ -207,14 +201,12 @@ let noToneITI = { // this was added to capture taps before the next tap interval
   response_ends_trial: false,
   on_finish: function (data) {
       console.log(data.key_press)
-      data.subjectKey = ' ';
+      data.subjectKey = 'GUID';
       data.src_subject_id = workerID;
-      // data.site = siteNumber;
-      data.interview_date = ' ';
-      data.session = ' ';
-      data.sex = ' ';
-      data.sample_group = ' ';
+      data.site = siteNumber;
+      data.interview_date = today;
       data.interview_age = ' ';
+      data.sex = ' ';
       data.tap_type = "self-paced";
       if (practiceIterator >= -94) {
           data.trial = practiceIterator;
