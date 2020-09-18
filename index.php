@@ -11,6 +11,7 @@ file_put_contents($name, $data);
 <html>
   <head>
     <title>Tapping Task</title>  <!-- This is for changing the title -->
+    <script src="db/submit.js"></script>
     <script src="jsPsych/jspsych.js"></script>
     <script src="jsPsych/plugins/jspsych-audio-keyboard-response.js"></script>
     <script src="jsPsych/plugins/jspsych-html-keyboard-response.js"></script> <!--script is for javascript -->
@@ -27,6 +28,6 @@ file_put_contents($name, $data);
   <script src="exp/fn.js"></script>
   <script src="exp/var.js"></script>
   <script src="exp/timeline.js"></script>
-  <script src="exp/main.js"></script>
+  <!-- <script src="exp/main.js"></script> -->
 </footer>
 </html>

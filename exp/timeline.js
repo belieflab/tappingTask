@@ -170,14 +170,12 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
     on_finish: function (data) {
         console.log(data.key_press);
         j=0;
-        data.subjectKey = ' ';
+        data.subjectKey = 'GUID';
         data.src_subject_id = workerID;
-        // data.site = siteNumber;
-        data.interview_date = ' ';
-        data.session = ' ';
-        data.sex = ' ';
-        data.sample_group = ' ';
+        data.site = siteNumber;
+        data.interview_date = today;
         data.interview_age = ' ';
+        data.sex = ' ';
         data.tap_type = "slow-tone-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -209,14 +207,12 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = ' ';
+        data.subjectKey = 'GUID';
         data.src_subject_id = workerID;
-        // data.site = siteNumber;
-        data.interview_date = ' ';
-        data.session = ' ';
-        data.sex = ' ';
-        data.sample_group = ' ';
+        data.site = siteNumber;
+        data.interview_date = today;
         data.interview_age = ' ';
+        data.sex = ' ';
         data.tap_type = "slow-tone-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -247,14 +243,12 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = ' ';
+        data.subjectKey = 'GUID';
         data.src_subject_id = workerID;
-        // data.site = siteNumber;
-        data.interview_date = ' ';
-        data.session = ' ';
-        data.sex = ' ';
-        data.sample_group = ' ';
+        data.site = siteNumber;
+        data.interview_date = today;
         data.interview_age = ' ';
+        data.sex = ' ';
         data.tap_type = "slow-self-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -285,14 +279,12 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = ' ';
+        data.subjectKey = 'GUID';
         data.src_subject_id = workerID;
-        // data.site = siteNumber;
-        data.interview_date = ' ';
-        data.session = ' ';
-        data.sex = ' ';
-        data.sample_group = ' ';
+        data.site = siteNumber;
+        data.interview_date = today;
         data.interview_age = ' ';
+        data.sex = ' ';
         data.tap_type = "slow-self-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -376,14 +368,12 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
     stimulus: "stim/50msec.wav",
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = ' ';
+        data.subjectKey = 'GUID';
         data.src_subject_id = workerID;
-        // data.site = siteNumber;
-        data.interview_date = ' ';
-        data.session = ' ';
-        data.sex = ' ';
-        data.sample_group = ' ';
+        data.site = siteNumber;
+        data.interview_date = today;
         data.interview_age = ' ';
+        data.sex = ' ';
         j=0; // if you do not reset
         data.tap_type = "fast-tone-paced";
         if (practiceIterator >= -188) {
@@ -416,14 +406,12 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = ' ';
+        data.subjectKey = 'GUID';
         data.src_subject_id = workerID;
-        // data.site = siteNumber;
-        data.interview_date = ' ';
-        data.session = ' ';
-        data.sex = ' ';
-        data.sample_group = ' ';
+        data.site = siteNumber;
+        data.interview_date = today;
         data.interview_age = ' ';
+        data.sex = ' ';
         data.tap_type = "fast-tone-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -454,14 +442,12 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = ' ';
+        data.subjectKey = 'GUID';
         data.src_subject_id = workerID;
-        // data.site = siteNumber;
-        data.interview_date = ' ';
-        data.session = ' ';
-        data.sex = ' ';
-        data.sample_group = ' ';
+        data.site = siteNumber;
+        data.interview_date = today;
         data.interview_age = ' ';
+        data.sex = ' ';
         data.tap_type = "fast-self-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -492,14 +478,12 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = ' ';
+        data.subjectKey = 'GUID';
         data.src_subject_id = workerID;
-        // data.site = siteNumber;
-        data.interview_date = ' ';
-        data.session = ' ';
-        data.sex = ' ';
-        data.sample_group = ' ';
+        data.site = siteNumber;
+        data.interview_date = today;
         data.interview_age = ' ';
+        data.sex = ' ';
         data.tap_type = "fast-self-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
