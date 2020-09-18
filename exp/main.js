@@ -133,14 +133,12 @@ let tapNondominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:18px"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.subjectKey = ' ';
-    data.src_subject_id = workerId;
-    // data.site = siteNumber;
-    data.interview_date = ' ';
-    data.session = ' ';
-    data.sex = ' ';
-    data.sample_group = ' ';
+    data.subjectKey = 'GUID';
+    data.src_subject_id = workerID;
+    data.site = siteNumber;
+    data.interview_date = today;
     data.interview_age = ' ';
+    data.sex = ' ';
     data.block = blockIterator;
     data.index = experimentIterator;
     experimentIterator++
@@ -181,14 +179,12 @@ let tapDominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white; font-size:18px"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.subjectKey = ' ';
-    data.src_subject_id = workerId;
-    // data.site = siteNumber;
-    data.interview_date = ' ';
-    data.session = ' ';
-    data.sex = ' ';
-    data.sample_group = ' ';
+    data.subjectKey = 'GUID';
+    data.src_subject_id = workerID;
+    data.site = siteNumber;
+    data.interview_date = today;
     data.interview_age = ' ';
+    data.sex = ' ';
     data.block = blockIterator;
     data.index = experimentIterator;
     experimentIterator++
