@@ -39,54 +39,9 @@ function startExperiment(){
     });
 }
 
-function validateIntake() {
-    let intake = document.getElementById("intake");
-    let consent = document.getElementById("nextButton");
-    if (intake.style.display === "none") {
-    intake.style.display = "block";
-    } else {
-    intake.style.display = "none";
-    consent.style.display = "block";
-    }
-}
 
-function submitIntake() {
-    let subjectID = document.getElementById("subjectid").value;
-    let siteID = document.getElementById("siteid");
-    
 
-    switch(siteID.options[siteID.selectedIndex].value){
-        case "Yale":
-            siteNumber = "10";
-            break;
-        case "UGA":
-            siteNumber = "20";
-            break;
-        case "Northwestern":
-            siteNumber = "30";
-            break;
-        case "Temple":
-            siteNumber = "40";
-            break;
-        case "Maryland":
-            siteNumber = "50";
-            break;
-        default:
-            siteNumber = "00";
-    }
 
-    // if(siteID.options[siteID.selectedIndex].value == "Yale") {
-    //     siteNumber = "10"
-    // }
-
-    if(subjectID == "") {
-        alert("Please enter a valid subjectid")
-    } else {
-        alert("your subjectid is " + siteNumber + subjectID);
-        workerID = parseInt(siteNumber + subjectID);
-        validateIntake();
-    }
-}
 
 function move() { // function definition
     var width = document.getElementById("goTap").style.width; // variable assignment of width property of keyBar

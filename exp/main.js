@@ -6,12 +6,12 @@
 /* Instructions Procedure */
 
 let instProcedure = { //This loops over the intrudction objects
-  timeline: [welcome, instructions_1, instructions_2, instructions_3, instructions_4, instructions_5], 
-}    
+  timeline: [welcome, instructions_1, instructions_2, instructions_3, instructions_4, instructions_5]
+};
 
 let endExperimentProcedure = { //This loops over the intrudction objects
-    timeline: [endExperiment], 
-  }    
+    timeline: [endExperiment]
+};
 
 /* Slow Practice Countdown Procedure */
 

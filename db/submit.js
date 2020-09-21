@@ -50,35 +50,13 @@ function ageFinder() {
     }
 }
 
+
+
 function submitIntake() {
-    // if (document.getElementById("age").value !== '') {
-    //     currentAge = document.getElementById("age").value;
-    //     ageAtAssessment = currentAge;
-    // } else {
-    //     alert("please enter your current age");
-
-    // }
     let subjectID = document.getElementById("subjectid").value;
-    // let rightHandedness = document.getElementById("rightHanded").checked;
-    // let leftHandedness = document.getElementById("leftHanded").checked;
-    let siteID = document.getElementById("siteid").value;
-    // let currentAge = document.getElementById("age").value;
-    // let sexMale = document.getElementById("male").value;
-    // let sexFemale = document.getElementById("female").value;
-    // let sex = document.getElementsByName("male").value;
-    // let sexAtBirth;
-    // let sexAtBirth = document.getElementById("result").value = sex;
+    let siteID = document.getElementById("siteid");
+    
 
-    // if (sex === 'male') {
-    //     sexAtBirth = "M";
-    // } else if (sex === 'female') {
-    //     sexAtBirth = "F";
-    // }
-    // if(rightHandedness == true) {
-    //     handedness = "R";
-    // } else if(leftHandedness == true) {
-    //     handedness = "L"
-    // } 
     switch(siteID.options[siteID.selectedIndex].value){
         case "Maryland":
             siteNumber = "10";
@@ -101,29 +79,94 @@ function submitIntake() {
         default:
             siteNumber = "00";
     }
+
     // if(siteID.options[siteID.selectedIndex].value == "Yale") {
     //     siteNumber = "10"
     // }
-    if (subjectID === "") {
-        alert("Please enter a valid subjectid");
+
+    if(subjectID == "") {
+        alert("Please enter a valid subjectid")
     } else {
         alert("your subjectid is " + siteNumber + subjectID);
-        // ageAtAssessment = parseInt(currentAge);
         workerID = parseInt(siteNumber + subjectID);
-
-
-        // ageAtAssessment = parseInt(currentAge);
-        // ageAtAssessment = parseInt(currentAge);
-        // sexAtBirth = sex;
-
-        // validateIntake();
-        // checkHandedness();
+        validateIntake();
     }
-
-    // if (currentAge !== '') {
-    //     ageAtAssessment = document.getElementById("age").value;
-
-    // } else {
-    //     alert("please enter your current age");
-    // }
 }
+
+// function submitIntake() {
+//     // if (document.getElementById("age").value !== '') {
+//     //     currentAge = document.getElementById("age").value;
+//     //     ageAtAssessment = currentAge;
+//     // } else {
+//     //     alert("please enter your current age");
+
+//     // }
+//     let subjectID = document.getElementById("subjectid").value;
+//     // let rightHandedness = document.getElementById("rightHanded").checked;
+//     // let leftHandedness = document.getElementById("leftHanded").checked;
+//     let siteID = document.getElementById("siteid").value;
+//     // let currentAge = document.getElementById("age").value;
+//     // let sexMale = document.getElementById("male").value;
+//     // let sexFemale = document.getElementById("female").value;
+//     // let sex = document.getElementsByName("male").value;
+//     // let sexAtBirth;
+//     // let sexAtBirth = document.getElementById("result").value = sex;
+
+//     // if (sex === 'male') {
+//     //     sexAtBirth = "M";
+//     // } else if (sex === 'female') {
+//     //     sexAtBirth = "F";
+//     // }
+//     // if(rightHandedness == true) {
+//     //     handedness = "R";
+//     // } else if(leftHandedness == true) {
+//     //     handedness = "L"
+//     // } 
+//     switch(siteID.options[siteID.selectedIndex].value){
+//         case "Maryland":
+//             siteNumber = "10";
+//             break;
+//         case "Northwestern":
+//             siteNumber = "20";
+//             break;
+//         case "Temple":
+//             siteNumber = "30";
+//             break;
+//         case "Georgia":
+//             siteNumber = "40";
+//             break;
+//         case "Yale":
+//             siteNumber = "50";
+//             break;
+//         case "Emory":
+//             siteNumber = "60";
+//             break;
+//         default:
+//             siteNumber = "00";
+//     }
+//     // if(siteID.options[siteID.selectedIndex].value == "Yale") {
+//     //     siteNumber = "10"
+//     // }
+//     if (subjectID === "") {
+//         alert("Please enter a valid subjectid");
+//     } else {
+//         alert("your subjectid is " + siteNumber + subjectID);
+//         // ageAtAssessment = parseInt(currentAge);
+//         workerID = parseInt(siteNumber + subjectID);
+
+
+//         // ageAtAssessment = parseInt(currentAge);
+//         // ageAtAssessment = parseInt(currentAge);
+//         // sexAtBirth = sex;
+
+//         // validateIntake();
+//         // checkHandedness();
+//     }
+
+//     // if (currentAge !== '') {
+//     //     ageAtAssessment = document.getElementById("age").value;
+
+//     // } else {
+//     //     alert("please enter your current age");
+//     // }
+// }
