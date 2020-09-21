@@ -1,14 +1,24 @@
 // function to store subject number on submit
 let workerID;
+
+
+// let sexMale;
+// let sexFemale;
+// let age;
+let ageAtAssessment;
+// let age;
+let sexAtBirth;
+// let currentAge;
 // let handedness;
 // let antihandedness;
-// let EasyKey_uCase; 
+// let EasyKey_uCase;
 // let HardKey_uCase;
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 let yyyy = today.getFullYear();
 today = mm + '/' + dd + '/' + yyyy;
+
 function validateIntake() {
     let intake = document.getElementById("intake");
     let consent = document.getElementById("nextButton");
@@ -19,21 +29,51 @@ function validateIntake() {
       consent.style.display = "block";
     }
   }
+
+function sexFinder() {
+    // document.getElementById("sex").value = sex;
+    if (document.getElementById("male").checked === true) {
+        sexAtBirth = "M";
+    } else if (document.getElementById("female").checked === true) {
+        sexAtBirth = "F";
+    }
+}
+
+function ageFinder() {
+    // document.getElementById("sex").value = sex;
+    if (document.getElementById("age").value !== '') {
+        let currentAge = document.getElementById("age").value;
+        ageAtAssessment = parseInt(currentAge);
+    } else {
+        alert("please enter your current age");
+
+    }
+}
+
 function submitIntake() {
+    // if (document.getElementById("age").value !== '') {
+    //     currentAge = document.getElementById("age").value;
+    //     ageAtAssessment = currentAge;
+    // } else {
+    //     alert("please enter your current age");
+
+    // }
     let subjectID = document.getElementById("subjectid").value;
     // let rightHandedness = document.getElementById("rightHanded").checked;
     // let leftHandedness = document.getElementById("leftHanded").checked;
-    let siteID = document.getElementById("siteid");
-    let age = document.getElementById("age").value;
-    let sexMale = document.getElementById("male");
-    let sexFemale = document.getElementById("female");
-    let sex;
+    let siteID = document.getElementById("siteid").value;
+    // let currentAge = document.getElementById("age").value;
+    // let sexMale = document.getElementById("male").value;
+    // let sexFemale = document.getElementById("female").value;
+    // let sex = document.getElementsByName("male").value;
+    // let sexAtBirth;
+    // let sexAtBirth = document.getElementById("result").value = sex;
 
-    if(sexMale == true) {
-        sex = "M";
-    } else if(sexFemale == true) {
-        sex = "F"
-    } 
+    // if (sex === 'male') {
+    //     sexAtBirth = "M";
+    // } else if (sex === 'female') {
+    //     sexAtBirth = "F";
+    // }
     // if(rightHandedness == true) {
     //     handedness = "R";
     // } else if(leftHandedness == true) {
@@ -64,12 +104,26 @@ function submitIntake() {
     // if(siteID.options[siteID.selectedIndex].value == "Yale") {
     //     siteNumber = "10"
     // }
-    if(subjectID == "") {
-        alert("Please enter a valid subjectid")
+    if (subjectID === "") {
+        alert("Please enter a valid subjectid");
     } else {
         alert("your subjectid is " + siteNumber + subjectID);
+        // ageAtAssessment = parseInt(currentAge);
         workerID = parseInt(siteNumber + subjectID);
-        validateIntake();
+
+
+        // ageAtAssessment = parseInt(currentAge);
+        // ageAtAssessment = parseInt(currentAge);
+        // sexAtBirth = sex;
+
+        // validateIntake();
         // checkHandedness();
     }
+
+    // if (currentAge !== '') {
+    //     ageAtAssessment = document.getElementById("age").value;
+
+    // } else {
+    //     alert("please enter your current age");
+    // }
 }
