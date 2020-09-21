@@ -129,7 +129,7 @@ let getReadySlow = {
 
 let countDownSlow = { 
     type: 'audio-keyboard-response', //html is the most versatile. Use html-keyboard-response and stuff as many things in it as possible
-    stimulus: audio,
+    stimulus: tone,
     prompt: function(){
         return countdownTrial[j];
     },
@@ -167,7 +167,7 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
     response_ends_trial: false,
     trial_ends_after_audio: false,
     trial_duration: 250,
-    stimulus: audio,
+    stimulus: tone,
     on_finish: function (data) {
         console.log(data.key_press);
         j=0;
@@ -327,7 +327,7 @@ let getReadyFast = {
 
 let countDownFast = { 
     type: 'audio-keyboard-response', //html is the most versatile. Use html-keyboard-response and stuff as many things in it as possible
-    stimulus: audio,
+    stimulus: tone,
     prompt: function(){
         return countdownTrial[j];
     },
