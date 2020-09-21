@@ -1,12 +1,20 @@
-let workerID = prompt( 'Subject ID' );
+// let workerID = prompt( 'Subject ID' );
 
-let handedness =prompt("Are you right or left handed?");
+// let handedness =prompt("Are you right or left handed?");
+// let workerID;
 
-var audio = ["stim/50msec.wav"];
+let handedness;
+let antihandedness;
+
+let audio = ["stim/50msec.wav"];
 
 // let stimuli;
 
 let j=0; //this is increment in countdown through countdown_stim
+practiceIterator = -1;
+experimentIterator = 1;
+blockIterator = -1;
+
 
 // creates the html code to be placed in the countdown object for displaying the countdown
 countdownTrial  = [];
