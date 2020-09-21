@@ -4,7 +4,8 @@ let timeline = []; // this needs to be first in code or it will error
 /* define welcome message trial */
 let welcome = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">Welcome to the next part of the FINGER TAPPING experiment!</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the 1 key to continue.</p>', //by default, jsPysch is white background and white text
+  stimulus: '<h1 style="color:white;">Welcome to the next part of the Finger Tapping experiment!</h2>' +
+  '<p style="color:white;">Press the 1 key to continue.</p>', //by default, jsPysch is white background and white text
   choices: [49],
   // on_load: checkHandedness(),
 };
@@ -13,7 +14,8 @@ let welcome = {
 
 let endExperiment = {
     type: "html-keyboard-response",
-    stimulus: '<p style="color:white; font-size:18px">Thank you for participating!</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the 1 key to exit. Then wait for further instructions.</p>', //by default, jsPysch is white background and white text
+    stimulus: '<h2 style="color:white">Thank you for participating!</h2>' +
+    '<p style="color:white;">Press the 1 key to exit. Then wait for further instructions.</p>', //by default, jsPysch is white background and white text
     choices: [49],
     // on_load: checkHandedness(),
 };
@@ -21,46 +23,54 @@ let endExperiment = {
 /* define instructions trial */
 let instructions_1 = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">Now your goal is to tap at the same speed as the tone you hear.</p>' +
-  '<p style="color:white; font-size:18px">When the trial begins, a count down from 10 will start that counts down at the same pace that you will be tapping. Each number from 10 to 1 is accompanied by the same tone that you will try and tap along with during the trial</p>' +
-  '<p style="color:white; font-size:18px">You will only tap with the hand that you use when writing. Use the SPACEBAR to tap.</p>' + '<br>' +
-  '<p style="color:white; font-size:18px">Press the 1 key to continue the instructions.</p>',
+  stimulus: '<h2 style="color:white;">Your goal is to tap at the same speed as the tones you hear.</h2>' +
+  '<h2 style="color:white">When each new trial starts, a countdown will begin at the same pace that you will be tapping.<h2>'+
+  '<h2 style="color:white">Each number from 10 to 1 is accompanied by tones that you will try and tap along with during each trial.</h2>' +
+  '<h2 style="color:white">Unlike last time, you will <i>only</i> tap the spacebar with the hand you use for writing</h2>' +
+  '<p style="color:white">Press the 1 key to continue.</p>',
   choices: [49], //without this, it can be any keyboard response
 };
 
-
 let instructions_2 = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">After the count down, you will see a "+" symbol and continue to hear the tone.</p>' + '<p style="color:white; font-size:18px">When you see the "+" symbol, listen carefully and continue to tap the SPACEBAR at the same rate with the tone.</p>' + '<br>' + 
-  '<p style="color:white; font-size:18px">Press the 1 key to continue.</p>',
+  stimulus: '<h2 style="color:white">After the countdown reaches 1, you will see a "+" symbol presented with the tones.</h2>' +
+  '<h3 style="color:white">When you see the "+" symbol, listen carefully and continue tapping the spacebar at the same rate as the tones.</h3>' +
+  '<p style="color:white; ">Press the 1 key to continue.</p>',
   choices: [49]
 };
 
 
 let instructions_3 = {
   type: "html-keyboard-response",
-  stimulus: '<img src="stim/instructions_3.png" width="800" height="600" />',
+
+  stimulus: '<p style="color:white; ">In summary:</p>'+
+  '<img src="stim/summary.png" width="800" height="400">',
+  prompt:   '<p style="color:white; ">Press the 1 key to continue.</p>',
   choices: [49]
 };
 
 
 let instructions_4 = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">Do you have any questions?</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the 1 key to start the first trial.</p>',
+  stimulus: '<h2 style="color:white; ">Do you have any questions?</h2>' +
+  '<p style="color:white; ">If not, press the 1 key to start the practice trial.</p>',
   choices: [49]
 };
 
 let instructions_5 = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">Try this one for practice.</p>' + 
-  '<p style="color:white; font-size:18px">Do your best to keep tapping at the same rate as the tone.</p>' + '<br>' + '<p style="color:white; font-size:18px">Do you have any questions?</p>' + '<br>' + '<p style="color:white; font-size:18px">Press the 1 key to start the first trial.</p>',
+  stimulus: '<h2 style="color:white; ">Try this one for practice.</h2>' + 
+  '<h2 style="color:white; ">Do your best to keep tapping at the same rate as the tones.</h2>' +
+  '<p style="color:white; ">Press the 1 key to start the first trial.</p>',
   choices: [49]
 };
 
 let experimentStartInst = {
   type: "html-keyboard-response",
-  stimulus: '<p style="color:white; font-size:18px">The experiment will now begin.</p>' + 
-  '<p style="color:white; font-size:18px">If you need more practice, refresh your browser to repeat the instructions and practice trials.</p>' + '<br>' + '<p style="color:white; font-size:18px">Do you have any questions?</p>' + '<br>' + '<p style="color:white; font-size:18px">If not, press the 1 key to start the first trial.</p>',
+  stimulus: '<h2 style="color:white; ">The experiment will now begin.</h2>' + 
+  '<h3 style="color:white; ">If you need more practice, refresh your browser to repeat the instructions and practice trials.</h3>' +
+  '<h2 style="color:white; ">Do you have any questions?</h2>' +
+  '<p style="color:white; ">If not, press the 1 key to start the first trial.</p>',
   choices: [49]
 };
 
@@ -68,7 +78,7 @@ let experimentStartInst = {
 
 let getReady = { 
   type: 'html-button-response',
-  stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">Get Ready To Tap!</p>',
+  stimulus: '<h2 id="counter" style="text-align:center; color:white; ">Get Ready to Tap!</h2>',
   button_html: '<button id="countdownPrompt" style = "outline:none; border:none; background-color:gray" onclick="countdown()" onkeypress="countdown()"></button>', //7.15.20 this used to have START in it which was displayed for some reason
   choices: jsPsych.NO_KEYS, //Spacebar
   trial_duration: 5000,
@@ -135,12 +145,12 @@ let tapTone = { // Collects responses for tone paced tapping for the first 250 m
       data.block = blockIterator;
       },
   // stimulus: function() { return "Stimuli/50msec.wav" },
-  prompt: '<p style="text-align:center; color:white; font-size:30px">+</p>',
+  prompt: '<h1 style="text-align:center; color:white; ">+</h1>',
 }
 
 let toneITI = { // this was added to capture taps before the next tone in order to capture 2 taps within a single 500 ms inter-tap interval. Otherwise, get nulls.
   type: 'html-keyboard-response',
-  stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
+  stimulus: '<h1 id="counter" style="text-align:center; color:white; ">+</h1>',
   choices: [32], //Spacebar
   response_ends_trial: false,
   on_finish: function (data) {
@@ -168,7 +178,7 @@ let toneITI = { // this was added to capture taps before the next tone in order 
 
 let tapNoTone = { // this was added to capture taps before the next tap interval in order to capture 2 taps within a single 500 ms inter-tap interval. Otherwise, get nulls.
   type: 'html-keyboard-response',
-  stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
+  stimulus: '<h1 id="counter" style="text-align:center; color:white; ">+</h1>',
   choices: [32], //Spacebar
   response_ends_trial: false,
   on_finish: function (data) {
@@ -196,7 +206,7 @@ let tapNoTone = { // this was added to capture taps before the next tap interval
 
 let noToneITI = { // this was added to capture taps before the next tap interval in order to capture 2 taps within a single 500 ms inter-tap interval. Otherwise, get nulls.
   type: 'html-keyboard-response',
-  stimulus: '<p id="counter" style="text-align:center; color:white; font-size:30px">+</p>',
+  stimulus: '<h1 id="counter" style="text-align:center; color:white; ">+</h1>',
   choices: [32], //Spacebar
   response_ends_trial: false,
   on_finish: function (data) {
