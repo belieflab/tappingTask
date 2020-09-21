@@ -167,7 +167,7 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
     response_ends_trial: false,
     trial_ends_after_audio: false,
     trial_duration: 250,
-    stimulus: "stim/50msec.wav",
+    stimulus: audio,
     on_finish: function (data) {
         console.log(data.key_press);
         j=0;
@@ -365,7 +365,7 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
     response_ends_trial: false,
     trial_ends_after_audio: false,
     trial_duration: 125,
-    stimulus: "stim/50msec.wav",
+    stimulus: tone,
     on_finish: function (data) {
         console.log(data.key_press);
         data.subjectKey = 'GUID';
