@@ -67,7 +67,7 @@ let instructions_5 = {
 
 let experimentStartInst = {
   type: "html-keyboard-response",
-  stimulus: '<h2 style="color:white; ">The experiment will now begin.</h2>' + 
+  stimulus: '<h2 style="color:white; ">The experiment will begin now.</h2>' + 
   '<h3 style="color:white; ">If you need more practice, refresh your browser to repeat the instructions and practice trials.</h3>' +
   '<h2 style="color:white; ">Do you have any questions?</h2>' +
   '<p style="color:white; ">If not, press the 1 key to start the first trial.</p>',
