@@ -1,23 +1,21 @@
-// function to store subject number on submit
-let workerID;
+/* pass workerId variable */
+let workerId;
+
+let handedness;
+let antihandedness;
 
 
-// let sexMale;
-// let sexFemale;
-// let age;
+
 let ageAtAssessment;
-// let age;
+
 let sexAtBirth;
-// let currentAge;
-// let handedness;
-// let antihandedness;
-// let EasyKey_uCase;
-// let HardKey_uCase;
+
 let today = new Date();
 let dd = String(today.getDate()).padStart(2, '0');
 let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 let yyyy = today.getFullYear();
 today = mm + '/' + dd + '/' + yyyy;
+
 
 function validateIntake() {
     let intake = document.getElementById("intake");
@@ -55,8 +53,14 @@ function ageFinder() {
 function submitIntake() {
     let subjectID = document.getElementById("subjectid").value;
     let siteID = document.getElementById("siteid");
+    let rightHandedness = document.getElementById("rightHanded").checked;
+    let leftHandedness = document.getElementById("leftHanded").checked;
     
-
+    if(rightHandedness === true) {
+        handedness = "Right";
+    } else if(leftHandedness === true) {
+        handedness = "Left";
+    } 
     switch(siteID.options[siteID.selectedIndex].value){
         case "Maryland":
             siteNumber = "10";
@@ -248,3 +252,4 @@ function submitIntake() {
 //         // checkHandedness();
 //     }
 // }
+
