@@ -82,7 +82,7 @@ let getReady = {
 
 let countDown = { 
   type: 'audio-keyboard-response', //html is the most versatile. Use html-keyboard-response and stuff as many things in it as possible
-  stimulus: audio,
+  stimulus: tone,
   prompt: function(){
       return countdownTrial[j];
   },
@@ -112,7 +112,7 @@ let tapTone = { // Collects responses for tone paced tapping for the first 250 m
   trial_ends_after_audio: false,
   trial_duration: 250,
   // trial_ends_after_audio: true,
-  stimulus: "stim/50msec.wav",
+  stimulus: tone,
   on_finish: function (data) {
       console.log(data.key_press)
       data.subjectKey = 'GUID';

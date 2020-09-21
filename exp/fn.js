@@ -26,7 +26,7 @@ function checkHandedness(){
 function startExperiment(){
     jsPsych.init({
     timeline: timeline,
-    preload_audio: audio,
+    preload_audio: tone,
     show_progress_bar: true,
     //use_webaudio: false,
     // on_finish: countdown(1),
