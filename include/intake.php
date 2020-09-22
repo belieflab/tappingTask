@@ -74,7 +74,7 @@
   </label>
 </form>
 <br>
-<button id="submitButton" class="loadMain" onclick="submitIntake(), ageFinder()" type="button">SUBMIT</button>
+<button id="submitButton" class="loadMain" onclick="submitIntake(), ageFinder()" type="button">VALIDATE</button>
 </div>
 <div id="validation" style="display: none">
     <br>

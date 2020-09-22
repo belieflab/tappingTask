@@ -57,9 +57,11 @@ function submitIntake() {
     let leftHandedness = document.getElementById("leftHanded").checked;
     
     if(rightHandedness === true) {
-        handedness = "Right";
+        handedness = "right";
+        antihandedness = "left";
     } else if(leftHandedness === true) {
-        handedness = "Left";
+        handedness = "left";
+        antihandedness = "right";
     } 
     switch(siteID.options[siteID.selectedIndex].value){
         case "Maryland":
@@ -92,7 +94,7 @@ function submitIntake() {
         alert("Please enter a valid subjectid")
     } else {
         alert("your subjectid is " + siteNumber + subjectID);
-        workerID = parseInt(siteNumber + subjectID);
+        workerId = parseInt(siteNumber + subjectID);
         validateIntake();
     }
 }
@@ -156,7 +158,7 @@ function submitIntake() {
 //     } else {
 //         alert("your subjectid is " + siteNumber + subjectID);
 //         // ageAtAssessment = parseInt(currentAge);
-//         workerID = parseInt(siteNumber + subjectID);
+//         workerId = parseInt(siteNumber + subjectID);
 
 
 //         // ageAtAssessment = parseInt(currentAge);
@@ -178,7 +180,7 @@ function submitIntake() {
 
 
 // // function to store subject number on submit
-// let workerID;
+// let workerId;
 // // let handedness;
 // // let antihandedness;
 // // let EasyKey_uCase; 
@@ -247,7 +249,7 @@ function submitIntake() {
 //         alert("Please enter a valid subjectid")
 //     } else {
 //         alert("your subjectid is " + siteNumber + subjectID);
-//         workerID = parseInt(siteNumber + subjectID);
+//         workerId = parseInt(siteNumber + subjectID);
 //         validateIntake();
 //         // checkHandedness();
 //     }

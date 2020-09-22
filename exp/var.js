@@ -8,7 +8,7 @@ let experimentIterator = 1;
 
 let tapping_stimuli = []; /* I believe this creates an array that holds the trial information. Does this need to be done in a for loop? */
 for (let i = 0; i < 100; i++){
-  tapping_stimuli.push('<p style="text-align:center; color:green; font-size:50px">Go!</p>'); //this is a thought of these in between the ps in an array
+  tapping_stimuli.push('<h1 style="text-align:center; color:lightgreen">Go!</h1>'); //this is a thought of these in between the ps in an array
 }
 
 stimuliDominant = [];

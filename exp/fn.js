@@ -21,36 +21,13 @@ function startExperiment(){
   });
 }
 
-
-      // function to store subject number on submit
-
-    
-    
 function countdown(){ // initialize timer
     let sec = 5; // set timer in seconds
-    let counTdown = setInterval(function(){
+    setInterval(function(){
     document.getElementById('countdown').innerHTML=sec;
     sec--;
-    if (sec < 0) {
+    if (sec < 1) {
         sec = 5;
       } 
     }, 1000);
   }
-    
-    //   function experimentTimer(){ // initialize timer
-    //     let seconds = 10; // set timer in seconds
-    //     let counTdown = setInterval(function(){
-    //     document.getElementById('experimentTimer').innerHTML=sec;
-    //     seconds--;
-    //     console.log(seconds)
-    //     if (seconds < 0) {
-    //         seconds = 10;
-    //         while (stimuliLeft.length > 0) {
-    //         stimuliLeft.pop()       
-    //         }
-    //         while (stimuliRight.length > 0) {
-    //         stimuliRight.pop()       
-    //         }
-    //       } 
-    //     }, 1000);
-    //   }
