@@ -88,8 +88,9 @@
 </div>
 <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
 <script>$("button.loadMain").click(function(){
-      // $.getScript("exp/timeline.js");
-      // setTimeout(5000);
+      $.getScript("exp/var.js"); // we are passing handedness into the exp
+      $.getScript("exp/timeline.js");
+      setTimeout(2000);
     $.getScript("exp/main.js");
     // $.getScript("exp/timeline.js");
     // $.load("include/consent.php");
