@@ -1,5 +1,5 @@
 // function to store subject number on submit
-let workerID;
+let workerId;
 
 
 // let sexMale;
@@ -88,7 +88,7 @@ function submitIntake() {
         alert("Please enter a valid subjectid")
     } else {
         alert("your subjectid is " + siteNumber + subjectID);
-        workerID = parseInt(siteNumber + subjectID);
+        workerId = parseInt(siteNumber + subjectID);
         validateIntake();
     }
 }
@@ -152,7 +152,7 @@ function submitIntake() {
 //     } else {
 //         alert("your subjectid is " + siteNumber + subjectID);
 //         // ageAtAssessment = parseInt(currentAge);
-//         workerID = parseInt(siteNumber + subjectID);
+//         workerId = parseInt(siteNumber + subjectID);
 
 
 //         // ageAtAssessment = parseInt(currentAge);
