@@ -20,14 +20,3 @@ function startExperiment(){
     //}
   });
 }
-
-function countdown(){ // initialize timer
-    let sec = 5; // set timer in seconds
-    setInterval(function(){
-    document.getElementById('countdown').innerHTML=sec;
-    sec--;
-    if (sec < 1) {
-        sec = 5;
-      } 
-    }, 1000);
-  }

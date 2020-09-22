@@ -1,8 +1,7 @@
 /* pass workerId variable */
 let workerId;
 
-let handedness;
-let antihandedness;
+
 
 
 

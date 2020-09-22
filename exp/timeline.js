@@ -78,15 +78,20 @@ let promptDominant = {
   //'<p style="color:white; ">Press the SPACEBAR to start tapping.</p>',
 //   choices: [32], //Spacebar
 choices: jsPsych.NO_KEYS,
-  on_finish: countdown(1),
   trial_duration: 5000,
 }
 
 let countDownTap = { 
   type: 'html-keyboard-response',
-  stimulus: '<h1 style="color:white" id="countdown"></h1>',
+  stimulus: '',
+  prompt: function(){
+    return countdownTrial[j];
+},
   choices: jsPsych.NO_KEYS,
-  trial_duration: 5500,
+  trial_duration: 1000,
+  on_finish: function(data){
+    j++
+  },
 }
 
 let startTimer = {
@@ -180,7 +185,6 @@ let promptNondominant = { //
   choices: jsPsych.NO_KEYS,
   trial_duration: 5000,
   response_ends_trial: false,
-  on_finish: countdown(1),
 }
 
 let tapDominant = { // I think this is the object for collecting responses //
