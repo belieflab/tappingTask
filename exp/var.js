@@ -1,7 +1,7 @@
-// let workerID = prompt( 'Subject ID' );
+// let workerId = prompt( 'Subject ID' );
 
 // let handedness =prompt("Are you right or left handed?");
-// let workerID;
+// let workerId;
 
 let handedness;
 let antihandedness;

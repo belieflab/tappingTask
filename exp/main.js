@@ -39,10 +39,10 @@ let endExperimentProcedure = { //This loops over the intrudction objects
 timeline.push(instProcedure)
 timeline.push(getReady, practiceProcedureCountDown, procedureTone, procedureNoTone)// PRACTICE
 timeline.push(experimentStartInst)
-timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 1
-timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 2
-timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 3
-timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 4
-timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 5
-timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 6
+// timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 1
+// timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 2
+// timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 3
+// timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 4
+// timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 5
+// timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 6
 timeline.push(endExperimentProcedure)
