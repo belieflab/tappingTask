@@ -132,6 +132,7 @@ let stopTapping = {
     trial_duration: 1000,
     on_finish: function(data) {
         blockIterator++
+        j=0; 
       },
   }
 
@@ -174,6 +175,12 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
     console.log(data.key_press)
     data.block = "practice";
     data.index = -1;
+    data.subjectKey = 'GUID';
+    data.src_subject_id = workerId;
+    data.site = siteNumber;
+    data.interview_date = today;
+    data.interview_age = ageAtAssessment;
+    data.sex = sexAtBirth;
   }
 }
 
@@ -219,5 +226,11 @@ let practiceTapDominant = { // I think this is the object for collecting respons
     console.log(data.key_press)
     data.block = "practice";
     data.index = -1;
+    data.subjectKey = 'GUID';
+    data.src_subject_id = workerId;
+    data.site = siteNumber;
+    data.interview_date = today;
+    data.interview_age = ageAtAssessment;
+    data.sex = sexAtBirth;
   }
 }
