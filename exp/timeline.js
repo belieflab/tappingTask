@@ -139,6 +139,12 @@ let countDownSlow = {
     data: jsPsych.timelineVariable('data'),
     on_finish: function(data){
     j++
+    data.subjectKey = 'GUID';
+    data.src_subject_id = workerId;
+    data.site = siteNumber;
+    data.interview_date = today;
+    data.interview_age = ageAtAssessment;
+    data.sex = sexAtBirth;
     data.tap_type = "slow-countdown";
     if (practiceIterator >= -188) {
       data.trial = practiceIterator;
@@ -336,7 +342,13 @@ let countDownFast = {
     response_ends_trial: false,
     data: jsPsych.timelineVariable('data'),
     on_finish: function(data){
-    j++
+    j++//this shit is critical for the countdown to function properly.
+    data.subjectKey = 'GUID';
+    data.src_subject_id = workerId;
+    data.site = siteNumber;
+    data.interview_date = today;
+    data.interview_age = ageAtAssessment;
+    data.sex = sexAtBirth;
     data.tap_type = "fast-countdown";
     if (practiceIterator >= -188) {
       data.trial = practiceIterator;
