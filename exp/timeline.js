@@ -159,7 +159,7 @@ let tapNondominant = { // I think this is the object for collecting responses //
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
     data.block = blockIterator;
-    data.index = experimentIterator;
+    data.trial = experimentIterator;
     experimentIterator++
   }
 }
@@ -174,7 +174,7 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
   on_finish: function (data) {
     console.log(data.key_press)
     data.block = "practice";
-    data.index = -1;
+    data.trial = -1;
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.site = siteNumber;
@@ -210,7 +210,7 @@ let tapDominant = { // I think this is the object for collecting responses //
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
     data.block = blockIterator;
-    data.index = experimentIterator;
+    data.trial = experimentIterator;
     experimentIterator++
   }
 }
@@ -225,7 +225,7 @@ let practiceTapDominant = { // I think this is the object for collecting respons
   on_finish: function (data) {
     console.log(data.key_press)
     data.block = "practice";
-    data.index = -1;
+    data.trial = -1;
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.site = siteNumber;
