@@ -171,7 +171,7 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
     on_finish: function (data) {
         console.log(data.key_press);
         j=0;
-        data.subjectKey = 'GUID';
+        data.subjectkey = 'GUID';
         data.src_subject_id = workerId;
         data.site = siteNumber;
         data.interview_date = today;
@@ -208,7 +208,7 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = 'GUID';
+        data.subjectkey = 'GUID';
         data.src_subject_id = workerId;
         data.site = siteNumber;
         data.interview_date = today;
@@ -244,7 +244,7 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = 'GUID';
+        data.subjectkey = 'GUID';
         data.src_subject_id = workerId;
         data.site = siteNumber;
         data.interview_date = today;
@@ -280,7 +280,7 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = 'GUID';
+        data.subjectkey = 'GUID';
         data.src_subject_id = workerId;
         data.site = siteNumber;
         data.interview_date = today;
@@ -368,7 +368,7 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
     stimulus: tone,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = 'GUID';
+        data.subjectkey = 'GUID';
         data.src_subject_id = workerId;
         data.site = siteNumber;
         data.interview_date = today;
@@ -406,7 +406,7 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = 'GUID';
+        data.subjectkey = 'GUID';
         data.src_subject_id = workerId;
         data.site = siteNumber;
         data.interview_date = today;
@@ -442,7 +442,7 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = 'GUID';
+        data.subjectkey = 'GUID';
         data.src_subject_id = workerId;
         data.site = siteNumber;
         data.interview_date = today;
@@ -478,7 +478,7 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectKey = 'GUID';
+        data.subjectkey = 'GUID';
         data.src_subject_id = workerId;
         data.site = siteNumber;
         data.interview_date = today;
