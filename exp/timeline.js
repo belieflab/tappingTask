@@ -152,7 +152,7 @@ let tapNondominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.subjectKey = 'GUID';
+    data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.site = siteNumber;
     data.interview_date = today;
@@ -175,7 +175,7 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
     console.log(data.key_press)
     data.block = "practice";
     data.index = -1;
-    data.subjectKey = 'GUID';
+    data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.site = siteNumber;
     data.interview_date = today;
@@ -203,7 +203,7 @@ let tapDominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.subjectKey = 'GUID';
+    data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.site = siteNumber;
     data.interview_date = today;
@@ -226,7 +226,7 @@ let practiceTapDominant = { // I think this is the object for collecting respons
     console.log(data.key_press)
     data.block = "practice";
     data.index = -1;
-    data.subjectKey = 'GUID';
+    data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.site = siteNumber;
     data.interview_date = today;
