@@ -1,0 +1,2 @@
+tempo_tapping,1,,,,,,,,,,,,,,,,
+rt,stimulus,key_press,trial_type,trial_index,time_elapsed,internal_node_id,button_pressed,tap_type,trial,test_part,block,subjectkey,src_subject_id,site,interview_date,interview_age,sex
