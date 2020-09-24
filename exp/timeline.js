@@ -9,8 +9,8 @@ let timeline = [];
 let welcome = {
     type: "html-keyboard-response",
     stimulus: '<h1 style="color:white">Welcome to the last part of the Finger Tapping experiment!</h1>' +
-    '<p style="color:white">Press the spacebar to continue.</p>', //by default, jsPysch is white background and white text
-    choices: [32],
+    '<p style="color:white">Press the 1 key to continue.</p>', //by default, jsPysch is white background and white text
+    choices: [49],
     // on_load: checkHandedness(),
 };
 
@@ -139,12 +139,6 @@ let countDownSlow = {
     data: jsPsych.timelineVariable('data'),
     on_finish: function(data){
     j++
-    data.subjectKey = 'GUID';
-    data.src_subject_id = workerId;
-    data.site = siteNumber;
-    data.interview_date = today;
-    data.interview_age = ageAtAssessment;
-    data.sex = sexAtBirth;
     data.tap_type = "slow-countdown";
     if (practiceIterator >= -188) {
       data.trial = practiceIterator;
@@ -162,6 +156,12 @@ let countDownSlow = {
       data.condition = "time-tapping-match";
     }
     data.block = blockIterator;
+    data.subjectKey = 'GUID';
+    data.src_subject_id = workerId;
+    data.site = siteNumber;
+    data.interview_date = today;
+    data.interview_age = ageAtAssessment;
+    data.sex = sexAtBirth;
     }
 }
 
@@ -177,12 +177,6 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
     on_finish: function (data) {
         console.log(data.key_press);
         j=0;
-        data.subjectkey = 'GUID';
-        data.src_subject_id = workerId;
-        data.site = siteNumber;
-        data.interview_date = today;
-        data.interview_age = ageAtAssessment;
-        data.sex = sexAtBirth;
         data.tap_type = "slow-tone-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -200,6 +194,12 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
+        data.subjectkey = 'GUID';
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<h1 style="text-align:center; color:white">+</h1>',
@@ -214,12 +214,6 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectkey = 'GUID';
-        data.src_subject_id = workerId;
-        data.site = siteNumber;
-        data.interview_date = today;
-        data.interview_age = ageAtAssessment;
-        data.sex = sexAtBirth;
         data.tap_type = "slow-tone-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -237,6 +231,12 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
+        data.subjectkey = 'GUID';
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
         },
     trial_duration: 250,
 }
@@ -250,12 +250,6 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectkey = 'GUID';
-        data.src_subject_id = workerId;
-        data.site = siteNumber;
-        data.interview_date = today;
-        data.interview_age = ageAtAssessment;
-        data.sex = sexAtBirth;
         data.tap_type = "slow-self-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -273,6 +267,12 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
+        data.subjectkey = 'GUID';
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
         },
     trial_duration: 250,
 }
@@ -286,12 +286,6 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectkey = 'GUID';
-        data.src_subject_id = workerId;
-        data.site = siteNumber;
-        data.interview_date = today;
-        data.interview_age = ageAtAssessment;
-        data.sex = sexAtBirth;
         data.tap_type = "slow-self-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -309,6 +303,12 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
+        data.subjectkey = 'GUID';
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
         },
     trial_duration: 250,
 }
@@ -343,12 +343,6 @@ let countDownFast = {
     data: jsPsych.timelineVariable('data'),
     on_finish: function(data){
     j++//this shit is critical for the countdown to function properly.
-    data.subjectKey = 'GUID';
-    data.src_subject_id = workerId;
-    data.site = siteNumber;
-    data.interview_date = today;
-    data.interview_age = ageAtAssessment;
-    data.sex = sexAtBirth;
     data.tap_type = "fast-countdown";
     if (practiceIterator >= -188) {
       data.trial = practiceIterator;
@@ -366,6 +360,12 @@ let countDownFast = {
       data.condition = "time-tapping-match";
     }
     data.block = blockIterator;
+    data.subjectkey = 'GUID';
+    data.src_subject_id = workerId;
+    data.site = siteNumber;
+    data.interview_date = today;
+    data.interview_age = ageAtAssessment;
+    data.sex = sexAtBirth;
     }
 }
 
@@ -380,12 +380,6 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
     stimulus: tone,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectkey = 'GUID';
-        data.src_subject_id = workerId;
-        data.site = siteNumber;
-        data.interview_date = today;
-        data.interview_age = ageAtAssessment;
-        data.sex = sexAtBirth;
         j=0; // if you do not reset
         data.tap_type = "fast-tone-paced";
         if (practiceIterator >= -188) {
@@ -404,6 +398,12 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
+        data.subjectkey = 'GUID';
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<h1 id="counter" style="text-align:center; color:white">+</h1>',
@@ -418,12 +418,6 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectkey = 'GUID';
-        data.src_subject_id = workerId;
-        data.site = siteNumber;
-        data.interview_date = today;
-        data.interview_age = ageAtAssessment;
-        data.sex = sexAtBirth;
         data.tap_type = "fast-tone-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -441,6 +435,12 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
+        data.subjectkey = 'GUID';
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
         },
     trial_duration: 125,
 }
@@ -454,12 +454,6 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectkey = 'GUID';
-        data.src_subject_id = workerId;
-        data.site = siteNumber;
-        data.interview_date = today;
-        data.interview_age = ageAtAssessment;
-        data.sex = sexAtBirth;
         data.tap_type = "fast-self-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -477,6 +471,12 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
+        data.subjectkey = 'GUID';
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
         },
     trial_duration: 125,
 }
@@ -490,12 +490,6 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
     response_ends_trial: false,
     on_finish: function (data) {
         console.log(data.key_press);
-        data.subjectkey = 'GUID';
-        data.src_subject_id = workerId;
-        data.site = siteNumber;
-        data.interview_date = today;
-        data.interview_age = ageAtAssessment;
-        data.sex = sexAtBirth;
         data.tap_type = "fast-self-paced";
         if (practiceIterator >= -188) {
           data.trial = practiceIterator;
@@ -513,6 +507,12 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
+        data.subjectkey = 'GUID';
+        data.src_subject_id = workerId;
+        data.site = siteNumber;
+        data.interview_date = today;
+        data.interview_age = ageAtAssessment;
+        data.sex = sexAtBirth;
         },
     trial_duration: 125,
 }
