@@ -8,7 +8,7 @@
 
 
 
-let tone = ["stim/50msec.wav"];
+let tone = "stim/50msec.wav";
 
 // let stimuli;
 
@@ -29,11 +29,11 @@ for (let k = 10; k > 0; k--){
 // adds sound to the countdown stimuli to be passed to the countdown object
 countdown_practice_stim = [];
 for (let i = 0; i < 10; i++){
-    countdown_practice_stim.push({stimulus: countdownTrial[i], sound: tone, data: {test_part: 'practice'}},)
+    countdown_practice_stim.push({stimulus: countdownTrial[i], stimulus: tone.slice(5,15), data: {test_part: 'practice'}},)
 }
 
 // adds sound to the countdown stimuli to be passed to the countdown object
 countdown_experiment_stim = [];
 for (let i = 0; i < 10; i++){
-    countdown_experiment_stim.push({stimulus: countdownTrial[i], sound: tone, data: {test_part: 'experiment'}},)
+    countdown_experiment_stim.push({stimulus: countdownTrial[i], stimulus: tone.slice(5,15), data: {test_part: 'experiment'}},)
 }

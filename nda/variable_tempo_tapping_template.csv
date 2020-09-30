@@ -1,2 +1,2 @@
 variable_tempo_tapping,1,,,,,,,,,,,,,,,,,
-subjectkey,src_subject_id,interview_date,interview_age,sex,rt,stimulus,key_press,trial_type,trial_index,time_elapsed,internal_node_id,button_pressed,test_part,tap_type,trial,block,site,condition
+subjectkey,src_subject_id,interview_date,interview_age,sex,rt,time_elapsed,test_part,tap_type,trial,block,condition
