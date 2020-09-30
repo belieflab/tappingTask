@@ -90,6 +90,7 @@ let countDownTap = {
   choices: jsPsych.NO_KEYS,
   trial_duration: 1000,
   on_finish: function(data){
+    data.stimulus = "start"
     j++;
   },
 }
@@ -98,7 +99,6 @@ let startTimer = {
   type: "html-keyboard-response",
   stimulus: '<h1 id="timer" style="text-align:center; color:lightgreen; ">Go!</h1>',
   on_finish: function experimentTimer(minutes) {// jsPsych on_finish cannot handle nested functions, you have to directly paste it in.
-    data.stimulus = "Go!"
     let seconds = 10;
     let mins = minutes;
     function tick() {
