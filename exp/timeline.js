@@ -177,7 +177,6 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
   on_finish: function (data) {
     console.log(data.key_press)
     data.block = practiceBlockIterator;
-    practiceBlockIterator--;
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.interview_date = today;
@@ -228,7 +227,6 @@ let practiceTapDominant = { // I think this is the object for collecting respons
   on_finish: function (data) {
     console.log(data.key_press)
     data.block = practiceBlockIterator;
-    practiceBlockIterator--;
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.interview_date = today;
