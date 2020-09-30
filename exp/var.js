@@ -6,7 +6,7 @@
 let handedness;
 let antihandedness;
 
-let tone = ["stim/50msec.wav"];
+let tone = "stim/50msec.wav";
 
 // let stimuli;
 
