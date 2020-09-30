@@ -90,7 +90,7 @@ let countDownTap = {
   choices: jsPsych.NO_KEYS,
   trial_duration: 1000,
   on_finish: function(data){
-    data.stimulus = "start"
+    data.stimuli = "start"
     j++;
   },
 }
