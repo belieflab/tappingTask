@@ -7,7 +7,7 @@ sex,String,20,Required,"Sex of the subject, assgined at birth",M;F,M = Male; F =
 rt,Float,,Recommended,Reaction time of each response.,,,
 time_elapsed,integer,,Recommended,Total time passed,,useful for determining runtime as well as whether subject idles during task,
 stimulus,String,,Recommended,Returns the stimulus tone that is displayed on the screen throughout the experiment ,,,
-test_part,String,,Recommended,Returns if the block is the experiment or practice. ,slow-tone-tapping;fast-tone-tapping;slow-self-tapping;fast-self-tapping,,
+test_part,String,,Recommended,Denotes if the block is the experiment or practice. ,slow-tone-tapping;fast-tone-tapping;slow-self-tapping;fast-self-tapping,,
 tap_type,String,,Recommended,"Denotes if response is concurrent with a tone or self-paced without the tone, as well as if slow or fast responses required.",,Negative values reflect practice block.,
 trial,Float,,Recommended,Returns the trial number across the experimental blocks.,,,
 block,Float,,Recommended,Returns the current block index.,1 to 6; -1,The practice block is denoted using -1.,
