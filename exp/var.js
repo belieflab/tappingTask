@@ -5,6 +5,7 @@
 // this one has to start at 1 because it is updated after the first block
 let blockIterator = 1;
 let experimentIterator = 1;
+let practiceBlockIterator = -1;
 let practiceIterator = -1;
 let j=0;
 

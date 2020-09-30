@@ -142,7 +142,7 @@ let stopTapping = {
     choices: jsPsych.NO_KEYS,
     trial_duration: 1000,
     on_finish: function(data) {
-      // blockIterator++
+      practiceBlockIterator--
       j=0;
     },
   }
@@ -176,7 +176,8 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
   prompt: '<p hidden id="counter" style="text-align:center; color:white"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.block = "practice";
+    data.block = practiceBlockIterator;
+    practiceBlockIterator--;
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.interview_date = today;
@@ -226,7 +227,8 @@ let practiceTapDominant = { // I think this is the object for collecting respons
   prompt: '<p hidden id="counter" style="text-align:center; color:white"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.block = "practice";
+    data.block = practiceBlockIterator;
+    practiceBlockIterator--;
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
     data.interview_date = today;
