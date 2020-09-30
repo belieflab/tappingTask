@@ -98,7 +98,7 @@ let startTimer = {
   type: "html-keyboard-response",
   stimulus: '<h1 id="timer" style="text-align:center; color:lightgreen; ">Go!</h1>',
   on_finish: function experimentTimer(minutes) {// jsPsych on_finish cannot handle nested functions, you have to directly paste it in.
-    // jsPsych.endCurrentTimeline();
+    data.stimulus = "Go!"
     let seconds = 10;
     let mins = minutes;
     function tick() {
