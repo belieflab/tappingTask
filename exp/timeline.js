@@ -127,7 +127,6 @@ let tapTone = { // Collects responses for tone paced tapping for the first 250 m
       console.log(data.key_press)
       data.subjectkey = 'GUID';
       data.src_subject_id = workerId;
-      data.site = siteNumber;
       data.interview_date = today;
       data.interview_age = ageAtAssessment;
       data.sex = sexAtBirth;
@@ -157,7 +156,6 @@ let toneITI = { // this was added to capture taps before the next tone in order 
       console.log(data.key_press)
       data.subjectkey = 'GUID';
       data.src_subject_id = workerId;
-      data.site = siteNumber;
       data.interview_date = today;
       data.interview_age = ageAtAssessment;
       data.sex = sexAtBirth;
@@ -185,7 +183,6 @@ let tapNoTone = { // this was added to capture taps before the next tap interval
       console.log(data.key_press)
       data.subjectkey = 'GUID';
       data.src_subject_id = workerId;
-      data.site = siteNumber;
       data.interview_date = today;
       data.interview_age = ageAtAssessment;
       data.sex = sexAtBirth;
@@ -213,7 +210,6 @@ let noToneITI = { // this was added to capture taps before the next tap interval
       console.log(data.key_press)
       data.subjectkey = 'GUID';
       data.src_subject_id = workerId;
-      data.site = siteNumber;
       data.interview_date = today;
       data.interview_age = ageAtAssessment;
       data.sex = sexAtBirth;
