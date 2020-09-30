@@ -5,6 +5,7 @@
 // this one has to start at 1 because it is updated after the first block
 let blockIterator = 1;
 let experimentIterator = 1;
+let practiceIterator = -1;
 let j=0;
 
 // creates the html code to be placed in the countdown object for displaying the countdown

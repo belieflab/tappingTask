@@ -90,7 +90,7 @@ let countDownTap = {
   choices: jsPsych.NO_KEYS,
   trial_duration: 1000,
   on_finish: function(data){
-    j++
+    j++;
   },
 }
 
@@ -132,7 +132,7 @@ let stopTapping = {
     trial_duration: 1000,
     on_finish: function(data) {
         blockIterator++
-        j=0; 
+        j=0;
       },
   }
 
@@ -141,6 +141,10 @@ let stopTapping = {
     stimulus: '<h1 style="text-align:center; color:#FF0046">Stop!</h1>',
     choices: jsPsych.NO_KEYS,
     trial_duration: 1000,
+    on_finish: function(data) {
+      // blockIterator++
+      j=0;
+    },
   }
 
 let tapNondominant = { // I think this is the object for collecting responses //
@@ -154,7 +158,6 @@ let tapNondominant = { // I think this is the object for collecting responses //
     console.log(data.key_press)
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
-    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
@@ -174,13 +177,13 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
   on_finish: function (data) {
     console.log(data.key_press)
     data.block = "practice";
-    data.trial = -1;
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
-    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.trial = practiceIterator;
+    practiceIterator--
   }
 }
 
@@ -205,7 +208,6 @@ let tapDominant = { // I think this is the object for collecting responses //
     console.log(data.key_press)
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
-    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
@@ -225,12 +227,12 @@ let practiceTapDominant = { // I think this is the object for collecting respons
   on_finish: function (data) {
     console.log(data.key_press)
     data.block = "practice";
-    data.trial = -1;
     data.subjectkey = 'GUID';
     data.src_subject_id = workerId;
-    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.trial = practiceIterator;
+    practiceIterator--
   }
 }
