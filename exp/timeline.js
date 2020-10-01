@@ -187,7 +187,7 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
   }
 }
 
-let promptNondominant = { // 
+let promptNondominant = {
   type: 'html-keyboard-response',
   stimulus: '<h2 id="counter" style="text-align:center; color:white">Get ready to tap with your <u>' + antihandedness + '</u> hand.</h2>',  //+
   //'<p style="color:white; ">Press the SPACEBAR to start tapping.</p>',
