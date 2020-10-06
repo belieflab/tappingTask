@@ -45,16 +45,13 @@
   <input type="radio" id="female" name="sex" value="female" onclick="sexFinder(this.value)">
   </form>
 <form>
-
 <form>
     <!-- <label for="handedness"><b>Are you right or left handed?</b></label> -->
     <p><b>Which is your dominant hand?</b></p>
         <label for="right">Right</label>
         <input id="rightHanded" type="radio" value="rightHanded">
-
         <label for="left">Left</label>
         <input id="leftHanded" type="radio" value="leftHanded">
-
         <!-- <span class="checkmark"></span> -->
   </form>
     <p><b>Before proceeding to the task, please confirm that the following are true:</b></p>
@@ -62,19 +59,17 @@
     <input type="checkbox">
     <br>
   </label>
-  
-  <!-- <label class="container">Headphones plugged in? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp               
+  <label class="container">Headphones plugged in? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp               
     <input type="checkbox"> 
     <br>
   </label>
-
   <label class="container">Headphones volume at 50%? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp          
     <input type="checkbox"> 
     <br>
   </label>
 </form>
-<br> -->
-<button id="submitButton" class="loadMain" onclick="submitIntake(), ageFinder()" type="button">VALIDATE</button>
+<br>
+<button id="submitButton" class="loadMain" onclick="submitIntake(), ageFinder()" type="button">SUBMIT</button>
 </div>
 <div id="validation" style="display: none">
     <br>
@@ -88,10 +83,8 @@
 </div>
 <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
 <script>$("button.loadMain").click(function(){
-      // $.getScript("exp/var.js"); // we are passing handedness into the exp
+      // $.getScript("exp/timeline.js");
       // setTimeout(1000);
-      $.getScript("exp/timeline.js");
-      setTimeout(1000);
     $.getScript("exp/main.js");
     // $.getScript("exp/timeline.js");
     // $.load("include/consent.php");
@@ -114,5 +107,4 @@
   <input type="checkbox">
   <span class="checkmark"></span>
 </label> -->
-
 
