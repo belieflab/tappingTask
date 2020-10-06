@@ -7,7 +7,7 @@ sex,String,20,Required,"Sex of the subject, assgined at birth",M;F,M = Male; F =
 rt,Float,,Recommended,Reaction time of each response.,,,
 key_press,Float,,Recommended,The ascii keyboard key pressed for each response,32;49,32 = spacebar; 49 = 1 key,
 time_elapsed,integer,,Recommended,Total time passed,,useful for determining runtime as well as whether subject idles during task,
-motor_onset,Float,,Recommended,Returns ms delay in montor onsent for each block of the experiment ,,,
+motor_onset,Float,,Recommended,Returns ms delay in montor onsent for each block of the experiment ,start-block,,
 test_part,String,,Recommended,Denotes if the block is practice or the experiment.,dominant;non-dominant,Handedness,
 tap_number,Float,,Recommended,Returns the number of responses within each block.,,,
 block,Float,,Recommended,Returns the current block index.,1 to 6; -1,The practice block is denoted using -1.,
