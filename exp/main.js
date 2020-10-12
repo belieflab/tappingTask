@@ -46,3 +46,5 @@ timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BL
 timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 5
 timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone)// BLOCK 6
 timeline.push(endExperimentProcedure)
+timeline.push(save_data)
+timeline.push(end)
