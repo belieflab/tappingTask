@@ -506,3 +506,38 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
         },
     trial_duration: 125,
 }
+
+let save_data = {
+  type: "html-keyboard-response",
+  stimulus: "<p>Data saving...</p>"+
+  '<div class="sk-cube-grid">'+
+'<div class="sk-cube sk-cube1"></div>'+
+'<div class="sk-cube sk-cube2"></div>'+
+'<div class="sk-cube sk-cube3"></div>'+
+'<div class="sk-cube sk-cube4"></div>'+
+'<div class="sk-cube sk-cube5"></div>'+
+'<div class="sk-cube sk-cube6"></div>'+
+'<div class="sk-cube sk-cube7"></div>'+
+'<div class="sk-cube sk-cube8"></div>'+
+'<div class="sk-cube sk-cube9"></div>'+
+'</div>'+
+  "<p>Do not close this window until the text dissapears.</p>",
+
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 5000,
+  on_finish: function(){
+    saveData("delay-discounting_" + workerId, jsPsych.data.get().csv());
+  }
+};
+
+let end = {
+  type: "html-keyboard-response",
+  stimulus:   "<p>Thank you!</p>"+
+  "<p>You have successfully completed the experiment and your data has been saved.</p>"+
+  "<p>To leave feedback on this task, please click the following link:</p>"+
+  "<p><a href='https://omnibus.sh/eCRFs/feedback/vartempotapping.php'>Leave Task Feedback!</a></p>"+
+      // "<p>Please wait for the experimenter to continue.</p>"+
+  "<p>You may now close the expriment window at anytime.</p>",
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 60000,
+};

@@ -128,3 +128,5 @@ timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedure
 timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)
 timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched)// BLOCK 6- Time Matched
 timeline.push(endExperimentProcedure)
+timeline.push(save_data)
+timeline.push(end)
