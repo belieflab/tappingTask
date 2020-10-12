@@ -264,3 +264,5 @@ timeline.push(promptDominant, procedureCountDown, startTimer, procedureDominant,
 timeline.push(promptDominant, procedureCountDown, startTimer, procedureDominant, stopTapping, promptNondominant, procedureCountDown, startTimer, procedureNondominant, stopTapping) //2nd block
 timeline.push(promptDominant, procedureCountDown, startTimer, procedureDominant, stopTapping, promptNondominant, procedureCountDown, startTimer, procedureNondominant, stopTapping)  //3rd block
 timeline.push(endExperimentProcedure)
+timeline.push(save_data)
+timeline.push(end)
