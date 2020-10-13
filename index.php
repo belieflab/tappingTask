@@ -20,7 +20,7 @@ file_put_contents($name, $data);
     <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link> 
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!--the interpreter will take care of ordering, rel, type, href do not have to be in a specific order -->
   </head>
-  <body  style="background-color:gray;">  <!--any time you see style = all properties that follow are inline css -->
+  <body onbeforeunload="return areYouSure()" style="background-color:gray;">  <!--any time you see style = all properties that follow are inline css -->
     <?php include_once "include/intake.php"?>
   </body>
 <footer>  
