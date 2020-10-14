@@ -30,3 +30,9 @@ function startExperiment(){
     show_progress_bar: true,
     });
 }
+
+  //onbeforeunload in body
+  function areYouSure() {
+    return "Write something clever here...";
+  }
+  areYouSure();
