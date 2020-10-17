@@ -21,7 +21,7 @@ file_put_contents($name, $data);
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!--the interpreter will take care of ordering, rel, type, href do not have to be in a specific order -->
   </head>
   <body onbeforeunload="return areYouSure()" style="background-color:gray;">  <!--any time you see style = all properties that follow are inline css -->
-    <?php include_once "include/intake.php"?>
+    <?php id='unload' include_once "include/intake.php"?>
   </body>
 <footer>  
   <script src="exp/jQuery.js"></script>
