@@ -88,31 +88,12 @@
 </div>
 <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
 <script>$("button.loadMain").click(function(){
-      // $.getScript("exp/var.js"); // we are passing handedness into the exp
-      // setTimeout(1000);
       $.getScript("exp/timeline.js");
       setTimeout(1000);
     $.getScript("exp/main.js");
-    // $.getScript("exp/timeline.js");
-    // $.load("include/consent.php");
+    $("body").addClass("hideCursor");
   }); </script>
 <script>
 </script>
-<!-- <label class="container">One
-  <input type="checkbox" checked="checked">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Two
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Three
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label>
-<label class="container">Four
-  <input type="checkbox">
-  <span class="checkmark"></span>
-</label> -->
 
 
