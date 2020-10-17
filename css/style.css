@@ -229,3 +229,18 @@ p {
             transform: scale3D(0, 0, 1);
   } 
 }
+
+/* hide cursor */
+.hideCursor {
+  cursor: none;
+  }
+
+  /* disable clicks */
+  .noClick {
+    pointer-events: none;
+  }
+
+  /* hide cursor */
+.showCursor {
+  cursor: default;
+  }
