@@ -88,8 +88,8 @@
 </div>
 <script type="text/javascript" src="//code.jquery.com/jquery-git.js"></script>
 <script>$("button.loadMain").click(function(){
-      $.getScript("exp/timeline.js");
-      setTimeout(1000);
+      // $.getScript("exp/timeline.js");
+      // setTimeout(1000);
     $.getScript("exp/main.js");
     $("body").addClass("hideCursor");
   }); </script>
