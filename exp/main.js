@@ -161,6 +161,7 @@ let tapNondominant = { // I think this is the object for collecting responses //
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.handedness = handedness;
     data.block = blockIterator;
     data.trial = experimentIterator;
     experimentIterator++
