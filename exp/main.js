@@ -32,9 +32,11 @@ let instructions_1 = {
 
 let instructions_2 = {
   type: "html-keyboard-response",
-  stimulus: '<h3 style="color:white">While testing, you must keep your hand in the position pictured below:</h3>' +
-  '<img src="stim/handposition2.jpg" width="400" height="300"><img src="stim/handposition1.jpg" width="400" height="300">' +
-  '<h3 style="color:white">Keep your non-pointer finger curled and your thumb under your pointer finger.</h3>'+
+  stimulus: '<h3 style="color:white">While testing, you must keep your hands in the position pictured below:</h3>' +
+  '<img src="stim/handposition.jpg" width="1100" height="400">' + 
+  '<h3 style="color:white">Keep your non-pointer fingers curled with your pointer fingers on the spacebar as pictured.</h3>'+
+  '<h3 style="color:white">Rest your wrists and lower palm on the laptop surface, or if you have desktop computer, the table surface.</h3>'+
+  '<h3 style="color:white">Try not to rest your hands directly on trackpad if you are on a laptop.</h3>'+
   '<p style="color:white; font-size:18px">Press the 1 key to continue.</p>',
   choices: [49]
   };

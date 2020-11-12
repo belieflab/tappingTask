@@ -51,7 +51,6 @@
     <p><b>Which is your dominant hand?</b></p>
         <label for="right">Right</label>
         <input id="rightHanded" type="radio" value="rightHanded">
-
         <label for="left">Left</label>
         <input id="leftHanded" type="radio" value="leftHanded">
 
