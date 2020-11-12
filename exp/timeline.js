@@ -37,7 +37,7 @@ let selfTimeBreak = {
 
 let secondHalfStart = {
     type: "html-keyboard-response",
-    stimulus: '<h2 style="color:white">The experiment is going start.</h2>' +
+    stimulus: '<h2 style="color:white">The experiment is going to start.</h2>' +
     '<h3 style="color:white">Get ready to start tapping.</h3>', //by default, jsPysch is white background and white text
     choices: jsPsych.NO_KEYS,
     trial_duration: 5000,
@@ -108,6 +108,13 @@ let experimentStartInst = {
 //////////////////////////////////////////////////
 /////////////////SLOW TAPPING OBJECTS////////////
 ////////////////////////////////////////////////
+
+let stopTapping = {
+  type: 'html-keyboard-response',
+  stimulus: '<h1 style="text-align:center; color:white">Stop Tapping!</h1>',
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 5000,
+}
 
 /* Slow Tapping Condition Instruction Object */
 
