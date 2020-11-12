@@ -23,10 +23,10 @@ let endExperiment = {
 /* define instructions trial */
 let instructions_1 = {
   type: "html-keyboard-response",
-  stimulus: '<h2 style="color:white;">Your goal is to tap at the same speed as the tones you hear.</h2>' +
+  stimulus: '<h2 style="color:white;">Your goal is to tap the spacebar at the same speed as the tones you hear.</h2>' +
   '<h2 style="color:white">When each new trial starts, a countdown will begin at the same pace that you will be tapping.<h2>'+
   '<h2 style="color:white">Each number from 10 to 1 is accompanied by tones that you will try and tap along with during each trial.</h2>' +
-  '<h2 style="color:white">Unlike last time, you will <i>only</i> tap the spacebar with the hand you use for writing</h2>' +
+  '<h2 style="color:white">Unlike the Speed Tapping Task, for this task, you will <i>only</i> tap the spacebar with the hand you use for writing</h2>' +
   '<p style="color:white">Press the 1 key to continue.</p>',
   choices: [49], //without this, it can be any keyboard response
 };
@@ -35,6 +35,8 @@ let instructions_2 = {
   type: "html-keyboard-response",
   stimulus: '<h2 style="color:white">After the countdown reaches 1, you will see a "+" symbol presented with the tones.</h2>' +
   '<h3 style="color:white">When you see the "+" symbol, listen carefully and continue tapping the spacebar at the same rate as the tones.</h3>' +
+  '<h3 style="color:white">After a number of taps, the tone will stop and you will have to keep tapping at the same pace without the tone.</h3>' +
+  '<h3 style="color:white">All together, you will be tapping from the start of the countdown, all the way until you are told to stop tapping.</h3>' +
   '<p style="color:white; ">Press the 1 key to continue.</p>',
   choices: [49]
 };
@@ -226,6 +228,13 @@ let noToneITI = { // this was added to capture taps before the next tap interval
       data.block = blockIterator;
       },
   trial_duration: 250,
+}
+
+let stopTapping = {
+  type: 'html-keyboard-response',
+  stimulus: '<h1 style="text-align:center; color:white">Stop Tapping!</h1>',
+  choices: jsPsych.NO_KEYS,
+  trial_duration: 3000,
 }
 
 let save_data = {
