@@ -187,6 +187,7 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.handedness = handedness;
     data.trial = practiceIterator;
     practiceIterator--
   }
@@ -217,6 +218,7 @@ let tapDominant = { // I think this is the object for collecting responses //
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.handedness = handedness;
     data.block = blockIterator;
     data.trial = experimentIterator;
     experimentIterator++
@@ -239,6 +241,7 @@ let practiceTapDominant = { // I think this is the object for collecting respons
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.handedness = handedness;
     data.trial = practiceIterator;
     practiceIterator--
   }
