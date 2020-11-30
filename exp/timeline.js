@@ -127,11 +127,13 @@ let tapTone = { // Collects responses for tone paced tapping for the first 250 m
   stimulus: tone,
   on_finish: function (data) {
       console.log(data.key_press)
-      data.subjectkey = 'GUID';
+      data.subjectkey = GUID;
       data.src_subject_id = workerId;
+      data.site = siteNumber;
       data.interview_date = today;
       data.interview_age = ageAtAssessment;
       data.sex = sexAtBirth;
+      data.handedness = handedness;
       j=0; //this has to be reset to 0 for the countdown to work. j is left at 10 in countdown.
       data.tap_type = "tone-paced";
       if (practiceIterator >= -94) {
@@ -156,11 +158,13 @@ let toneITI = { // this was added to capture taps before the next tone in order 
   response_ends_trial: false,
   on_finish: function (data) {
       console.log(data.key_press)
-      data.subjectkey = 'GUID';
+      data.subjectkey = GUID;
       data.src_subject_id = workerId;
+      data.site = siteNumber;
       data.interview_date = today;
       data.interview_age = ageAtAssessment;
       data.sex = sexAtBirth;
+      data.handedness = handedness;
       data.tap_type = "tone-paced";
       if (practiceIterator >= -94) {
           data.trial = practiceIterator;
@@ -183,11 +187,13 @@ let tapNoTone = { // this was added to capture taps before the next tap interval
   response_ends_trial: false,
   on_finish: function (data) {
       console.log(data.key_press)
-      data.subjectkey = 'GUID';
+      data.subjectkey = GUID;
       data.src_subject_id = workerId;
+      data.site = siteNumber;
       data.interview_date = today;
       data.interview_age = ageAtAssessment;
       data.sex = sexAtBirth;
+      data.handedness = handedness;
       data.tap_type = "self-paced";
       if (practiceIterator >= -94) {
           data.trial = practiceIterator;
@@ -210,11 +216,13 @@ let noToneITI = { // this was added to capture taps before the next tap interval
   response_ends_trial: false,
   on_finish: function (data) {
       console.log(data.key_press)
-      data.subjectkey = 'GUID';
+      data.subjectkey = GUID;
       data.src_subject_id = workerId;
+      data.site = siteNumber;
       data.interview_date = today;
       data.interview_age = ageAtAssessment;
       data.sex = sexAtBirth;
+      data.handedness = handedness;
       data.tap_type = "self-paced";
       if (practiceIterator >= -94) {
           data.trial = practiceIterator;
@@ -269,9 +277,60 @@ let end = {
   stimulus:   "<p>Thank you!</p>"+
   "<p>You have successfully completed the experiment and your data has been saved.</p>"+
   "<p>To leave feedback on this task, please click the following link:</p>"+
-  "<p><a href='https://omnibus.sh/eCRFs/feedback/tempotapping.php'>Leave Task Feedback!</a></p>"+
-      // "<p>Please wait for the experimenter to continue.</p>"+
-  "<p>You may now close the expriment window at anytime.</p>",
+  "<p style='color:white;'><a href="+feedbackLink+">Leave Task Feedback!</a></p>"+
+  // "<p>Please wait for the experimenter to continue.</p>"+
+  "<p><i>You may now close the expriment window at anytime.</i></p>",
   choices: jsPsych.NO_KEYS,
-  trial_duration: 60000,
+  // trial_duration: 60000,
 };
+
+let instProcedure = { //This loops over the object
+  timeline: [welcome, instructions_1, instructions_2, instructions_3, instructions_4, instructions_5], 
+}    
+
+////////////////PRACTICE PROCEDURES/////////////
+
+let practiceProcedureCountDown = { //This loops over the object
+timeline: [countDown], //if you put fixation in front and the feedback after, it will display those in that order
+//timeline_variables: stimuliTone,
+randomize_order: false,// This is the outer procedure, looping over the stimuli
+timeline_variables: countdown_practice_stim
+}
+
+let procedureCountDown = { //This loops over the object
+  timeline: [countDown], //if you put fixation in front and the feedback after, it will display those in that order
+  //timeline_variables: stimuliTone,
+  randomize_order: false,// This is the outer procedure, looping over the stimuli
+  timeline_variables: countdown_experiment_stim
+}
+
+let procedureTone = { //This loops over the object
+  timeline: [tapTone, toneITI], //if you put fixation in front and the feedback after, it will display those in that order
+  //timeline_variables: stimuliTone,
+  randomize_order: false,// This is the outer procedure, looping over the stimuli
+  repetitions: 12,
+}
+
+let procedureNoTone = { //This loops over the object
+  timeline: [tapNoTone, noToneITI], //if you put fixation in front and the feedback after, it will display those in that order
+  //timeline_variables: stimuliTone,
+  randomize_order: false,// This is the outer procedure, looping over the stimuli
+  repetitions: 30,
+}
+
+let endExperimentProcedure = { //This loops over the intrudction objects
+  timeline: [endExperiment], 
+}    
+
+timeline.push(instProcedure)
+timeline.push(getReady, practiceProcedureCountDown, procedureTone, procedureNoTone, stopTapping)// PRACTICE
+timeline.push(experimentStartInst)
+timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone, stopTapping)// BLOCK 1
+timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone, stopTapping)// BLOCK 2
+timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone, stopTapping)// BLOCK 3
+timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone, stopTapping)// BLOCK 4
+timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone, stopTapping)// BLOCK 5
+timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone, stopTapping)// BLOCK 6
+timeline.push(endExperimentProcedure)
+timeline.push(save_data)
+timeline.push(end)

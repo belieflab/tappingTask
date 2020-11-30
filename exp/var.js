@@ -1,10 +1,6 @@
-// let workerId = prompt( 'Subject ID' );
 
-// let handedness =prompt("Are you right or left handed?");
-// let workerId;
 
-let handedness;
-let antihandedness;
+
 
 let tone = ["stim/50ms.wav"];
 
