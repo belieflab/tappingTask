@@ -163,11 +163,13 @@ let countDownSlow = {
       data.condition = "time-tapping-match";
     }
     data.block = blockIterator;
-    data.subjectKey = 'GUID';
+    data.subjectKey = GUID;
     data.src_subject_id = workerId;
+    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.handedness = handedness;
     }
 }
 
@@ -200,11 +202,13 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
-        data.subjectkey = 'GUID';
+        data.subjectkey = GUID;
         data.src_subject_id = workerId;
+        data.site = siteNumber;
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.handedness = handedness;
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<h1 style="text-align:center; color:white">+</h1>',
@@ -236,11 +240,13 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
-        data.subjectkey = 'GUID';
+        data.subjectkey = GUID;
         data.src_subject_id = workerId;
+        data.site = siteNumber;
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.handedness = handedness;
         },
     trial_duration: 250,
 }
@@ -271,11 +277,13 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
-        data.subjectkey = 'GUID';
+        data.subjectkey = GUID;
         data.src_subject_id = workerId;
+        data.site = siteNumber;
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.handedness = handedness;
         },
     trial_duration: 250,
 }
@@ -306,11 +314,13 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
-        data.subjectkey = 'GUID';
+        data.subjectkey = GUID;
         data.src_subject_id = workerId;
+        data.site = siteNumber;
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.handedness = handedness;
         },
     trial_duration: 250,
 }
@@ -362,11 +372,13 @@ let countDownFast = {
       data.condition = "time-tapping-match";
     }
     data.block = blockIterator;
-    data.subjectkey = 'GUID';
+    data.subjectkey = GUID;
     data.src_subject_id = workerId;
+    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.handedness = handedness;
     }
 }
 
@@ -399,11 +411,13 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
-        data.subjectkey = 'GUID';
+        data.subjectkey = GUID;
         data.src_subject_id = workerId;
+        data.site = siteNumber;
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.handedness = handedness;
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
     prompt: '<h1 id="counter" style="text-align:center; color:white">+</h1>',
@@ -435,11 +449,13 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
-        data.subjectkey = 'GUID';
+        data.subjectkey = GUID;
         data.src_subject_id = workerId;
+        data.site = siteNumber;
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.handedness = handedness;
         },
     trial_duration: 125,
 }
@@ -470,11 +486,13 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
-        data.subjectkey = 'GUID';
+        data.subjectkey = GUID;
         data.src_subject_id = workerId;
+        data.site = siteNumber;
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.handedness = handedness;
         },
     trial_duration: 125,
 }
@@ -505,11 +523,13 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
           data.condition = "time-tapping-match";
         }
         data.block = blockIterator;
-        data.subjectkey = 'GUID';
+        data.subjectkey = GUID;
         data.src_subject_id = workerId;
+        data.site = siteNumber;
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.handedness = handedness;
         },
     trial_duration: 125,
 }
@@ -533,7 +553,7 @@ let save_data = {
   choices: jsPsych.NO_KEYS,
   trial_duration: 5000,
   on_finish: function(){
-    saveData("variable-tempo-tapping_" + workerId, jsPsych.data.get().csv());
+    saveData("var-tap_" + workerId, jsPsych.data.get().csv());
     document.getElementById("unload").onbeforeunload='';
     $(document).ready(function(){
     $("body").addClass("showCursor"); // returns cursor functionality
@@ -546,9 +566,142 @@ let end = {
   stimulus:   "<p>Thank you!</p>"+
   "<p>You have successfully completed the experiment and your data has been saved.</p>"+
   "<p>To leave feedback on this task, please click the following link:</p>"+
-  "<p><a href='https://omnibus.sh/eCRFs/feedback/vartempotapping.php'>Leave Task Feedback!</a></p>"+
-      // "<p>Please wait for the experimenter to continue.</p>"+
-  "<p>You may now close the expriment window at anytime.</p>",
+  "<p style='color:white;'><a href="+feedbackLink+">Leave Task Feedback!</a></p>"+
+  // "<p>Please wait for the experimenter to continue.</p>"+
+  "<p><i>You may now close the expriment window at anytime.</i></p>",
   choices: jsPsych.NO_KEYS,
-  trial_duration: 60000,
+  // trial_duration: 60000,
 };
+
+
+//////////////////////////////////////////////////
+////////////////////PROCEDURES///////////////////
+////////////////////////////////////////////////
+
+/* Instructions Procedure */
+
+let instProcedure = { //This loops over the intrudction objects
+  timeline: [welcome, instructions_1, instructions_2, instructions_3, instructions_4, instructions_5]
+};
+
+let endExperimentProcedure = { //This loops over the intrudction objects
+    timeline: [endExperiment]
+};
+
+/* Slow Practice Countdown Procedure */
+
+//The way the experiment is designed is that the only the differentiating experiment blocks from practice
+//is the countdown procedure to denote it as practice.
+let practiceProcedureCountDownSlow = { //This loops over the object
+  timeline: [countDownSlow], //This is the loop through objects, just one, so it does countdown
+  randomize_order: false,// This is the outer procedure, looping over the stimuli
+  timeline_variables: countdown_practice_stim
+}
+
+/* Fast Practice Countdown Procedure */
+
+let practiceProcedureCountDownFast = { //This loops over the object
+  timeline: [countDownFast], //if you put fixation in front and the feedback after, it will display those in that order
+  //timeline_variables: stimuliTone,
+  randomize_order: false,// This is the outer procedure, looping over the stimuli
+  timeline_variables: countdown_practice_stim
+}
+
+
+////////////////EXPERIMENT SLOW PROCEDURES/////////////
+  
+/* Slow Experiment Countdown Procedure */
+
+  let procedureCountDownSlow = { //This loops over the object
+    timeline: [countDownSlow], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    timeline_variables: countdown_experiment_stim
+  }
+
+/* Slow Experiment Tone Tapping Procedure */
+
+  let procedureToneSlow = { //This loops over the object
+    timeline: [tapToneSlow, toneITISlow], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    repetitions: 12,
+  }
+
+/* Slow Experiment Self-Paced Tapping Procedure */
+
+  let procedureNoToneSlow = { //This loops over the object
+    timeline: [tapNoToneSlow, noToneITISlow], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    repetitions: 30,
+  }
+  
+  ////////////////EXPERIMENT FAST PROCEDURES/////////////
+
+/* Fast Experiment Countdown Procedure */
+
+  let procedureCountDownFast = { //This loops over the object
+    timeline: [countDownFast], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    timeline_variables: countdown_experiment_stim
+  }
+
+/* Tap-Matched Fast Experiment Tone Tapping Procedure */
+
+  let procedureToneFast = { //This loops over the object
+    timeline: [tapToneFast, toneITIFast], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    repetitions: 12,
+  }
+
+/* Tap-Matched Fast Experiment Self-Paced Tapping Procedure */
+
+  let procedureNoToneFast = { //This loops over the object
+    timeline: [tapNoToneFast, noToneITIFast], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    repetitions: 30,
+  }
+
+  /* Time-Matched Fast Experiment Tone Tapping Procedure */
+
+  let procedureToneFast_timeMatched = { //This loops over the object
+    timeline: [tapToneFast, toneITIFast], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    repetitions: 24,
+  }
+
+/* Time-Matched Fast Experiment Self-Paced Tapping Procedure */
+
+  let procedureNoToneFast_timeMatched = { //This loops over the object
+    timeline: [tapNoToneFast, noToneITIFast], //if you put fixation in front and the feedback after, it will display those in that order
+    //timeline_variables: stimuliTone,
+    randomize_order: false,// This is the outer procedure, looping over the stimuli
+    repetitions: 60,
+  }
+
+ ////////////////DEFINING BLOCKS/////////////
+
+timeline.push(instProcedure)
+timeline.push(getReadySlow, practiceProcedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, practiceProcedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// PRACTICE
+timeline.push(experimentStartInst)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// BLOCK 1- Tap Matched
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// BLOCK 2
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// BLOCK 3
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// BLOCK 4
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// BLOCK 5
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// BLOCK 6- Tap Matched
+timeline.push(selfTimeBreak, secondHalfStart)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched, stopTapping)// BLOCK 1- Time Matched
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched, stopTapping)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched, stopTapping)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched, stopTapping)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched, stopTapping)
+timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast_timeMatched, procedureNoToneFast_timeMatched, stopTapping)// BLOCK 6- Time Matched
+timeline.push(endExperimentProcedure)
+timeline.push(save_data)
+timeline.push(end)
