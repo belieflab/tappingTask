@@ -158,8 +158,9 @@ let tapNondominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.subjectkey = 'GUID';
+    data.subjectkey = GUID;
     data.src_subject_id = workerId;
+    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
@@ -180,8 +181,9 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
   on_finish: function (data) {
     console.log(data.key_press)
     data.block = practiceBlockIterator;
-    data.subjectkey = 'GUID';
+    data.subjectkey = GUID;
     data.src_subject_id = workerId;
+    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
@@ -209,8 +211,9 @@ let tapDominant = { // I think this is the object for collecting responses //
   prompt: '<p hidden id="counter" style="text-align:center; color:white"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
-    data.subjectkey = 'GUID';
+    data.subjectkey = GUID;
     data.src_subject_id = workerId;
+    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
@@ -230,8 +233,9 @@ let practiceTapDominant = { // I think this is the object for collecting respons
   on_finish: function (data) {
     console.log(data.key_press)
     data.block = practiceBlockIterator;
-    data.subjectkey = 'GUID';
+    data.subjectkey = GUID;
     data.src_subject_id = workerId;
+    data.site = siteNumber;
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
@@ -259,7 +263,7 @@ let save_data = {
   choices: jsPsych.NO_KEYS,
   trial_duration: 5000,
   on_finish: function(){
-    saveData("speed-tapping_" + workerId, jsPsych.data.get().csv());
+    saveData("speed-tap_" + workerId, jsPsych.data.get().csv());
     document.getElementById("unload").onbeforeunload='';
     $(document).ready(function(){
     $("body").addClass("showCursor"); // returns cursor functionality
@@ -272,11 +276,11 @@ let end = {
   stimulus:   "<p>Thank you!</p>"+
   "<p>You have successfully completed the experiment and your data has been saved.</p>"+
   "<p>To leave feedback on this task, please click the following link:</p>"+
-  "<p><a href='https://omnibus.sh/eCRFs/feedback/speedtapping.php'>Leave Task Feedback!</a></p>"+
-      // "<p>Please wait for the experimenter to continue.</p>"+
-  "<p>You may now close the expriment window at anytime.</p>",
+  "<p style='color:white;'><a href="+feedbackLink+">Leave Task Feedback!</a></p>"+
+  // "<p>Please wait for the experimenter to continue.</p>"+
+  "<p><i>You may now close the expriment window at anytime.</i></p>",
   choices: jsPsych.NO_KEYS,
-  trial_duration: 60000,
+  // trial_duration: 60000,
 };
 
 let instProcedure = { //This loops over the object
