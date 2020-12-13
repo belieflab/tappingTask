@@ -44,7 +44,7 @@ if (isset($candidateId)) {
   <script src="exp/fn.js"></script>
   <script src="exp/var.js"></script>
   <script type="text/javascript">
-    let feedbackLink = "https://omnibus.sh/eCRFs/feedback/tasks/speed-tap.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
+    let feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/speed-tap.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
     </script>
 </footer>
 </html>
