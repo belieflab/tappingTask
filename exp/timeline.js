@@ -148,11 +148,11 @@ let countDownSlow = {
     j++
     data.tap_type = "slow-countdown";
     if (practiceIterator >= -188) {
-      data.trial = practiceIterator;
+      data.index = practiceIterator;
       practiceIterator--;
       data.test_part = "practice";
     } else if (practiceIterator < -188) {
-      data.trial = experimentIterator;
+      data.index = experimentIterator;
       experimentIterator++
       data.test_part = "experiment";
     }
@@ -187,11 +187,11 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
         j=0;
         data.tap_type = "slow-tone-paced";
         if (practiceIterator >= -188) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -188) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -225,11 +225,11 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
         console.log(data.key_press);
         data.tap_type = "slow-tone-paced";
         if (practiceIterator >= -188) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -188) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -262,11 +262,11 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
         console.log(data.key_press);
         data.tap_type = "slow-self-paced";
         if (practiceIterator >= -188) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -188) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -299,11 +299,11 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
         console.log(data.key_press);
         data.tap_type = "slow-self-paced";
         if (practiceIterator >= -188) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -188) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -357,11 +357,11 @@ let countDownFast = {
     j++//this shit is critical for the countdown to function properly.
     data.tap_type = "fast-countdown";
     if (practiceIterator >= -188) {
-      data.trial = practiceIterator;
+      data.index = practiceIterator;
       practiceIterator--;
       data.test_part = "practice";
     } else if (practiceIterator < -188) {
-      data.trial = experimentIterator;
+      data.index = experimentIterator;
       experimentIterator++
       data.test_part = "experiment";
     }
@@ -396,11 +396,11 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
         j=0; // if you do not reset
         data.tap_type = "fast-tone-paced";
         if (practiceIterator >= -188) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -188) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -434,11 +434,11 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
         console.log(data.key_press);
         data.tap_type = "fast-tone-paced";
         if (practiceIterator >= -188) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -188) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -471,11 +471,11 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
         console.log(data.key_press);
         data.tap_type = "fast-self-paced";
         if (practiceIterator >= -188) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -188) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -508,11 +508,11 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
         console.log(data.key_press);
         data.tap_type = "fast-self-paced";
         if (practiceIterator >= -188) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -188) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
