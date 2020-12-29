@@ -105,11 +105,11 @@ let countDown = {
       j++
       data.tap_type = "countdown";
       if (practiceIterator >= -94) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -94) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -137,11 +137,11 @@ let tapTone = { // Collects responses for tone paced tapping for the first 250 m
       j=0; //this has to be reset to 0 for the countdown to work. j is left at 10 in countdown.
       data.tap_type = "tone-paced";
       if (practiceIterator >= -94) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -94) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -167,11 +167,11 @@ let toneITI = { // this was added to capture taps before the next tone in order 
       data.handedness = handedness;
       data.tap_type = "tone-paced";
       if (practiceIterator >= -94) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -94) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -196,11 +196,11 @@ let tapNoTone = { // this was added to capture taps before the next tap interval
       data.handedness = handedness;
       data.tap_type = "self-paced";
       if (practiceIterator >= -94) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -94) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
@@ -225,11 +225,11 @@ let noToneITI = { // this was added to capture taps before the next tap interval
       data.handedness = handedness;
       data.tap_type = "self-paced";
       if (practiceIterator >= -94) {
-          data.trial = practiceIterator;
+          data.index = practiceIterator;
           practiceIterator--;
           data.test_part = "practice";
         } else if (practiceIterator < -94) {
-          data.trial = experimentIterator;
+          data.index = experimentIterator;
           experimentIterator++
           data.test_part = "experiment";
         }
