@@ -166,7 +166,7 @@ let tapNondominant = { // I think this is the object for collecting responses //
     data.sex = sexAtBirth;
     data.handedness = handedness;
     data.block = blockIterator;
-    data.trial = experimentIterator;
+    data.index = experimentIterator;
     experimentIterator++
   }
 }
@@ -188,7 +188,7 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
     data.handedness = handedness;
-    data.trial = practiceIterator;
+    data.index = practiceIterator;
     practiceIterator--
   }
 }
@@ -220,7 +220,7 @@ let tapDominant = { // I think this is the object for collecting responses //
     data.sex = sexAtBirth;
     data.handedness = handedness;
     data.block = blockIterator;
-    data.trial = experimentIterator;
+    data.index = experimentIterator;
     experimentIterator++
   }
 }
@@ -242,7 +242,7 @@ let practiceTapDominant = { // I think this is the object for collecting respons
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
     data.handedness = handedness;
-    data.trial = practiceIterator;
+    data.index = practiceIterator;
     practiceIterator--
   }
 }
