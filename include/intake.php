@@ -29,7 +29,7 @@
     <!-- GUID -->
     <p><b>GUID:</b></p>
     <input required id="guid" type="text" name="guid" minlength="12" maxlength="12">
-    <!-- <input required type="hidden" id="guid" name="guid" value="<?php echo $guid ?>"> -->
+    <!-- <input required type="hidden" id="guid" name="guid" value="< ?php echo $guid ?>"> -->
 
     </form>
     <!-- <button onclick="submitIntake()">submit subjectid</button> -->
@@ -63,17 +63,14 @@
 
     <p><b>Before proceeding to the task, please confirm the following are true:</b></p>
     <label class="container">Screen brightness is up to 100% &nbsp&nbsp&nbsp&nbsp  
-    <input type="hidden" name="brightness" id="brightness" value="0" />
     <input type="checkbox" name="brightness" id="brightness" value="1"/>
     </label>
     <br>
     <label class="container">Headphones plugged in? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp      
-    <input type="hidden" name="headphones" id="headphones" value="0" />
     <input type="checkbox" name="headphones" id="headphones" value="1"/>
     </label>
     <br>
     <label class="container">Headphone volume is set to 50% &nbsp&nbsp&nbsp  
-    <input type="hidden" name="volume" id="volume" value="0" />
     <input type="checkbox" name="volume" id="volume" value="1"/>
   </label>
   </form>
@@ -88,7 +85,7 @@
   </label>
 </form>
 <br> -->
-<button id="submitButton" class="loadMain" onclick="validateSite(), submitIntake(), guidBuilder(), ageFinder(), validateSex(), validateHandedness(), validateBrightness()" type="button">submit</button>
+<button id="submitButton" class="loadMain" onclick="validateSite(), submitIntake(), guidBuilder(), ageFinder(), validateSex(), validateHandedness(), validateBrightness(), validateHeadphones(), validateVolume()" type="button">submit</button>
 </div>
 <div id="validation" style="display: none">
     <br>
@@ -102,6 +99,7 @@
 </div>
 <script>$("button.loadMain").click(function(){
       $.getScript("exp/timeline.js");
+      $.getScript("exp/main.js");
   }); </script>
 <script>
 $("button.noCursor").click(function(){

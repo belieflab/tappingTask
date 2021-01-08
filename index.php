@@ -48,6 +48,7 @@ $ageInMonths = $_GET["interview_age"];
   <script src="exp/fn.js"></script>
   <script src="exp/var.js"></script>
   <script type="text/javascript">
+  // let feedbackLink = '';
     let feedbackLink = "https://belieflab.yale.edu/omnibus/eCRFs/feedback/tasks/var-tap.php?candidateId=<?php echo $candidateId?>&studyId=<?php echo $studyId?>";
     let GUID = "<?php echo $subjectKey?>";
     let subjectID = "<?php echo $consortId?>";

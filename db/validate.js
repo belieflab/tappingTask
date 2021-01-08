@@ -9,9 +9,7 @@ let EasyKey_uCase;
 let HardKey_uCase;
 
 // let ageAtAssessment;
-
 // let sexAtBirth;
-
 // let GUID;
 
 let today = new Date();

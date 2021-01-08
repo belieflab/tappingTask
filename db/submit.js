@@ -62,9 +62,22 @@ function validateIntake() {
 }
 
 function validateBrightness() {
-    // document.getElementById("sex").value = sex;
-    if (document.getElementById("brightness").value == '0') {
-        alert("Please confirm you have turned your screen brightness up to 100%");
+    if (document.getElementById("brightness").checked == false) {
+        alert("Please confirm your screen brightness is 100%");
+
+    }
+}
+
+function validateHeadphones() {
+    if (document.getElementById("headphones").checked == false) {
+        alert("Please confirm your headphones are plugged in.");
+
+    }
+}
+
+function validateVolume() {
+    if (document.getElementById("volume").checked == false) {
+        alert("Please confirm your headphone volume is 50%");
 
     }
 }
@@ -134,8 +147,8 @@ function submitIntake() {
 
   
 
-    if(subjectID == "") {
-        alert("Please enter a valid SubjectID.")
+    if(subjectID === '' || document.getElementById("brightness").checked === false || document.getElementById("headphones").checked === false || document.getElementById("volume").checked === false) {
+        // do nothing
     } else {
         // alert("your subjectid is " + siteNumber + subjectID);
         workerId = parseInt(subjectID);
