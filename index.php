@@ -32,7 +32,7 @@ $ageInMonths = $_GET["interview_age"];
   <head>
     <title>Tapping Task</title>  <!-- This is for changing the title -->
     <script src="db/validate.js"></script>
-    <script src="exp/jQuery.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="jsPsych/jspsych.js"></script>
     <script src="jsPsych/plugins/jspsych-html-keyboard-response.js"></script> <!--script is for javascript -->
     <link href="jsPsych/css/jspsych.css" rel="stylesheet" type="text/css"></link> <!--link is for any other text file; href is for local directory, either a url or path -->
