@@ -24,10 +24,12 @@
     </form> -->
     <form action="<?php echo SIGNUP_VIEW ?>/post/intakeadd.php" method="post">
     <p><b>CAPR ID:</b></p>
-    <input required id="subjectid" type="text" name="consent_id" plattern="\d*" minlength="5" maxlength="5">
+    <input required id="subjectid" type="text" name="consent_id" minlength="5" maxlength="5">
     
     <!-- GUID -->
-    <input required type="hidden" id="guid" name="guid" value="<?php echo $guid ?>">
+    <p><b>GUID:</b></p>
+    <input required id="guid" type="text" name="guid" minlength="12" maxlength="12">
+    <!-- <input required type="hidden" id="guid" name="guid" value="<?php echo $guid ?>"> -->
 
     </form>
     <!-- <button onclick="submitIntake()">submit subjectid</button> -->

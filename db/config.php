@@ -33,12 +33,21 @@ if ( file_exists( $_SERVER[ "DOCUMENT_ROOT" ] . '/omnibus.yale' ) ) { // Yale pr
   DEFINE( 'DB_PASSWORD', "Xk2QsWmaDrj8pfz8" ); // Note: this should be your root password
   DEFINE( 'DB_NAME',     "omnibus" );
   DEFINE( 'SALT',        "graduate" ); // needed for guernica mySQL db connection
-} else {
+  echo '<script type="text/javascript">let db_connection = true</script>';
+} else if ( file_exists( $_SERVER[ "DOCUMENT_ROOT" ] . '/omnibus.local' ) ) {
   DEFINE( 'DB_HOST',     "localhost" );
   DEFINE( 'DB_USER',     "root" );
   DEFINE( 'DB_PASSWORD', "dingdong" ); // Note: this should be your root password
   DEFINE( 'DB_NAME',     "omnibus" );
   DEFINE( 'SALT',        "graduate" ); // needed for guernica mySQL db connection
+  echo '<script type="text/javascript">let db_connection = true</script>';
+} else {
+  DEFINE( 'DB_HOST',     "" );
+  DEFINE( 'DB_USER',     "" );
+  DEFINE( 'DB_PASSWORD', "" ); // Note: this should be your root password
+  DEFINE( 'DB_NAME',     "" );
+  DEFINE( 'SALT',        "" ); // needed for guernica mySQL db connection
+  echo '<script type="text/javascript">let db_connection = false</script>';
 }
 
 // RPH 2020/08/16
