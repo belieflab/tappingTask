@@ -100,8 +100,10 @@ function submitIntake() {
 
     if (rightHandedness === true) {
         handedness = "right";
+        antihandedness = "left";
     } else if (leftHandedness === true) {
         handedness = "left";
+        antihandedness = "right";
     }
 
     // const zeroPad = (num, places) => String(num).padStart(places, '0');
