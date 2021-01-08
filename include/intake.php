@@ -1,9 +1,9 @@
 <div class="screening" style="background-color:lightgray; text-align:center; margin:35px; vertical-align:middle">
 <br>
-<h1 style="text-align:center;">CAPR Participant Intake</h1>
+<h1 style="text-align:center;">Participant Intake</h1>
 <!-- <input type="text" id="result"> -->
   <div id="intake">
-    <p><b>Select your Research Site:</b></p>
+    <p><b>Research Site:</b></p>
     <select name="facility" id="siteid">
         <option value="none">---</option>
         <option value="Maryland">UMBC</option>
