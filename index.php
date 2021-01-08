@@ -42,7 +42,17 @@ $ageInMonths = $_GET["interview_age"];
     <link rel="stylesheet" type="text/css" href="css/style.css"> <!--the interpreter will take care of ordering, rel, type, href do not have to be in a specific order -->
   </head>
   <body id='unload' onbeforeunload="return areYouSure()" style="background-color:gray;">  <!--any time you see style = all properties that follow are inline css -->
-    <?php include_once "include/nda.php"?>
+  <?php
+    if ($db_connection_status == true) {
+      include_once "include/nda.php";
+      // echo'<br>';
+      // echo'connected';
+    } else if ($db_connection_status == false) {
+      include_once "include/intake.php";
+      // echo'<br>';
+      // echo'not connected';
+    }
+    ?>
   </body>
 <footer>
   <script src="exp/fn.js"></script>
