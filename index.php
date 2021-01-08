@@ -31,8 +31,9 @@ $ageInMonths = $_GET["interview_age"];
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tapping Task</title>  <!-- This is for changing the title -->
+    <title>Tone Tapping</title>  <!-- This is for changing the title -->
     <script src="db/validate.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="jsPsych/jspsych.js"></script>
     <script src="jsPsych/plugins/jspsych-audio-keyboard-response.js"></script>
     <script src="jsPsych/plugins/jspsych-html-keyboard-response.js"></script> <!--script is for javascript -->
@@ -45,7 +46,6 @@ $ageInMonths = $_GET["interview_age"];
     <?php include_once "include/nda.php"?>
   </body>
 <footer>  
-  <script src="exp/jQuery.js"></script>
   <script src="exp/fn.js"></script>
   <script src="exp/var.js"></script>
   <script type="text/javascript">
@@ -55,6 +55,6 @@ $ageInMonths = $_GET["interview_age"];
     let sexAtBirth = "<?php echo $sexAtBirth?>";
     let siteNumber = "<?php echo $institutionAlias?>";
     let ageAtAssessment = "<?php echo $ageInMonths?>";
-    </script>
+  </script>
 </footer>
 </html>
