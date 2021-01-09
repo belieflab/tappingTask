@@ -40,16 +40,16 @@ $ageInMonths = $_GET["interview_age"];
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
   </head>
   <body id='unload' onbeforeunload="return areYouSure()" style="background-color:gray;">  <!--any time you see style = all properties that follow are inline css -->
-  <?php
-    if ($db_connection_status == true) {
-      include_once "include/nda.php";
-      // echo'<br>';
-      // echo'connected';
-    } else if ($db_connection_status == false) {
-      include_once "include/intake.php";
-      // echo'<br>';
-      // echo'not connected';
-    }
+    <?php
+      if ($db_connection_status == true) {
+        include_once "include/nda.php";
+        // echo'<br>';
+        // echo'connected';
+      } else if ($db_connection_status == false) {
+        include_once "include/intake.php";
+        // echo'<br>';
+        // echo'not connected';
+      }
     ?>
   </body>
   <footer>
