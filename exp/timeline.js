@@ -169,6 +169,7 @@ let countDownSlow = {
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.phenotype = groupStatus;
     data.handedness = handedness;
     }
 }
@@ -208,6 +209,7 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
         data.handedness = handedness;
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
@@ -246,6 +248,7 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
         data.handedness = handedness;
         },
     trial_duration: 250,
@@ -283,6 +286,7 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
         data.handedness = handedness;
         },
     trial_duration: 250,
@@ -320,6 +324,7 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
         data.handedness = handedness;
         },
     trial_duration: 250,
@@ -378,6 +383,7 @@ let countDownFast = {
     data.interview_date = today;
     data.interview_age = ageAtAssessment;
     data.sex = sexAtBirth;
+    data.phenotype = groupStatus;
     data.handedness = handedness;
     }
 }
@@ -417,6 +423,7 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
         data.handedness = handedness;
         },
     // stimulus: function() { return "Stimuli/50msec.wav" },
@@ -455,6 +462,7 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
         data.handedness = handedness;
         },
     trial_duration: 125,
@@ -492,6 +500,7 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
         data.handedness = handedness;
         },
     trial_duration: 125,
@@ -529,6 +538,7 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
         data.interview_date = today;
         data.interview_age = ageAtAssessment;
         data.sex = sexAtBirth;
+        data.phenotype = groupStatus;
         data.handedness = handedness;
         },
     trial_duration: 125,
