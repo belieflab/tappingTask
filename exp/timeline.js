@@ -163,7 +163,7 @@ let countDownSlow = {
       data.condition = "time-tapping-match";
     }
     data.block = blockIterator;
-    data.subjectKey = GUID;
+    data.subjectkey = GUID;
     data.src_subject_id = workerId;
     data.site = siteNumber;
     data.interview_date = today;
