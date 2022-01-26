@@ -12,6 +12,16 @@ if (file_exists($_SERVER["DOCUMENT_ROOT"] . '/config.php')) {
   $institutionAlias = $_GET["site"];
   $ageInMonths = $_GET["interview_age"];
   $groupStatus = openssl_decrypt($_GET["phenotype"],$encryptionMethod, $secretHash);
+  // // $groupStatus = $_POST["phenotype"];
+  // echo"<br>";
+  // echo"<br>";
+  // echo"<br>";
+  // echo"<br>";
+  // echo"<br>";
+  // echo"<br>";
+  // echo"<br>";
+  // echo"<br>";
+  // echo$groupStatus;
 
   } else {
     $db_connection_status = null;
