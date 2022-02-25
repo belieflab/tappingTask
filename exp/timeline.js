@@ -186,6 +186,9 @@ let tapToneSlow = { // Collects responses for tone paced tapping for the first 2
     on_finish: function (data) {
         console.log(data.key_press);
         j=0;
+        if (data.key_press == 32){
+          tapTotal++;
+        }
         data.tap_type = "slow-tone-paced";
         if (practiceIterator >= -188) {
           data.index = practiceIterator;
@@ -224,6 +227,9 @@ let toneITISlow = { // this was added to capture taps before the next tone in or
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
+      if (data.key_press == 32){
+        tapTotal++;
+      }
         console.log(data.key_press);
         data.tap_type = "slow-tone-paced";
         if (practiceIterator >= -188) {
@@ -262,6 +268,9 @@ let tapNoToneSlow = { // this was added to capture taps before the next tap inte
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
+      if (data.key_press == 32){
+        tapTotal++;
+      }
         console.log(data.key_press);
         data.tap_type = "slow-self-paced";
         if (practiceIterator >= -188) {
@@ -300,6 +309,9 @@ let noToneITISlow = { // this was added to capture taps before the next tap inte
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
+      if (data.key_press == 32){
+        tapTotal++;
+      }
         console.log(data.key_press);
         data.tap_type = "slow-self-paced";
         if (practiceIterator >= -188) {
@@ -398,6 +410,9 @@ let tapToneFast = { // Collects responses for tone paced tapping for the first 2
     trial_duration: 125,
     stimulus: tone,
     on_finish: function (data) {
+      if (data.key_press == 32){
+        tapTotal++;
+      }
         console.log(data.key_press);
         j=0; // if you do not reset
         data.tap_type = "fast-tone-paced";
@@ -438,6 +453,9 @@ let toneITIFast = { // this was added to capture taps before the next tone in or
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
+      if (data.key_press == 32){
+        tapTotal++;
+      }
         console.log(data.key_press);
         data.tap_type = "fast-tone-paced";
         if (practiceIterator >= -188) {
@@ -476,6 +494,9 @@ let tapNoToneFast = { // this was added to capture taps before the next tap inte
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
+      if (data.key_press == 32){
+        tapTotal++;
+      }
         console.log(data.key_press);
         data.tap_type = "fast-self-paced";
         if (practiceIterator >= -188) {
@@ -514,6 +535,9 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
     choices: [32], //Spacebar
     response_ends_trial: false,
     on_finish: function (data) {
+      if (data.key_press == 32){
+        tapTotal++;
+      }
         console.log(data.key_press);
         data.tap_type = "fast-self-paced";
         if (practiceIterator >= -188) {
@@ -543,6 +567,22 @@ let noToneITIFast = { // this was added to capture taps before the next tap inte
         },
     trial_duration: 125,
 }
+
+let tapNumberFeedback = {
+  type: "html-keyboard-response",
+  stimulus: "<h2 style='color:white'> </h2>",
+  trial_duration: 2000,
+  on_finish: function(){
+    if (tapTotal < 38) {
+      jsPsych.endExperiment("You are tapping too little.\nPlease refresh broswer to redo practice.");
+      tapTotal=0;
+    } else if (tapTotal > 46) {
+      jsPsych.endExperiment("You are tapping too much.\nPlease refresh broswer to redo practice.");
+      tapTotal=0;
+    }
+    tapTotal=0; //need this to clear it out if the if statement is passed
+  }
+};
 
 let save_data = {
   type: "html-keyboard-response",

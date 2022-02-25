@@ -111,7 +111,7 @@ let instProcedure = { //This loops over the intrudction objects
    ////////////////DEFINING BLOCKS/////////////
   
   timeline.push(instProcedure)
-  timeline.push(getReadySlow, practiceProcedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, practiceProcedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// PRACTICE
+  timeline.push(getReadySlow, practiceProcedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, tapNumberFeedback, getReadyFast, practiceProcedureCountDownFast, procedureToneFast, procedureNoToneFast, tapNumberFeedback, stopTapping)// PRACTICE
   timeline.push(experimentStartInst)
   timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// BLOCK 1- Tap Matched
   timeline.push(getReadySlow, procedureCountDownSlow, procedureToneSlow, procedureNoToneSlow, getReadyFast, procedureCountDownFast, procedureToneFast, procedureNoToneFast, stopTapping)// BLOCK 2

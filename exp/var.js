@@ -6,13 +6,12 @@
 // let handedness;
 // let antihandedness;
 
-
-
 let tone = ["stim/50ms.wav"];
 
 // let stimuli;
 
 let j=0;
+let tapTotal=0;
 practiceIterator = -1;
 experimentIterator = 1;
 blockIterator = -1;
