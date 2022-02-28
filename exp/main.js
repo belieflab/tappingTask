@@ -39,7 +39,7 @@ let instProcedure = { //This loops over the object
   }    
   
   timeline.push(instProcedure)
-  timeline.push(getReady, practiceProcedureCountDown, procedureTone, procedureNoTone, stopTapping)// PRACTICE
+  timeline.push(getReady, practiceProcedureCountDown, procedureTone, procedureNoTone, tapNumberFeedback, stopTapping)// PRACTICE
   timeline.push(experimentStartInst)
   timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone, stopTapping)// BLOCK 1
   timeline.push(getReady, procedureCountDown, procedureTone, procedureNoTone, stopTapping)// BLOCK 2

@@ -7,6 +7,7 @@ let tone = ["stim/50ms.wav"];
 // let stimuli;
 
 let j=0; //this is increment in countdown through countdown_stim
+let tapTotal=0;
 practiceIterator = -1;
 experimentIterator = 1;
 blockIterator = -1;

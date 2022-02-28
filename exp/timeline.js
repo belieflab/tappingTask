@@ -137,6 +137,9 @@ let tapTone = { // Collects responses for tone paced tapping for the first 250 m
       data.handedness = handedness;
       j=0; //this has to be reset to 0 for the countdown to work. j is left at 10 in countdown.
       data.tap_type = "tone-paced";
+      if (data.key_press == 32){
+        tapTotal++;
+      }
       if (practiceIterator >= -94) {
           data.index = practiceIterator;
           practiceIterator--;
@@ -168,6 +171,9 @@ let toneITI = { // this was added to capture taps before the next tone in order 
       data.phenotype = groupStatus;
       data.handedness = handedness;
       data.tap_type = "tone-paced";
+      if (data.key_press == 32){
+        tapTotal++;
+      }
       if (practiceIterator >= -94) {
           data.index = practiceIterator;
           practiceIterator--;
@@ -198,6 +204,9 @@ let tapNoTone = { // this was added to capture taps before the next tap interval
       data.phenotype = groupStatus;
       data.handedness = handedness;
       data.tap_type = "self-paced";
+      if (data.key_press == 32){
+        tapTotal++;
+      }
       if (practiceIterator >= -94) {
           data.index = practiceIterator;
           practiceIterator--;
@@ -228,6 +237,9 @@ let noToneITI = { // this was added to capture taps before the next tap interval
       data.phenotype = groupStatus;
       data.handedness = handedness;
       data.tap_type = "self-paced";
+      if (data.key_press == 32){
+        tapTotal++;
+      }
       if (practiceIterator >= -94) {
           data.index = practiceIterator;
           practiceIterator--;
@@ -248,6 +260,22 @@ let stopTapping = {
   choices: jsPsych.NO_KEYS,
   trial_duration: 3000,
 }
+
+let tapNumberFeedback = {
+  type: "html-keyboard-response",
+  stimulus: "<h2 style='color:white'> </h2>",
+  trial_duration: 2000,
+  on_finish: function(){
+    if (tapTotal < 38) {
+      jsPsych.endExperiment("You are tapping too little.\nPlease refresh broswer to redo practice.");
+      tapTotal=0;
+    } else if (tapTotal > 46) {
+      jsPsych.endExperiment("You are tapping too much.\nPlease refresh broswer to redo practice.");
+      tapTotal=0;
+    }
+    tapTotal=0; //need this to clear it out if the if statement is passed
+  }
+};
 
 let save_data = {
   type: "html-keyboard-response",
