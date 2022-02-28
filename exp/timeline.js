@@ -181,6 +181,9 @@ let practiceTapNondominant = { // I think this is the object for collecting resp
   prompt: '<p hidden id="counter" style="text-align:center; color:white"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
+    if (data.key_press == 32){
+      tapTotal++;
+    }
     data.block = practiceBlockIterator;
     data.subjectkey = GUID;
     data.src_subject_id = workerId;
@@ -237,6 +240,9 @@ let practiceTapDominant = { // I think this is the object for collecting respons
   prompt: '<p hidden id="counter" style="text-align:center; color:white"></p>',
   on_finish: function (data) {
     console.log(data.key_press)
+    if (data.key_press == 32){
+      tapTotal++;
+    }
     data.block = practiceBlockIterator;
     data.subjectkey = GUID;
     data.src_subject_id = workerId;
@@ -250,6 +256,22 @@ let practiceTapDominant = { // I think this is the object for collecting respons
     practiceIterator--
   }
 }
+
+let tapNumberFeedback = {
+  type: "html-keyboard-response",
+  stimulus: "<h2 style='color:white'> </h2>",
+  trial_duration: 2000,
+  on_finish: function(){
+    if (tapTotal < 30) {
+      jsPsych.endExperiment("Are you tapping as quickly as you can?.\nIf you are not tapping as quickly as you can, please refresh broswer to redo practice.\n If you are tapping as quickly as you can, please redo the practice and try to tap at least 30 times to continue past the practice.");
+      tapTotal=0;
+    } else if (tapTotal > 80) {
+      jsPsych.endExperiment("You are tapping very quickly. Is your hand position correct?\nIf your hand position is incorrect, please refresh broswer to redo practice.\nIf your hand position is correct, please refresh browser and tap 40 times to continue past practice");
+      tapTotal=0;
+    }
+    tapTotal=0; //need this to clear it out if the if statement is passed
+  }
+};
 
 let save_data = {
   type: "html-keyboard-response",

@@ -38,7 +38,7 @@ let endExperimentProcedure = { //This loops over the intrudction objects
 }
 
 timeline.push(instProcedure)
-timeline.push(promptDominant, procedureCountDown, startTimer, practiceProcedureDominant, practiceStopTapping, promptNondominant, procedureCountDown, startTimer, practiceProcedureNondominant, practiceStopTapping) //1st block
+timeline.push(promptDominant, procedureCountDown, startTimer, practiceProcedureDominant, practiceStopTapping, tapNumberFeedback, promptNondominant, procedureCountDown, startTimer, practiceProcedureNondominant, practiceStopTapping, tapNumberFeedback) //1st block
 timeline.push(experimentStartInst)
 timeline.push(promptDominant, procedureCountDown, startTimer, procedureDominant, stopTapping, promptNondominant, procedureCountDown, startTimer, procedureNondominant, stopTapping) //1st block
 timeline.push(promptDominant, procedureCountDown, startTimer, procedureDominant, stopTapping, promptNondominant, procedureCountDown, startTimer, procedureNondominant, stopTapping) //2nd block
