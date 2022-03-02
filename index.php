@@ -32,7 +32,6 @@
   </body>
 <footer>
   <script src="exp/fn.js"></script>
-  <!-- <script src="exp/var.js"></script> -->
   <script type="text/javascript">
       // declare NDA required variables
       let GUID;
