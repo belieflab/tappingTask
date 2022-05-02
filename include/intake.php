@@ -101,7 +101,6 @@
 <br>
 </div>
 <script>$("button.loadMain").click(function(){
-      $.getScript("exp/var.js");
       $.getScript("exp/timeline.js");
   }); </script>
 <script>
