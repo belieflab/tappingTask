@@ -266,10 +266,10 @@ let tapNumberFeedback = {
   stimulus: "<h2 style='color:white'> </h2>",
   trial_duration: 2000,
   on_finish: function(){
-    if (tapTotal < 38) {
+    if (tapTotal < 34) {
       jsPsych.endExperiment("You are tapping too little.\nPlease refresh broswer to redo practice.");
       tapTotal=0;
-    } else if (tapTotal > 46) {
+    } else if (tapTotal > 50) {
       jsPsych.endExperiment("You are tapping too much.\nPlease refresh broswer to redo practice.");
       tapTotal=0;
     }
